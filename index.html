@@ -612,14 +612,15 @@ btnInstalar.addEventListener("click", async () => {
 addEventListener("appinstalled", () => { btnInstalar.hidden = true; });
 
 // Aviso na agenda: o celular assina o plantao.ics (gerado por ferramentas/gerar-agenda.mjs) e avisa na véspera de cada plantão.
-// O Google Agenda ignora lembretes de agendas assinadas por link; no Android o caminho é uma agenda pública do Google,
-// que ainda não existe. Quando existir, ponha o id dela em GOOGLE_AGENDA e o botão aparece também lá.
-const GOOGLE_AGENDA = "";
+// O Google Agenda ignora lembretes de agendas assinadas por link; no Android o caminho é a agenda pública do Google
+// "Plantão Itaocara" (conta do Diego). A cada escala nova, importe o plantao.ics nela de novo.
+const GOOGLE_AGENDA = "a2eddf4ade2e5e4cf6c76b802f70c3e527680803a5c7e9a44b6178b03c76c90b@group.calendar.google.com";
 const ehAndroid = /android/i.test(navigator.userAgent);
 const ICS = new URL("plantao.ics", SITE);
 const agenda = ehAndroid
   ? GOOGLE_AGENDA && {
-      link: `https://calendar.google.com/calendar/u/0?cid=${encodeURIComponent(GOOGLE_AGENDA)}`,
+      // Mesmo formato do "link compartilhável" do Google: o id em base64, sem o "=" do fim.
+      link: `https://calendar.google.com/calendar/u/0?cid=${btoa(GOOGLE_AGENDA).replace(/=+$/, "")}`,
       passos: ["Toque em <strong>Adicionar à agenda</strong> e confirme no Google Agenda.",
                "No Google Agenda, abra <strong>Configurações</strong>, toque em <strong>Plantão Itaocara</strong> e ative uma notificação para eventos de dia inteiro, por exemplo <strong>1 dia antes às 17:00</strong>."]}
   : {
