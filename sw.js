@@ -1,5 +1,5 @@
 // Rede primeiro, para a escala nova aparecer logo; sem internet, usa a última cópia salva.
-const CACHE = "plantao-v19";
+const CACHE = "plantao-v20";
 const ARQUIVOS = ["./", "index.html", "manifest.webmanifest", "icone.svg", "icone-192.png", "icone-512.png"];
 
 self.addEventListener("install", e => {
@@ -14,6 +14,9 @@ self.addEventListener("activate", e => {
 
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
+  // Google Analytics e outros endereços de fora ficam com o navegador: sem internet, simplesmente não contam.
+  const url = new URL(e.request.url);
+  if (/(^|\.)(googletagmanager|google-analytics|analytics\.google)\.com$/.test(url.hostname)) return;
   e.respondWith(
     fetch(e.request)
       .then(r => {
