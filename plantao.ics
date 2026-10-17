@@ -32,8 +32,8 @@ DTSTAMP:20260912T000000Z
 DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260914
 SUMMARY:Plantão: Nova Droga Ita e Drogaria Ideal
-DESCRIPTION:Nova Droga Ita\nDrogaria Ideal: (22) 3861-3428\n\nEscala comple
- ta: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Nova Droga Ita: (22) 3861-2661\nDrogaria Ideal: (22) 3861-3428\
+ n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -48,8 +48,9 @@ DTSTAMP:20260919T000000Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
 SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Drogaria Descontão
-DESCRIPTION:Farmácia Jardim d'Aldeia\nDrogaria Descontão: (22) 3861-3713\
- n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Farmácia Jardim d'Aldeia: (22) 3861-1868\nDrogaria Descontão:
+  (22) 3861-3713\n\nEscala completa: https://dibmartins.github.io/plantao-i
+ taocara/#escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -130,8 +131,9 @@ DTSTAMP:20261017T000000Z
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261019
 SUMMARY:Plantão: Farmácia 4 Esquinas e Farmácia Avenida
-DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nFarmácia Avenida\n\nEsca
- la completa: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nFarmácia Avenida: (22) 3
+ 861-3040\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara
+ /#escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -179,8 +181,9 @@ DTSTAMP:20261031T000000Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261102
 SUMMARY:Plantão: Drogaria Capil e Farmácia Casa Branca
-DESCRIPTION:Drogaria Capil\nFarmácia Casa Branca: (22) 98133-8982\n\nEscal
- a completa: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Drogaria Capil: (22) 3861-3318\nFarmácia Casa Branca: (22) 981
+ 33-8982\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/
+ #escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -211,8 +214,9 @@ DTSTAMP:20261107T000000Z
 DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261109
 SUMMARY:Plantão: Nova Droga Ita e Drogaria Descontão
-DESCRIPTION:Nova Droga Ita\nDrogaria Descontão: (22) 3861-3713\n\nEscala c
- ompleta: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Nova Droga Ita: (22) 3861-2661\nDrogaria Descontão: (22) 3861-
+ 3713\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#es
+ cala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -227,9 +231,9 @@ DTSTAMP:20261114T000000Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261116
 SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Farmácia Amaral
-DESCRIPTION:Proclamação da República\n\nFarmácia Jardim d'Aldeia\nFarm
- ácia Amaral\n\nEscala completa: https://dibmartins.github.io/plantao-itao
- cara/#escala
+DESCRIPTION:Proclamação da República\n\nFarmácia Jardim d'Aldeia: (22) 
+ 3861-1868\nFarmácia Amaral\n\nEscala completa: https://dibmartins.github.
+ io/plantao-itaocara/#escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -293,8 +297,9 @@ DTSTAMP:20261205T000000Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261207
 SUMMARY:Plantão: Drogaria Soares e Farmácia Avenida
-DESCRIPTION:Drogaria Soares: (22) 3861-2990\nFarmácia Avenida\n\nEscala co
- mpleta: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Drogaria Soares: (22) 3861-2990\nFarmácia Avenida: (22) 3861-3
+ 040\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#esc
+ ala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -359,8 +364,8 @@ DTSTAMP:20261226T000000Z
 DTSTART;VALUE=DATE:20261226
 DTEND;VALUE=DATE:20261228
 SUMMARY:Plantão: Drogaria Capil e Drogaria Ideal
-DESCRIPTION:Drogaria Capil\nDrogaria Ideal: (22) 3861-3428\n\nEscala comple
- ta: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Drogaria Capil: (22) 3861-3318\nDrogaria Ideal: (22) 3861-3428\
+ n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -391,8 +396,8 @@ DTSTAMP:20270102T000000Z
 DTSTART;VALUE=DATE:20270102
 DTEND;VALUE=DATE:20270104
 SUMMARY:Plantão: Nova Droga Ita e Farmácia Amaral
-DESCRIPTION:Nova Droga Ita\nFarmácia Amaral\n\nEscala completa: https://di
- bmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Nova Droga Ita: (22) 3861-2661\nFarmácia Amaral\n\nEscala comp
+ leta: https://dibmartins.github.io/plantao-itaocara/#escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -407,8 +412,9 @@ DTSTAMP:20270109T000000Z
 DTSTART;VALUE=DATE:20270109
 DTEND;VALUE=DATE:20270111
 SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Fort Popular
-DESCRIPTION:Farmácia Jardim d'Aldeia\nFort Popular: (22) 98154-1153\n\nEsc
- ala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Farmácia Jardim d'Aldeia: (22) 3861-1868\nFort Popular: (22) 9
+ 8154-1153\n\nEscala completa: https://dibmartins.github.io/plantao-itaocar
+ a/#escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -455,8 +461,8 @@ DTSTAMP:20270130T000000Z
 DTSTART;VALUE=DATE:20270130
 DTEND;VALUE=DATE:20270201
 SUMMARY:Plantão: Drogalima e Farmácia Avenida
-DESCRIPTION:Drogalima: (22) 3861-2531\nFarmácia Avenida\n\nEscala completa
- : https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Drogalima: (22) 3861-2531\nFarmácia Avenida: (22) 3861-3040\n\
+ nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -539,8 +545,9 @@ DTSTAMP:20270220T000000Z
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270222
 SUMMARY:Plantão: Drogaria Capil e Drogaria Descontão
-DESCRIPTION:Drogaria Capil\nDrogaria Descontão: (22) 3861-3713\n\nEscala c
- ompleta: https://dibmartins.github.io/plantao-itaocara/#escala
+DESCRIPTION:Drogaria Capil: (22) 3861-3318\nDrogaria Descontão: (22) 3861-
+ 3713\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#es
+ cala
 URL:https://dibmartins.github.io/plantao-itaocara/
 TRANSP:TRANSPARENT
 BEGIN:VALARM

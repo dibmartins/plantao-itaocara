@@ -321,13 +321,14 @@ svg{flex:none}
 // Endereço do site publicado, usado no texto do WhatsApp. Deixe vazio enquanto não houver.
 const SITE = "https://dibmartins.github.io/plantao-itaocara/";
 
-// Contatos confirmados no Google Maps. Quem não tem telefone cai numa busca no mapa.
+// Contatos do Google Maps e de sites que as farmácias usam (zap = WhatsApp quando é outro número que o tel).
+// Quem não tem telefone cai numa busca no mapa.
 const CONTATOS = {
   "Drogalima": {end:"R. Nilo Peçanha, 242, Centro", tel:"(22) 3861-2531"},
-  "Farmácia 4 Esquinas": {tel:"(22) 3861-3021"},
-  "Farmácia Avenida": {end:"R. Pastor José Henrique da Mata, 529"},
+  "Farmácia 4 Esquinas": {tel:"(22) 3861-3021", zap:"(22) 99855-2738"},
+  "Farmácia Avenida": {end:"R. Pastor José Henrique da Mata, 529", tel:"(22) 3861-3040", zap:"(22) 98813-0192"},
   "Drogaria do Povo": {end:"R. Aristides Scisínio, 81, Centro", tel:"(22) 98171-5564"},
-  "Farmácia Ayrão": {end:"R. Nilo Peçanha, 500, Cidade Nova", tel:"(22) 3861-2083"},
+  "Farmácia Ayrão": {end:"R. Nilo Peçanha, 500, Cidade Nova", tel:"(22) 3861-2083", zap:"(22) 98112-1564"},
   "Drogaria Ideal": {end:"Av. Roberto Silveira, 501, Centro", tel:"(22) 3861-3428"},
   "Farma Nossa": {end:"Av. Roberto Silveira, 561, Cidade Nova", tel:"(22) 98117-3592"},
   "Fort Popular": {end:"R. Walter Luiz Rimes, 89, Centro", tel:"(22) 98154-1153"},
@@ -335,7 +336,10 @@ const CONTATOS = {
   "Drogaria Descontão": {end:"R. Benedito Pereira de Souza, 149, Centro", tel:"(22) 3861-3713"},
   "Farmácia Casa Branca": {end:"R. Nilo Peçanha, 549, Centro", tel:"(22) 98133-8982"},
   "Farmácia Martins": {end:"R. Nilo Peçanha, 561, Centro", tel:"(22) 3861-2732"},
-  "Drogaria Soares": {end:"Centro", tel:"(22) 3861-2990"}
+  "Drogaria Soares": {end:"Centro", tel:"(22) 3861-2990"},
+  "Farmácia Jardim d'Aldeia": {end:"R. José Scizinio Bucker, 126, Jardim da Aldeia", tel:"(22) 3861-1868", zap:"(22) 98171-1903"},
+  "Drogaria Capil": {end:"R. Magno Martins", tel:"(22) 3861-3318"},
+  "Nova Droga Ita": {end:"R. Nilo Peçanha, 110, Centro", tel:"(22) 3861-2661"}
 };
 
 // Escala do cartaz: datas, as duas farmácias e, quando houver, o motivo do plantão.
@@ -411,17 +415,24 @@ const ICONE = {
 };
 
 
+// Número do WhatsApp só com dígitos: o zap, ou o próprio telefone quando é celular.
+function zapDe(c){
+  if(c.zap) return c.zap.replace(/\D/g,"");
+  const d = c.tel ? c.tel.replace(/\D/g,"") : "";
+  return d.length===11 && d[2]==="9" ? d : "";
+}
+
 // Linha da lista enxuta dos dias sem plantão: nome, telefone (ou endereço) e botões só de ícone.
 function itemCompacto(nome){
   const c = CONTATOS[nome] || {};
   const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
   const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
-  const celular = digitos.length===11 && digitos[2]==="9";
+  const whats = zapDe(c);
   const sub = c.tel || c.end || "";
   return `<li>
     <div><p class="title-m">${esc(nome)}</p>${sub ? `<p class="body-m">${esc(sub)}</p>` : ""}</div>
     ${c.tel ? `<a class="btn-icone principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
-    ${celular ? `<a class="btn-icone estado-camada" href="https://wa.me/55${digitos}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
+    ${whats ? `<a class="btn-icone estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
     <a class="btn-icone estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
   </li>`;
 }
@@ -434,14 +445,15 @@ function itemAgenda(nome){
   const c = CONTATOS[nome] || {};
   const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
   const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
-  const celular = digitos.length===11 && digitos[2]==="9";
+  const whats = zapDe(c);
   return `<li>
     <div><p class="title-m">${esc(nome)}</p>
       ${c.end ? `<p class="body-m">${esc(c.end)}</p>` : ""}
       ${c.tel ? `<p class="body-m">${esc(c.tel)}</p>` : `<p class="body-m">Telefone não informado</p>`}
+      ${c.zap ? `<p class="body-m">WhatsApp ${esc(c.zap)}</p>` : ""}
       ${PLANTAO_HOJE.includes(nome) ? `<span class="chip-hoje">De plantão hoje</span>` : ""}</div>
     ${c.tel ? `<a class="btn-icone principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
-    ${celular ? `<a class="btn-icone estado-camada" href="https://wa.me/55${digitos}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
+    ${whats ? `<a class="btn-icone estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
     <a class="btn-icone estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
   </li>`;
 }
