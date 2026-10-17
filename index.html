@@ -184,7 +184,12 @@ svg{flex:none}
 /* Cards das farmácias de plantão na home: nome grande em negrito, endereço e, na última linha,
    botões redondos grandes com o nome da ação embaixo (pensado para leitura fácil). */
 .cards-plantao{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-.card-plantao{background:var(--md-surface-container-low);border-radius:20px;padding:16px}
+.card-plantao{background:var(--md-surface-container-low);border-radius:20px;padding:16px;overflow:hidden}
+/* Mapa do Google no topo do card, de ponta a ponta; o toque abre o Google Maps. Sem internet fica só o fundo com o alfinete. */
+.card-plantao .mapa-card{position:relative;display:block;height:132px;margin:-16px -16px 14px;overflow:hidden;
+  background:var(--md-surface-container-high);color:var(--md-on-surface-variant)}
+.card-plantao .mapa-card > svg{position:absolute;inset:0;margin:auto;width:32px;height:32px;fill:currentColor;opacity:.5}
+.card-plantao .mapa-card iframe{position:absolute;top:-60px;left:0;width:100%;height:calc(100% + 120px);border:0;pointer-events:none}
 .card-plantao .topo-card{display:flex;align-items:flex-start;gap:6px}
 .card-plantao .topo-card h3{flex:1;min-width:0}
 .card-plantao .aberto{flex:none;display:inline-flex;align-items:center;gap:4px;height:20px;margin-top:5px;padding:0 6px 0 5px;border-radius:10px;white-space:nowrap;
@@ -519,7 +524,9 @@ function cardPlantao(nome){
   const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
   const whats = zapDe(c);
   const sub = c.end || c.tel || "";
+  const embed = "https://maps.google.com/maps?output=embed&z=17&q="+encodeURIComponent(`${nome}, ${c.end ? c.end+", " : ""}Itaocara - RJ`);
   return `<li class="card-plantao">
+    <a class="mapa-card" href="${mapa}" target="_blank" rel="noopener" aria-label="Ver ${esc(nome)} no mapa">${ICONE.mapa}${navigator.onLine ? `<iframe src="${embed}" loading="lazy" tabindex="-1" aria-hidden="true" title="Mapa da ${esc(nome)}" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ""}</a>
     <div class="topo-card"><h3>${esc(nome)}</h3>${aberto ? `<span class="aberto">Aberto agora</span>` : ""}</div>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
     <div class="acoes-card">
       ${c.tel ? `<a class="acao-card principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}"><span>${ICONE.tel}</span>Ligar</a>` : ""}
