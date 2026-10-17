@@ -76,6 +76,16 @@ svg{flex:none}
 .app-bar .logo svg{width:40px;height:40px}
 .app-bar h1{font-size:1.375rem;line-height:1.75rem;font-weight:400}
 .app-bar p{color:rgba(255,255,255,.85)}
+/* Botão de instalar, logo abaixo do de compartilhar */
+.btn.instalar{align-self:center;margin:-28px 0 0}
+/* Diálogo M3 com os passos para instalar no iPhone */
+.dialogo{border:0;border-radius:28px;padding:24px;max-width:min(360px,calc(100vw - 32px));
+  background:var(--md-surface-container-high);color:var(--md-on-surface)}
+.dialogo::backdrop{background:rgba(0,0,0,.4)}
+.dialogo h2{margin:0 0 16px}
+.dialogo ol{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:12px;color:var(--md-on-surface-variant)}
+.dialogo ol svg{width:18px;height:18px;fill:currentColor;vertical-align:-3px}
+.dialogo form{display:flex;justify-content:flex-end;margin-top:20px}
 
 .pagina{max-width:640px;margin:0 auto;
   padding:8px max(16px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
@@ -210,10 +220,20 @@ svg{flex:none}
     </div>
   </div>
 </header>
+<dialog class="dialogo" id="dialogo-ios" aria-labelledby="titulo-ios">
+  <h2 id="titulo-ios" class="headline-s">Instalar no iPhone</h2>
+  <ol class="body-m">
+    <li>Abra esta página no <strong>Safari</strong>.</li>
+    <li>Toque em <strong>Compartilhar</strong> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5l-1.4 1.4-1.6-1.6V16h-2V4.8L9.4 6.4 8 5l4-4 4 4zm4 5v11c0 1.1-.9 2-2 2H6a2 2 0 0 1-2-2V10c0-1.1.9-2 2-2h3v2H6v11h12V10h-3V8h3a2 2 0 0 1 2 2z"/></svg> na barra do navegador.</li>
+    <li>Escolha <strong>Adicionar à Tela de Início</strong> e toque em <strong>Adicionar</strong>.</li>
+  </ol>
+  <form method="dialog"><button class="btn texto estado-camada">Entendi</button></form>
+</dialog>
 <div class="status label-l" id="status" role="status"><span class="status-data" id="status-data"></span><div class="status-trilho" aria-hidden="true"><span class="status-msg" id="status-msg"></span></div></div>
 
 <div class="pagina">
   <main class="agora" id="agora" aria-live="polite"></main>
+  <button class="btn contornado com-icone instalar estado-camada" id="instalar" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zm14-9h-4V3H9v8H5l7 7 7-7z"/></svg>Instalar no celular</button>
 
   <section class="escala" aria-labelledby="titulo-escala">
     <div class="escala-topo">
@@ -435,6 +455,26 @@ addEventListener("scroll", () => barra.classList.toggle("rolou", scrollY > 4), {
 document.getElementById("mostrar").addEventListener("click", () => { mostrarPassadas = !mostrarPassadas; renderEscala(destaque); });
 
 // Guarda a página para abrir mesmo sem internet.
+// Botão "Instalar": no Android usa o pedido de instalação do navegador; no iPhone mostra os passos do Safari.
+// Some quando a página já está aberta como aplicativo instalado.
+const btnInstalar = document.getElementById("instalar");
+const instalado = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const ehIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+let pedidoInstalacao = null;
+if(!instalado){
+  if(ehIOS) btnInstalar.hidden = false;
+  addEventListener("beforeinstallprompt", ev => { ev.preventDefault(); pedidoInstalacao = ev; btnInstalar.hidden = false; });
+}
+btnInstalar.addEventListener("click", async () => {
+  if(pedidoInstalacao){
+    pedidoInstalacao.prompt();
+    const {outcome} = await pedidoInstalacao.userChoice;
+    if(outcome === "accepted") btnInstalar.hidden = true;
+    pedidoInstalacao = null;
+  } else if(ehIOS) document.getElementById("dialogo-ios").showModal();
+});
+addEventListener("appinstalled", () => { btnInstalar.hidden = true; });
+
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
 </body>
