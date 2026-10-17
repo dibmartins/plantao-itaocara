@@ -229,6 +229,15 @@ svg{flex:none}
   </ol>
   <form method="dialog"><button class="btn texto estado-camada">Entendi</button></form>
 </dialog>
+<dialog class="dialogo" id="dialogo-samsung" aria-labelledby="titulo-samsung">
+  <h2 id="titulo-samsung" class="headline-s">Instalar no Samsung Internet</h2>
+  <ol class="body-m">
+    <li>Toque no menu <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg> na barra do navegador.</li>
+    <li>Escolha <strong>Adicionar página a</strong> e depois <strong>Tela inicial</strong>.</li>
+    <li>Toque em <strong>Adicionar</strong>.</li>
+  </ol>
+  <form method="dialog"><button class="btn texto estado-camada">Entendi</button></form>
+</dialog>
 <div class="status label-l" id="status" role="status"><span class="status-data" id="status-data"></span><div class="status-trilho" aria-hidden="true"><span class="status-msg" id="status-msg"></span></div></div>
 
 <div class="pagina">
@@ -456,13 +465,15 @@ document.getElementById("mostrar").addEventListener("click", () => { mostrarPass
 
 // Guarda a página para abrir mesmo sem internet.
 // Botão "Instalar": no Android usa o pedido de instalação do navegador; no iPhone mostra os passos do Safari.
+// O Samsung Internet nem sempre dispara o pedido (prefere o ícone próprio na barra), então ganha os passos do menu.
 // Some quando a página já está aberta como aplicativo instalado.
 const btnInstalar = document.getElementById("instalar");
 const instalado = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
 const ehIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const ehSamsung = /SamsungBrowser/i.test(navigator.userAgent);
 let pedidoInstalacao = null;
 if(!instalado){
-  if(ehIOS) btnInstalar.hidden = false;
+  if(ehIOS || ehSamsung) btnInstalar.hidden = false;
   addEventListener("beforeinstallprompt", ev => { ev.preventDefault(); pedidoInstalacao = ev; btnInstalar.hidden = false; });
 }
 btnInstalar.addEventListener("click", async () => {
@@ -472,6 +483,7 @@ btnInstalar.addEventListener("click", async () => {
     if(outcome === "accepted") btnInstalar.hidden = true;
     pedidoInstalacao = null;
   } else if(ehIOS) document.getElementById("dialogo-ios").showModal();
+  else if(ehSamsung) document.getElementById("dialogo-samsung").showModal();
 });
 addEventListener("appinstalled", () => { btnInstalar.hidden = true; });
 
