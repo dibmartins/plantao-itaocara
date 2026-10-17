@@ -1,0 +1,568 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Farmacias Itaocara//Plantao//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Plantão Itaocara
+X-WR-CALDESC:Farmácias de plantão em Itaocara-RJ nos fins de semana e fer
+ iados
+X-WR-TIMEZONE:America/Sao_Paulo
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:plantao-20260907@farmacias-itaocara
+DTSTAMP:20260907T000000Z
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:Plantão: Única Farma e Farmácia Casa Branca
+DESCRIPTION:Independência\n\nÚnica Farma\nFarmácia Casa Branca: (22) 981
+ 33-8982\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/
+ #escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Única Farma e Farmácia Casa Branca
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20260912@farmacias-itaocara
+DTSTAMP:20260912T000000Z
+DTSTART;VALUE=DATE:20260912
+DTEND;VALUE=DATE:20260914
+SUMMARY:Plantão: Nova Droga Ita e Drogaria Ideal
+DESCRIPTION:Nova Droga Ita\nDrogaria Ideal: (22) 3861-3428\n\nEscala comple
+ ta: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Nova Droga Ita e Drogaria Ideal
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20260919@farmacias-itaocara
+DTSTAMP:20260919T000000Z
+DTSTART;VALUE=DATE:20260919
+DTEND;VALUE=DATE:20260921
+SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Drogaria Descontão
+DESCRIPTION:Farmácia Jardim d'Aldeia\nDrogaria Descontão: (22) 3861-3713\
+ n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Jardim d'Aldeia e Drogaria Descont
+ ão
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20260926@farmacias-itaocara
+DTSTAMP:20260926T000000Z
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260928
+SUMMARY:Plantão: Farmácia 2 Irmãos e Farmácia Amaral
+DESCRIPTION:Farmácia 2 Irmãos\nFarmácia Amaral\n\nEscala completa: https
+ ://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia 2 Irmãos e Farmácia Amaral
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261003@farmacias-itaocara
+DTSTAMP:20261003T000000Z
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261005
+SUMMARY:Plantão: Farma Pop e Fort Popular
+DESCRIPTION:Farma Pop\nFort Popular: (22) 98154-1153\n\nEscala completa: ht
+ tps://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farma Pop e Fort Popular
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261010@farmacias-itaocara
+DTSTAMP:20261010T000000Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261012
+SUMMARY:Plantão: Drogalima e Farmácia Martins
+DESCRIPTION:Drogalima: (22) 3861-2531\nFarmácia Martins: (22) 3861-2732\n\
+ nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogalima e Farmácia Martins
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261012@farmacias-itaocara
+DTSTAMP:20261012T000000Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:Plantão: Drogaria Soares e Farma Nossa
+DESCRIPTION:Nossa Senhora Aparecida\n\nDrogaria Soares: (22) 3861-2990\nFar
+ ma Nossa: (22) 98117-3592\n\nEscala completa: https://dibmartins.github.io
+ /plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogaria Soares e Farma Nossa
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261017@farmacias-itaocara
+DTSTAMP:20261017T000000Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261019
+SUMMARY:Plantão: Farmácia 4 Esquinas e Farmácia Avenida
+DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nFarmácia Avenida\n\nEsca
+ la completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia 4 Esquinas e Farmácia Avenida
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261024@farmacias-itaocara
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261026
+SUMMARY:Plantão: Farmácia Pop Farma e Drogaria do Povo
+DESCRIPTION:Farmácia Pop Farma\nDrogaria do Povo: (22) 98171-5564\n\nEscal
+ a completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Pop Farma e Drogaria do Povo
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261028@farmacias-itaocara
+DTSTAMP:20261028T000000Z
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:Plantão: Farmácia Itaocara e Farmácia Ayrão
+DESCRIPTION:Dia do Servidor Público\n\nFarmácia Itaocara: (22) 3861-2219\
+ nFarmácia Ayrão: (22) 3861-2083\n\nEscala completa: https://dibmartins.g
+ ithub.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Itaocara e Farmácia Ayrão
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261031@farmacias-itaocara
+DTSTAMP:20261031T000000Z
+DTSTART;VALUE=DATE:20261031
+DTEND;VALUE=DATE:20261102
+SUMMARY:Plantão: Drogaria Capil e Farmácia Casa Branca
+DESCRIPTION:Drogaria Capil\nFarmácia Casa Branca: (22) 98133-8982\n\nEscal
+ a completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogaria Capil e Farmácia Casa Branca
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261102@farmacias-itaocara
+DTSTAMP:20261102T000000Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:Plantão: Única Farma e Drogaria Ideal
+DESCRIPTION:Finados\n\nÚnica Farma\nDrogaria Ideal: (22) 3861-3428\n\nEsca
+ la completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Única Farma e Drogaria Ideal
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261107@farmacias-itaocara
+DTSTAMP:20261107T000000Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261109
+SUMMARY:Plantão: Nova Droga Ita e Drogaria Descontão
+DESCRIPTION:Nova Droga Ita\nDrogaria Descontão: (22) 3861-3713\n\nEscala c
+ ompleta: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Nova Droga Ita e Drogaria Descontão
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261114@farmacias-itaocara
+DTSTAMP:20261114T000000Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261116
+SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Farmácia Amaral
+DESCRIPTION:Proclamação da República\n\nFarmácia Jardim d'Aldeia\nFarm
+ ácia Amaral\n\nEscala completa: https://dibmartins.github.io/plantao-itao
+ cara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Jardim d'Aldeia e Farmácia Amaral
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261120@farmacias-itaocara
+DTSTAMP:20261120T000000Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:Plantão: Farmácia 2 Irmãos e Fort Popular
+DESCRIPTION:Consciência Negra\n\nFarmácia 2 Irmãos\nFort Popular: (22) 9
+ 8154-1153\n\nEscala completa: https://dibmartins.github.io/plantao-itaocar
+ a/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia 2 Irmãos e Fort Popular
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261121@farmacias-itaocara
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261123
+SUMMARY:Plantão: Farma Pop e Farmácia Martins
+DESCRIPTION:Farma Pop\nFarmácia Martins: (22) 3861-2732\n\nEscala completa
+ : https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farma Pop e Farmácia Martins
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261128@farmacias-itaocara
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261130
+SUMMARY:Plantão: Drogalima e Farma Nossa
+DESCRIPTION:Drogalima: (22) 3861-2531\nFarma Nossa: (22) 98117-3592\n\nEsca
+ la completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogalima e Farma Nossa
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261205@farmacias-itaocara
+DTSTAMP:20261205T000000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261207
+SUMMARY:Plantão: Drogaria Soares e Farmácia Avenida
+DESCRIPTION:Drogaria Soares: (22) 3861-2990\nFarmácia Avenida\n\nEscala co
+ mpleta: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogaria Soares e Farmácia Avenida
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261212@farmacias-itaocara
+DTSTAMP:20261212T000000Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261214
+SUMMARY:Plantão: Farmácia 4 Esquinas e Drogaria do Povo
+DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nDrogaria do Povo: (22) 98
+ 171-5564\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara
+ /#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia 4 Esquinas e Drogaria do Povo
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261219@farmacias-itaocara
+DTSTAMP:20261219T000000Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261221
+SUMMARY:Plantão: Farmácia Pop Farma e Farmácia Ayrão
+DESCRIPTION:Farmácia Pop Farma\nFarmácia Ayrão: (22) 3861-2083\n\nEscala
+  completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Pop Farma e Farmácia Ayrão
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261225@farmacias-itaocara
+DTSTAMP:20261225T000000Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:Plantão: Farmácia Itaocara e Farmácia Casa Branca
+DESCRIPTION:Natal\n\nFarmácia Itaocara: (22) 3861-2219\nFarmácia Casa Bra
+ nca: (22) 98133-8982\n\nEscala completa: https://dibmartins.github.io/plan
+ tao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Itaocara e Farmácia Casa Branca
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20261226@farmacias-itaocara
+DTSTAMP:20261226T000000Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261228
+SUMMARY:Plantão: Drogaria Capil e Drogaria Ideal
+DESCRIPTION:Drogaria Capil\nDrogaria Ideal: (22) 3861-3428\n\nEscala comple
+ ta: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogaria Capil e Drogaria Ideal
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270101@farmacias-itaocara
+DTSTAMP:20270101T000000Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:Plantão: Única Farma e Drogaria Descontão
+DESCRIPTION:Ano-novo\n\nÚnica Farma\nDrogaria Descontão: (22) 3861-3713\n
+ \nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Única Farma e Drogaria Descontão
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270102@farmacias-itaocara
+DTSTAMP:20270102T000000Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270104
+SUMMARY:Plantão: Nova Droga Ita e Farmácia Amaral
+DESCRIPTION:Nova Droga Ita\nFarmácia Amaral\n\nEscala completa: https://di
+ bmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Nova Droga Ita e Farmácia Amaral
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270109@farmacias-itaocara
+DTSTAMP:20270109T000000Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270111
+SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Fort Popular
+DESCRIPTION:Farmácia Jardim d'Aldeia\nFort Popular: (22) 98154-1153\n\nEsc
+ ala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Jardim d'Aldeia e Fort Popular
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270116@farmacias-itaocara
+DTSTAMP:20270116T000000Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270118
+SUMMARY:Plantão: Farmácia 2 Irmãos e Farmácia Martins
+DESCRIPTION:Farmácia 2 Irmãos\nFarmácia Martins: (22) 3861-2732\n\nEscal
+ a completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia 2 Irmãos e Farmácia Martins
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270123@farmacias-itaocara
+DTSTAMP:20270123T000000Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270125
+SUMMARY:Plantão: Farma Pop e Farma Nossa
+DESCRIPTION:Farma Pop\nFarma Nossa: (22) 98117-3592\n\nEscala completa: htt
+ ps://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farma Pop e Farma Nossa
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270130@farmacias-itaocara
+DTSTAMP:20270130T000000Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270201
+SUMMARY:Plantão: Drogalima e Farmácia Avenida
+DESCRIPTION:Drogalima: (22) 3861-2531\nFarmácia Avenida\n\nEscala completa
+ : https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogalima e Farmácia Avenida
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270204@farmacias-itaocara
+DTSTAMP:20270204T000000Z
+DTSTART;VALUE=DATE:20270204
+DTEND;VALUE=DATE:20270205
+SUMMARY:Plantão: Drogaria Soares e Drogaria do Povo
+DESCRIPTION:Plantão extra\n\nDrogaria Soares: (22) 3861-2990\nDrogaria do 
+ Povo: (22) 98171-5564\n\nEscala completa: https://dibmartins.github.io/pla
+ ntao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogaria Soares e Drogaria do Povo
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270206@farmacias-itaocara
+DTSTAMP:20270206T000000Z
+DTSTART;VALUE=DATE:20270206
+DTEND;VALUE=DATE:20270208
+SUMMARY:Plantão: Farmácia 4 Esquinas e Farmácia Ayrão
+DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nFarmácia Ayrão: (22) 38
+ 61-2083\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/
+ #escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia 4 Esquinas e Farmácia Ayrão
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270208@farmacias-itaocara
+DTSTAMP:20270208T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270210
+SUMMARY:Plantão: Farmácia Pop Farma e Farmácia Casa Branca
+DESCRIPTION:Carnaval\n\nFarmácia Pop Farma\nFarmácia Casa Branca: (22) 98
+ 133-8982\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara
+ /#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Pop Farma e Farmácia Casa Branca
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270213@farmacias-itaocara
+DTSTAMP:20270213T000000Z
+DTSTART;VALUE=DATE:20270213
+DTEND;VALUE=DATE:20270215
+SUMMARY:Plantão: Farmácia Itaocara e Drogaria Ideal
+DESCRIPTION:Farmácia Itaocara: (22) 3861-2219\nDrogaria Ideal: (22) 3861-3
+ 428\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#esc
+ ala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Farmácia Itaocara e Drogaria Ideal
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270220@farmacias-itaocara
+DTSTAMP:20270220T000000Z
+DTSTART;VALUE=DATE:20270220
+DTEND;VALUE=DATE:20270222
+SUMMARY:Plantão: Drogaria Capil e Drogaria Descontão
+DESCRIPTION:Drogaria Capil\nDrogaria Descontão: (22) 3861-3713\n\nEscala c
+ ompleta: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Drogaria Capil e Drogaria Descontão
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-20270227@farmacias-itaocara
+DTSTAMP:20270227T000000Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270301
+SUMMARY:Plantão: Única Farma e Farmácia Amaral
+DESCRIPTION:Única Farma\nFarmácia Amaral\n\nEscala completa: https://dibm
+ artins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Plantão amanhã: Única Farma e Farmácia Amaral
+TRIGGER:-PT7H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

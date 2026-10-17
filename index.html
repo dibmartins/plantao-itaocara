@@ -112,6 +112,8 @@ svg{flex:none}
 .dialogo ol{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:12px;color:var(--md-on-surface-variant)}
 .dialogo ol svg{width:18px;height:18px;fill:currentColor;vertical-align:-3px}
 .dialogo form{display:flex;justify-content:flex-end;margin-top:20px}
+.dialogo .apoio-dialogo{margin:0 0 16px;color:var(--md-on-surface-variant)}
+.dialogo .acoes-dialogo{gap:8px;flex-wrap:wrap}
 
 .pagina{max-width:640px;margin:0 auto;
   padding:8px max(16px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
@@ -271,6 +273,12 @@ svg{flex:none}
   </ol>
   <form method="dialog"><button class="btn texto estado-camada">Entendi</button></form>
 </dialog>
+<dialog class="dialogo" id="dialogo-agenda" aria-labelledby="titulo-agenda">
+  <h2 id="titulo-agenda" class="headline-s">Aviso na agenda</h2>
+  <p class="body-m apoio-dialogo">Todos os plantões entram na agenda do celular, com um lembrete na véspera às 17h. Quando a escala mudar, a agenda se atualiza sozinha.</p>
+  <ol class="body-m" id="passos-agenda"></ol>
+  <form method="dialog" class="acoes-dialogo"><button class="btn texto estado-camada">Agora não</button><a class="btn preenchido com-icone estado-camada" id="assinar-agenda" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Adicionar à agenda</a></form>
+</dialog>
 <div class="status label-l" id="status" role="status"><span class="status-data" id="status-data"></span><div class="status-trilho" aria-hidden="true"><span class="status-msg" id="status-msg"></span></div></div>
 
 <div class="pagina">
@@ -278,6 +286,7 @@ svg{flex:none}
     <div class="agora" id="agora" aria-live="polite"></div>
     <div class="acoes">
       <a class="btn contornado com-icone estado-camada" href="#escala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Ver escala de plantão</a>
+      <button class="btn texto com-icone estado-camada" id="agenda-aviso" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.1-1.6-5.6-4.5-6.3V4a1.5 1.5 0 0 0-3 0v.7C7.6 5.4 6 7.9 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>Receber aviso na agenda</button>
       <button class="btn texto com-icone instalar estado-camada" id="instalar" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zm14-9h-4V3H9v8H5l7 7 7-7z"/></svg>Instalar no celular</button>
     </div>
   </main>
@@ -589,6 +598,32 @@ btnInstalar.addEventListener("click", async () => {
   else if(ehSamsung) document.getElementById("dialogo-samsung").showModal();
 });
 addEventListener("appinstalled", () => { btnInstalar.hidden = true; });
+
+// Aviso na agenda: o celular assina o plantao.ics (gerado por ferramentas/gerar-agenda.mjs) e avisa na véspera de cada plantão.
+// O Google Agenda ignora lembretes de agendas assinadas por link; no Android o caminho é uma agenda pública do Google,
+// que ainda não existe. Quando existir, ponha o id dela em GOOGLE_AGENDA e o botão aparece também lá.
+const GOOGLE_AGENDA = "";
+const ehAndroid = /android/i.test(navigator.userAgent);
+const ICS = new URL("plantao.ics", SITE);
+const agenda = ehAndroid
+  ? GOOGLE_AGENDA && {
+      link: `https://calendar.google.com/calendar/u/0?cid=${encodeURIComponent(GOOGLE_AGENDA)}`,
+      passos: ["Toque em <strong>Adicionar à agenda</strong> e confirme no Google Agenda.",
+               "No Google Agenda, abra <strong>Configurações</strong>, toque em <strong>Plantão Itaocara</strong> e ative uma notificação para eventos de dia inteiro, por exemplo <strong>1 dia antes às 17:00</strong>."]}
+  : {
+      link: `webcal://${ICS.host}${ICS.pathname}`,
+      passos: ehIOS
+        ? ["Toque em <strong>Adicionar à agenda</strong> e depois em <strong>Assinar</strong>.",
+           "Na tela seguinte, deixe <strong>Remover Alertas</strong> desligado, para o lembrete tocar, e toque em <strong>OK</strong>."]
+        : ["Toque em <strong>Adicionar à agenda</strong> e confirme a assinatura no seu aplicativo de agenda."]};
+if(agenda){
+  const btnAgenda = document.getElementById("agenda-aviso");
+  btnAgenda.hidden = false;
+  document.getElementById("assinar-agenda").href = agenda.link;
+  document.getElementById("passos-agenda").innerHTML = agenda.passos.map(p => `<li>${p}</li>`).join("");
+  btnAgenda.addEventListener("click", () => document.getElementById("dialogo-agenda").showModal());
+  document.getElementById("assinar-agenda").addEventListener("click", () => document.getElementById("dialogo-agenda").close());
+}
 
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
