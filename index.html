@@ -126,11 +126,10 @@ svg{flex:none}
 /* Aviso de cookies (LGPD): cartão fixo no rodapé, sem bloquear a página. */
 .cookies{position:fixed;z-index:10;left:0;right:0;bottom:0;margin:0 auto;max-width:640px;
   padding:0 max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-.cookies > div{border-radius:16px;padding:16px 16px 8px;background:var(--md-surface-container-high);color:var(--md-on-surface);
+.cookies > div{display:flex;align-items:center;gap:8px;flex-wrap:wrap;border-radius:16px;padding:4px 8px 4px 16px;background:var(--md-surface-container-high);color:var(--md-on-surface);
   box-shadow:0 2px 6px 2px color-mix(in srgb,var(--md-shadow) 60%,transparent),0 1px 2px var(--md-shadow)}
-.cookies h2{margin:0 0 4px}
-.cookies p{color:var(--md-on-surface-variant)}
-.cookies .acoes{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:8px}
+.cookies p{flex:1 1 180px;color:var(--md-on-surface-variant)}
+.cookies .acoes{display:flex;gap:4px;margin-left:auto}
 @media (prefers-reduced-motion:no-preference){.cookies > div{animation:entrar .3s var(--md-ease) both}}
 
 .pagina{max-width:640px;margin:0 auto;
@@ -353,11 +352,10 @@ svg{flex:none}
   </section>
 </div>
 
-<div class="cookies" id="cookies" role="region" aria-labelledby="titulo-cookies" hidden>
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
   <div>
-    <h2 id="titulo-cookies" class="title-s">Podemos contar sua visita?</h2>
-    <p class="body-m">Usamos cookies do Google Analytics só para saber quantas pessoas usam o aplicativo e quais telas são mais vistas. Nada disso identifica você. Você pode mudar de ideia quando quiser em <strong>Privacidade e cookies</strong>, no menu.</p>
-    <div class="acoes"><button class="btn texto estado-camada" id="recusar-cookies" type="button">Recusar</button><button class="btn preenchido estado-camada" id="aceitar-cookies" type="button">Aceitar</button></div>
+    <p class="body-m">Usamos cookies para melhorar sua experiência.</p>
+    <div class="acoes"><button class="btn texto estado-camada" id="recusar-cookies" type="button">Recusar</button><button class="btn tonal estado-camada" id="aceitar-cookies" type="button">Ok</button></div>
   </div>
 </div>
 
@@ -758,7 +756,7 @@ if(!dataForcada && !horaForcada){
   });
 }
 
-// Google Analytics só depois do aceite no aviso de cookies (LGPD). A escolha fica salva no aparelho.
+// Google Analytics só depois do "Ok" no aviso de cookies. A escolha fica salva no aparelho.
 // As telas são trocadas pelo # do endereço, então cada uma vira uma visualização de página com seu próprio título.
 const GA_ID = "G-LNWS21PP4G";
 const avisoCookies = document.getElementById("cookies");
