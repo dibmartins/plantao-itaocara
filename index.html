@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Plantão Itaocara</title>
 <meta name="description" content="Qual farmácia está de plantão hoje em Itaocara, RJ. Escala de fins de semana e feriados.">
-<meta name="theme-color" content="#F5FBF5" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0F1511" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#006D40" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#00522F" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400..700&display=swap">
@@ -25,6 +25,7 @@
   --md-shadow:rgba(0,0,0,.18);
   --md-font:"Roboto Flex","Roboto",system-ui,-apple-system,"Segoe UI",sans-serif;
   --md-ease:cubic-bezier(.2,0,0,1);
+  --barra:#006D40;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --md-primary:#7ED8A4; --md-on-primary:#00391F; --md-primary-container:#00522F; --md-on-primary-container:#9AF5BF;
@@ -34,7 +35,7 @@
   --md-surface:#0F1511; --md-on-surface:#DEE4DE; --md-on-surface-variant:#C0C9C0;
   --md-surface-container-lowest:#0A0F0C; --md-surface-container-low:#171D19; --md-surface-container:#1B211D;
   --md-surface-container-high:#252B27; --md-surface-container-highest:#303632;
-  --md-outline:#8A938B; --md-outline-variant:#404942; --md-shadow:rgba(0,0,0,.5); color-scheme:dark}}
+  --md-outline:#8A938B; --md-outline-variant:#404942; --md-shadow:rgba(0,0,0,.5); --barra:#00522F; color-scheme:dark}}
 :root[data-theme="dark"]{
   --md-primary:#7ED8A4; --md-on-primary:#00391F; --md-primary-container:#00522F; --md-on-primary-container:#9AF5BF;
   --md-secondary:#B4CCBB; --md-on-secondary:#203528; --md-secondary-container:#364B3E; --md-on-secondary-container:#D0E8D6;
@@ -43,7 +44,7 @@
   --md-surface:#0F1511; --md-on-surface:#DEE4DE; --md-on-surface-variant:#C0C9C0;
   --md-surface-container-lowest:#0A0F0C; --md-surface-container-low:#171D19; --md-surface-container:#1B211D;
   --md-surface-container-high:#252B27; --md-surface-container-highest:#303632;
-  --md-outline:#8A938B; --md-outline-variant:#404942; --md-shadow:rgba(0,0,0,.5); color-scheme:dark}
+  --md-outline:#8A938B; --md-outline-variant:#404942; --md-shadow:rgba(0,0,0,.5); --barra:#00522F; color-scheme:dark}
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -65,16 +66,16 @@ svg{flex:none}
 .label-l{font-size:.875rem;line-height:1.25rem;font-weight:500;letter-spacing:.00625rem}
 .body-m{font-size:.875rem;line-height:1.25rem;letter-spacing:.015625rem}
 
-/* Barra superior (top app bar pequena); ganha cor de superfície elevada ao rolar */
-.app-bar{position:sticky;top:0;z-index:2;background:var(--md-surface);
+/* Barra superior (top app bar pequena) em verde, na mesma cor da barra do navegador; ganha sombra ao rolar */
+.app-bar{position:sticky;top:0;z-index:2;background:var(--barra);color:#fff;
   padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));
-  transition:background-color .2s var(--md-ease)}
-.app-bar.rolou{background:var(--md-surface-container)}
+  transition:box-shadow .2s var(--md-ease)}
+.app-bar.rolou{box-shadow:0 2px 6px 2px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.3)}
 .app-bar-conteudo{max-width:640px;margin:0 auto;min-height:64px;display:flex;align-items:center;gap:16px}
-.app-bar .logo{width:40px;height:40px;border-radius:12px;background:var(--md-primary);display:grid;place-items:center}
-.app-bar .logo svg{width:22px;height:22px;fill:var(--md-on-primary)}
+.app-bar .logo{width:40px;height:40px;border-radius:12px;background:#fff;display:grid;place-items:center}
+.app-bar .logo svg{width:22px;height:22px;fill:var(--barra)}
 .app-bar h1{font-size:1.375rem;line-height:1.75rem;font-weight:400}
-.app-bar p{color:var(--md-on-surface-variant)}
+.app-bar p{color:rgba(255,255,255,.85)}
 
 .pagina{max-width:640px;margin:0 auto;
   padding:8px max(16px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
@@ -118,7 +119,7 @@ svg{flex:none}
 .btn.contornado{border:1px solid var(--md-outline)}
 .btn.texto{padding:0 12px}
 @media (hover:hover){.btn.preenchido:hover,.btn.tonal:hover{box-shadow:0 1px 2px var(--md-shadow),0 1px 3px 1px color-mix(in srgb,var(--md-shadow) 50%,transparent)}}
-.compartilhar{align-self:flex-start}
+.compartilhar{align-self:center}
 
 /* Escala */
 .escala{display:flex;flex-direction:column;gap:16px}
@@ -189,6 +190,8 @@ svg{flex:none}
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icone.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icone-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta property="og:title" content="Farmácia de plantão em Itaocara">
 <meta property="og:description" content="Qual farmácia está de plantão hoje em Itaocara, RJ.">
 </head>
