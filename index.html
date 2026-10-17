@@ -89,6 +89,20 @@ svg{flex:none}
 .estado-camada:focus-visible::before{opacity:.1}
 .estado-camada:active::before{opacity:.1}
 
+/* Barra de status preta abaixo do topo: data fixa à esquerda e a frase passando, como letreiro de notícias */
+.status{background:#000;color:#fff;display:flex;align-items:center;min-height:40px;overflow:hidden;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:env(safe-area-inset-right,0px)}
+.status-data{flex:none;font-weight:700;padding-right:10px;white-space:nowrap}
+.status-trilho{flex:1;min-width:0;overflow:hidden;white-space:nowrap;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent);
+  mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent)}
+.status-msg{display:inline-block;padding-left:100%;animation:letreiro 11s linear infinite}
+@keyframes letreiro{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){
+  .status-trilho{white-space:normal;-webkit-mask-image:none;mask-image:none}
+  .status-msg{padding:8px 16px 8px 0;animation:none}
+}
+
 /* Plantão de agora */
 .agora{display:flex;flex-direction:column;gap:12px}
 .destaque-card{background:var(--md-primary-container);color:var(--md-on-primary-container);border-radius:28px;
@@ -205,6 +219,7 @@ svg{flex:none}
     </div>
   </div>
 </header>
+<div class="status label-l" id="status" role="status"><span class="status-data" id="status-data"></span><div class="status-trilho" aria-hidden="true"><span class="status-msg" id="status-msg"></span></div></div>
 
 <div class="pagina">
   <main class="agora" id="agora" aria-live="polite"></main>
@@ -413,6 +428,17 @@ function renderEscala(destaque){
   btn.textContent = mostrarPassadas ? "Esconder datas que já passaram" : "Mostrar datas que já passaram";
 }
 
+// Barra de status: "Sexta-feira, 16 de outubro:" fixo e a situação do dia passando.
+function renderStatus(){
+  const dePlantao = ESCALA.some(e => e.d.includes(HOJE));
+  const data = cap(`${fmt(HOJE,{weekday:"long"})}, ${dia(HOJE)} de ${mes(HOJE)}:`);
+  const msg = dePlantao ? "Farmácias de plantão operando normalmente" : "Todas as farmácias estão operando normalmente";
+  document.getElementById("status-data").textContent = data;
+  document.getElementById("status-msg").textContent = msg;
+  document.getElementById("status").setAttribute("aria-label", `${data} ${msg}`);
+}
+
+renderStatus();
 const destaque = renderAgora();
 renderEscala(destaque);
 const busca = document.getElementById("busca"), limpar = document.getElementById("limpar");
