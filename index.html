@@ -163,6 +163,19 @@ svg{flex:none}
 .btn-icone svg{width:24px;height:24px;fill:currentColor}
 .btn-icone.principal{background:var(--md-primary-container);color:var(--md-on-primary-container)}
 .aviso{color:var(--md-error)}
+/* Cards das farmácias de plantão na home: nome grande em negrito, endereço e, na última linha,
+   botões redondos grandes com o nome da ação embaixo (pensado para leitura fácil). */
+.cards-plantao{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.card-plantao{background:var(--md-surface-container-low);border-radius:20px;padding:16px}
+.card-plantao h3{font-size:1.5rem;line-height:1.875rem;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+.card-plantao .end{margin-top:4px;font-size:1rem;line-height:1.375rem;color:var(--md-on-surface-variant)}
+.card-plantao .acoes-card{display:flex;margin-top:14px}
+.acao-card{flex:0 0 33.333%;display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 0;border-radius:16px;
+  text-decoration:none;color:var(--md-on-surface);font-size:.9375rem;line-height:1.25rem;font-weight:600}
+.acao-card span{width:60px;height:60px;border-radius:30px;display:grid;place-items:center;
+  background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.acao-card.principal span{background:var(--md-primary-container);color:var(--md-on-primary-container)}
+.acao-card svg{width:28px;height:28px;fill:currentColor}
 
 /* Botões M3: preenchido, tonal, contornado e de texto. 40px de altura visual, área de toque de 48px. */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 24px;border-radius:20px;
@@ -228,8 +241,8 @@ svg{flex:none}
 .vazio{color:var(--md-on-surface-variant);padding:0 4px}
 
 @media (prefers-reduced-motion:no-preference){
-  .aviso-prox,.lista-prox{animation:entrar .45s var(--md-ease) both}
-  .lista-prox{animation-delay:.06s}
+  .aviso-prox,.lista-prox,.cards-plantao{animation:entrar .45s var(--md-ease) both}
+  .lista-prox,.cards-plantao{animation-delay:.06s}
 }
 @keyframes entrar{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 </style>
@@ -428,18 +441,20 @@ function zapDe(c){
   return d.length===11 && d[2]==="9" ? d : "";
 }
 
-// Linha da lista enxuta dos dias sem plantão: nome, telefone (ou endereço) e botões só de ícone.
-function itemCompacto(nome){
+// Card de farmácia de plantão na home: nome, endereço (ou telefone, se não houver endereço) e botões grandes com rótulo.
+function cardPlantao(nome){
   const c = CONTATOS[nome] || {};
   const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
   const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
   const whats = zapDe(c);
-  const sub = c.tel || c.end || "";
-  return `<li>
-    <div><p class="title-m">${esc(nome)}</p>${sub ? `<p class="body-m">${esc(sub)}</p>` : ""}</div>
-    ${c.tel ? `<a class="btn-icone principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
-    ${whats ? `<a class="btn-icone estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
-    <a class="btn-icone estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
+  const sub = c.end || c.tel || "";
+  return `<li class="card-plantao">
+    <h3>${esc(nome)}</h3>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
+    <div class="acoes-card">
+      ${c.tel ? `<a class="acao-card principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}"><span>${ICONE.tel}</span>Ligar</a>` : ""}
+      ${whats ? `<a class="acao-card estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}"><span>${ICONE.zap}</span>WhatsApp</a>` : ""}
+      <a class="acao-card estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}"><span>${ICONE.mapa}</span>Mapa</a>
+    </div>
   </li>`;
 }
 
@@ -504,7 +519,7 @@ function renderAgora(){
       </div></div>`;
   }
   el.innerHTML = `${faixa}
-    <ul class="lista-prox">${e.f.map(itemCompacto).join("")}</ul>`;
+    <ul class="cards-plantao">${e.f.map(cardPlantao).join("")}</ul>`;
   return e;
 }
 
