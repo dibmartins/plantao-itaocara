@@ -105,13 +105,6 @@ svg{flex:none}
 .farmacia .end svg{width:18px;height:18px;margin-top:1px;fill:currentColor}
 .acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .sem-tel{color:var(--md-on-surface-variant);align-self:center}
-/* Card com foto da fachada: a foto fica no topo e um degradê escuro garante a leitura do nome e dos botões. */
-.farmacia.com-foto{color:#fff;padding-top:96px;background:
-  linear-gradient(180deg,rgba(0,0,0,.05) 0,rgba(0,0,0,.45) 45%,rgba(0,0,0,.82) 100%),var(--foto) center/cover no-repeat,var(--md-surface-container-high)}
-.farmacia.com-foto .end,.farmacia.com-foto .sem-tel{color:rgba(255,255,255,.88)}
-.farmacia.com-foto .btn.contornado{color:#fff;border-color:rgba(255,255,255,.75)}
-.farmacia.com-foto .btn.tonal{background:rgba(255,255,255,.92);color:#0B1F14}
-.farmacia.com-foto .btn.preenchido{background:var(--md-primary-container);color:var(--md-on-primary-container)}
 .aviso{color:var(--md-error)}
 
 /* Botões M3: preenchido, tonal, contornado e de texto. 40px de altura visual, área de toque de 48px. */
@@ -234,7 +227,6 @@ svg{flex:none}
 const SITE = "https://dibmartins.github.io/plantao-itaocara/";
 
 // Contatos confirmados no Google Maps. Quem não tem telefone cai numa busca no mapa.
-// Para mostrar a fachada no card, salve a foto na pasta fotos/ e acrescente foto:"fotos/nome.jpg".
 const CONTATOS = {
   "Drogalima": {end:"R. Nilo Peçanha, 242, Centro", tel:"(22) 3861-2531"},
   "Farmácia 4 Esquinas": {tel:"(22) 3861-3021"},
@@ -329,7 +321,7 @@ function cartao(nome){
   const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
   const celular = digitos.length===11 && digitos[2]==="9";
   const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
-  return `<li class="farmacia${c.foto ? " com-foto" : ""}"${c.foto ? ` style="--foto:url('${esc(c.foto)}')"` : ""}>
+  return `<li class="farmacia">
     <h3 class="title-l">${esc(nome)}</h3>
     ${c.end ? `<p class="end body-m">${ICONE.local}${esc(c.end)}</p>` : ""}
     <div class="acoes">
