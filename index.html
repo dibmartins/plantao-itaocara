@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Plantão Itaocara</title>
-<meta name="description" content="Qual farmácia está de plantão hoje em Itaocara, RJ. Escala de fins de semana e feriados.">
+<title>Farmácias Itaocara</title>
+<meta name="description" content="Farmácias de Itaocara, RJ: quem está de plantão hoje, a escala de fins de semana e feriados e os contatos de todas.">
 <meta name="theme-color" content="#006D40" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#00522F" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,8 +76,34 @@ svg{flex:none}
 .app-bar .logo svg{width:40px;height:40px}
 .app-bar h1{font-size:1.375rem;line-height:1.75rem;font-weight:400}
 .app-bar p{color:rgba(255,255,255,.85)}
-/* Botão de instalar, logo abaixo do de compartilhar */
-.btn.instalar{align-self:center;margin:-28px 0 0}
+.app-bar .menu{width:48px;height:48px;margin-left:-12px;border:0;border-radius:24px;background:transparent;color:#fff;
+  display:grid;place-items:center;cursor:pointer}
+.app-bar .menu svg{width:24px;height:24px;fill:currentColor}
+.app-bar .logo + div{min-width:0}
+
+/* Gaveta de navegação M3 (modal), aberta pelo botão de menu */
+.gaveta{margin:0;padding:12px;border:0;height:100%;max-height:none;width:min(320px,85vw);
+  border-radius:0 16px 16px 0;background:var(--md-surface-container-low);color:var(--md-on-surface);
+  padding-top:calc(12px + env(safe-area-inset-top,0px))}
+.gaveta::backdrop{background:rgba(0,0,0,.4)}
+.gaveta[open]{animation:gaveta-entra .3s var(--md-ease)}
+@keyframes gaveta-entra{from{transform:translateX(-100%)}}
+.gaveta h2{padding:16px 16px 12px;color:var(--md-on-surface-variant)}
+.gaveta nav{display:flex;flex-direction:column}
+.gaveta a{display:flex;align-items:center;gap:12px;height:56px;padding:0 24px 0 16px;border-radius:28px;text-decoration:none;
+  color:var(--md-on-surface-variant)}
+.gaveta a svg{width:24px;height:24px;fill:currentColor}
+.gaveta a[aria-current="page"]{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.gaveta a[aria-current="page"] .label-l{font-weight:700}
+
+/* Cada tela (início, escala, farmácias) é uma vista; só uma aparece por vez */
+.vista{display:flex;flex-direction:column;gap:16px}
+.vista > h2{margin-top:8px}
+.acoes{display:flex;flex-direction:column;align-items:center;gap:4px}
+.btn.instalar{align-self:center}
+.contagem{color:var(--md-on-surface-variant);padding:0 4px}
+.lista-prox .chip-hoje{display:inline-block;margin-top:4px;padding:0 8px;border-radius:8px;font-size:.75rem;line-height:1.25rem;font-weight:500;
+  background:var(--md-primary-container);color:var(--md-on-primary-container)}
 /* Diálogo M3 com os passos para instalar no iPhone */
 .dialogo{border:0;border-radius:28px;padding:24px;max-width:min(360px,calc(100vw - 32px));
   background:var(--md-surface-container-high);color:var(--md-on-surface)}
@@ -99,8 +125,9 @@ svg{flex:none}
 .estado-camada:focus-visible::before{opacity:.1}
 .estado-camada:active::before{opacity:.1}
 
-/* Barra de status preta abaixo do topo: data fixa à esquerda e a frase passando, como letreiro de notícias */
-.status{background:#000;color:#fff;display:flex;align-items:center;min-height:40px;overflow:hidden;
+/* Barra de status vermelha abaixo do topo: data fixa à esquerda e a frase passando, como letreiro de notícias.
+   Vermelho carmim com leve degradê; o mesmo nos dois temas, para não sumir no fundo escuro. */
+.status{background:linear-gradient(180deg,#C8202F 0%,#A8121F 100%);color:#fff;box-shadow:inset 0 -1px 0 rgba(0,0,0,.18);display:flex;align-items:center;min-height:40px;overflow:hidden;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:env(safe-area-inset-right,0px)}
 .status-data{flex:none;font-weight:700;padding-right:10px;white-space:nowrap}
 .status-trilho{flex:1;min-width:0;overflow:hidden;white-space:nowrap;
@@ -142,9 +169,6 @@ svg{flex:none}
 @media (hover:hover){.btn.preenchido:hover,.btn.tonal:hover{box-shadow:0 1px 2px var(--md-shadow),0 1px 3px 1px color-mix(in srgb,var(--md-shadow) 50%,transparent)}}
 .compartilhar{align-self:center}
 
-/* Escala */
-.escala{display:flex;flex-direction:column;gap:16px}
-.escala-topo{display:flex;flex-direction:column;gap:16px}
 
 /* Campo de texto preenchido M3 com ícone de busca e rótulo flutuante */
 .campo{position:relative;display:flex;align-items:center;background:var(--md-surface-container-highest);
@@ -207,19 +231,28 @@ svg{flex:none}
 <link rel="apple-touch-icon" href="icone-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta property="og:title" content="Farmácia de plantão em Itaocara">
-<meta property="og:description" content="Qual farmácia está de plantão hoje em Itaocara, RJ.">
+<meta property="og:title" content="Farmácias Itaocara">
+<meta property="og:description" content="Quem está de plantão hoje, a escala e os contatos das farmácias de Itaocara, RJ.">
 </head>
 <body>
 <header class="app-bar" id="app-bar">
   <div class="app-bar-conteudo">
+    <button class="menu estado-camada" id="abrir-menu" type="button" aria-label="Abrir menu" aria-controls="gaveta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></button>
     <div class="logo" aria-hidden="true"><svg viewBox="88 92 366 366"><rect x="176" y="163" width="96" height="250" rx="30" fill="#fff"/><rect x="99" y="240" width="250" height="96" rx="30" fill="#fff"/><path d="M392 104a70 70 0 1 0 50 112a58 58 0 1 1-50-112z" fill="#FFD95A"/></svg></div>
     <div>
-      <h1>Farmácias de plantão</h1>
+      <h1>Farmácias</h1>
       <p class="body-m">Itaocara-RJ</p>
     </div>
   </div>
 </header>
+<dialog class="gaveta" id="gaveta" aria-label="Menu">
+  <h2 class="title-s">Farmácias Itaocara</h2>
+  <nav>
+    <a class="estado-camada" href="#inicio" data-vista="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 2a10 10 0 1 0 9.7 12.4A7.5 7.5 0 0 1 12.3 2z"/></svg><span class="label-l">Plantão de hoje</span></a>
+    <a class="estado-camada" href="#escala" data-vista="escala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg><span class="label-l">Escala de Plantão</span></a>
+    <a class="estado-camada" href="#farmacias" data-vista="farmacias"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM10 4h4v2h-4V4zm6 11h-3v3h-2v-3H8v-2h3v-3h2v3h3v2z"/></svg><span class="label-l">Farmácias</span></a>
+  </nav>
+</dialog>
 <dialog class="dialogo" id="dialogo-ios" aria-labelledby="titulo-ios">
   <h2 id="titulo-ios" class="headline-s">Instalar no iPhone</h2>
   <ol class="body-m">
@@ -241,22 +274,37 @@ svg{flex:none}
 <div class="status label-l" id="status" role="status"><span class="status-data" id="status-data"></span><div class="status-trilho" aria-hidden="true"><span class="status-msg" id="status-msg"></span></div></div>
 
 <div class="pagina">
-  <main class="agora" id="agora" aria-live="polite"></main>
-  <button class="btn contornado com-icone instalar estado-camada" id="instalar" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zm14-9h-4V3H9v8H5l7 7 7-7z"/></svg>Instalar no celular</button>
+  <main class="vista" id="vista-inicio">
+    <div class="agora" id="agora" aria-live="polite"></div>
+    <div class="acoes">
+      <a class="btn contornado com-icone estado-camada" href="#escala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Ver escala de plantão</a>
+      <button class="btn texto com-icone instalar estado-camada" id="instalar" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zm14-9h-4V3H9v8H5l7 7 7-7z"/></svg>Instalar no celular</button>
+    </div>
+  </main>
 
-  <section class="escala" aria-labelledby="titulo-escala">
-    <div class="escala-topo">
-      <h2 id="titulo-escala" class="headline-s">Escala</h2>
-      <div class="campo">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        <input id="busca" type="search" autocomplete="off" placeholder="Ex.: Drogalima">
-        <label for="busca">Buscar farmácia</label>
-        <button class="limpar estado-camada" id="limpar" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button>
-      </div>
+  <section class="vista escala" id="vista-escala" aria-labelledby="titulo-escala" hidden>
+    <h2 id="titulo-escala" class="headline-s">Escala de Plantão</h2>
+    <div class="campo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input id="busca" type="search" autocomplete="off" placeholder="Ex.: Drogalima">
+      <label for="busca">Buscar farmácia</label>
+      <button class="limpar estado-camada" id="limpar" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button>
     </div>
     <p class="resultado body-m" id="resultado" aria-live="polite"></p>
     <div id="meses"></div>
     <button class="btn texto mostrar estado-camada" id="mostrar" type="button"></button>
+  </section>
+
+  <section class="vista" id="vista-farmacias" aria-labelledby="titulo-farmacias" hidden>
+    <h2 id="titulo-farmacias" class="headline-s">Farmácias</h2>
+    <div class="campo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input id="busca-farm" type="search" autocomplete="off" placeholder="Ex.: Drogaria Ideal">
+      <label for="busca-farm">Buscar farmácia</label>
+      <button class="limpar estado-camada" id="limpar-farm" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button>
+    </div>
+    <p class="contagem body-m" id="contagem" aria-live="polite"></p>
+    <ul class="lista-prox" id="agenda"></ul>
   </section>
 </div>
 
@@ -319,8 +367,8 @@ const ESCALA = [
   {d:["2027-02-27","2027-02-28"], f:["Única Farma","Farmácia Amaral"]}
 ];
 
-// "Hoje" no horário de Brasília. Para testar outra data, abra a página com #2026-10-17 no fim do link.
-const forcado = /^#(\d{4}-\d{2}-\d{2})$/.exec(location.hash);
+// "Hoje" no horário de Brasília. Para testar outra data, abra a página com ?data=2026-10-17 (ou #2026-10-17) no link.
+const forcado = /^\?data=(\d{4}-\d{2}-\d{2})$/.exec(location.search) || /^#(\d{4}-\d{2}-\d{2})$/.exec(location.hash);
 const HOJE = forcado ? forcado[1]
   : new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 
@@ -369,9 +417,40 @@ function itemCompacto(nome){
   </li>`;
 }
 
+// Agenda: todas as farmácias que aparecem nos contatos ou na escala, em ordem alfabética.
+const FARMACIAS = [...new Set([...Object.keys(CONTATOS), ...ESCALA.flatMap(e => e.f)])].sort((a,b) => a.localeCompare(b,"pt-BR"));
+const PLANTAO_HOJE = (ESCALA.find(e => e.d.includes(HOJE)) || {f:[]}).f;
+
+function itemAgenda(nome){
+  const c = CONTATOS[nome] || {};
+  const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
+  const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
+  const celular = digitos.length===11 && digitos[2]==="9";
+  return `<li>
+    <div><p class="title-m">${esc(nome)}</p>
+      ${c.end ? `<p class="body-m">${esc(c.end)}</p>` : ""}
+      ${c.tel ? `<p class="body-m">${esc(c.tel)}</p>` : `<p class="body-m">Telefone não informado</p>`}
+      ${PLANTAO_HOJE.includes(nome) ? `<span class="chip-hoje">De plantão hoje</span>` : ""}</div>
+    ${c.tel ? `<a class="btn-icone principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
+    ${celular ? `<a class="btn-icone estado-camada" href="https://wa.me/55${digitos}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
+    <a class="btn-icone estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
+  </li>`;
+}
+
+function renderFarmacias(){
+  const termo = semAcento(document.getElementById("busca-farm").value.trim());
+  const lista = FARMACIAS.filter(n => !termo || semAcento(n).includes(termo));
+  const agenda = document.getElementById("agenda");
+  agenda.innerHTML = lista.map(itemAgenda).join("");
+  agenda.hidden = !lista.length;
+  document.getElementById("contagem").textContent = lista.length
+    ? `${lista.length} ${lista.length===1 ? "farmácia" : "farmácias"}`
+    : `Nenhuma farmácia com esse nome. Confira a grafia, por exemplo "Drogaria Ideal".`;
+}
+
 function mensagem(e){
   const quem = e.f.map(n => CONTATOS[n]?.tel ? `${n} ${CONTATOS[n].tel}` : n).join(" e ");
-  return `Farmácias de plantão em Itaocara, ${porExtenso(e.d).toLowerCase()}: ${quem}.` + (SITE ? ` Escala completa: ${SITE}` : "");
+  return `Farmácias de plantão em Itaocara, ${porExtenso(e.d).toLowerCase()}: ${quem}.` + (SITE ? ` Escala completa: ${SITE}#escala` : "");
 }
 
 function renderAgora(){
@@ -454,9 +533,33 @@ function renderStatus(){
 renderStatus();
 const destaque = renderAgora();
 renderEscala(destaque);
-const busca = document.getElementById("busca"), limpar = document.getElementById("limpar");
-busca.addEventListener("input", () => { limpar.hidden = !busca.value; renderEscala(destaque); });
-limpar.addEventListener("click", () => { busca.value = ""; limpar.hidden = true; busca.focus(); renderEscala(destaque); });
+renderFarmacias();
+// Campo de busca com botão de limpar, usado na escala e na agenda.
+function ligarBusca(idCampo, idLimpar, render){
+  const campo = document.getElementById(idCampo), limpar = document.getElementById(idLimpar);
+  campo.addEventListener("input", () => { limpar.hidden = !campo.value; render(); });
+  limpar.addEventListener("click", () => { campo.value = ""; limpar.hidden = true; campo.focus(); render(); });
+}
+ligarBusca("busca", "limpar", () => renderEscala(destaque));
+ligarBusca("busca-farm", "limpar-farm", renderFarmacias);
+
+// Telas: #escala e #farmacias; qualquer outro endereço mostra o plantão de hoje.
+const gaveta = document.getElementById("gaveta");
+function mostrarVista(){
+  const v = {"#escala":"escala","#farmacias":"farmacias"}[location.hash] || "inicio";
+  for(const id of ["inicio","escala","farmacias"]) document.getElementById("vista-"+id).hidden = id !== v;
+  for(const a of gaveta.querySelectorAll("a")){
+    if(a.dataset.vista === v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+  }
+}
+mostrarVista();
+addEventListener("hashchange", () => { mostrarVista(); scrollTo(0,0); });
+document.getElementById("abrir-menu").addEventListener("click", () => gaveta.showModal());
+// Fecha ao escolher um item ou ao tocar fora da gaveta.
+gaveta.addEventListener("click", ev => {
+  const r = gaveta.getBoundingClientRect();
+  if(ev.target.closest("a") || ev.clientX > r.right) gaveta.close();
+});
 
 // A barra superior muda de tom quando a página rola, como no Material 3.
 const barra = document.getElementById("app-bar");
