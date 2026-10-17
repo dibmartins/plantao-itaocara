@@ -4,8 +4,8 @@ PRODID:-//Farmacias Itaocara//Plantao//PT-BR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Plantão Itaocara
-X-WR-CALDESC:Farmácias de plantão em Itaocara-RJ nos fins de semana e fer
- iados
+X-WR-CALDESC:Farmácias de plantão em Itaocara-RJ: o dia todo nos fins de 
+ semana e feriados e, nos dias úteis seguintes, das 18h às 22h
 X-WR-TIMEZONE:America/Sao_Paulo
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
@@ -27,6 +27,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20260907@farmacias-itaocara
+DTSTAMP:20260907T000000Z
+DTSTART;VALUE=DATE:20260908
+DTEND;VALUE=DATE:20260912
+SUMMARY:Plantão das 18h às 22h: Única Farma e Farmácia Casa Branca
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nÚnica Farma\nFarmácia Casa Branca: (22) 98133-8982\n\nEscala c
+ ompleta: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20260912@farmacias-itaocara
 DTSTAMP:20260912T000000Z
 DTSTART;VALUE=DATE:20260912
@@ -41,6 +53,18 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Nova Droga Ita e Drogaria Ideal
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20260912@farmacias-itaocara
+DTSTAMP:20260912T000000Z
+DTSTART;VALUE=DATE:20260914
+DTEND;VALUE=DATE:20260919
+SUMMARY:Plantão das 18h às 22h: Nova Droga Ita e Drogaria Ideal
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nNova Droga Ita: (22) 3861-2661\nDrogaria Ideal: (22) 3861-3428\n
+ \nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20260919@farmacias-itaocara
@@ -61,6 +85,20 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20260919@farmacias-itaocara
+DTSTAMP:20260919T000000Z
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260926
+SUMMARY:Plantão das 18h às 22h: Farmácia Jardim d'Aldeia e Drogaria Desc
+ ontão
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia Jardim d'Aldeia: (22) 3861-1868\nDrogaria Descontão: 
+ (22) 3861-3713\n\nEscala completa: https://dibmartins.github.io/plantao-it
+ aocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20260926@farmacias-itaocara
 DTSTAMP:20260926T000000Z
 DTSTART;VALUE=DATE:20260926
@@ -77,6 +115,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20260926@farmacias-itaocara
+DTSTAMP:20260926T000000Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20261003
+SUMMARY:Plantão das 18h às 22h: Farmácia 2 Irmãos e Farmácia Amaral
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia 2 Irmãos\nFarmácia Amaral\n\nEscala completa: https:
+ //dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20261003@farmacias-itaocara
 DTSTAMP:20261003T000000Z
 DTSTART;VALUE=DATE:20261003
@@ -91,6 +141,18 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Farma Pop e Fort Popular
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20261003@farmacias-itaocara
+DTSTAMP:20261003T000000Z
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261010
+SUMMARY:Plantão das 18h às 22h: Farma Pop e Fort Popular
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarma Pop\nFort Popular: (22) 98154-1153\n\nEscala completa: htt
+ ps://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20261010@farmacias-itaocara
@@ -126,6 +188,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20261012@farmacias-itaocara
+DTSTAMP:20261012T000000Z
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261017
+SUMMARY:Plantão das 18h às 22h: Drogaria Soares e Farma Nossa
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nDrogaria Soares: (22) 3861-2990\nFarma Nossa: (22) 98117-3592\n\
+ nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20261017@farmacias-itaocara
 DTSTAMP:20261017T000000Z
 DTSTART;VALUE=DATE:20261017
@@ -141,6 +215,19 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Farmácia 4 Esquinas e Farmácia Avenida
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20261017@farmacias-itaocara
+DTSTAMP:20261017T000000Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261024
+SUMMARY:Plantão das 18h às 22h: Farmácia 4 Esquinas e Farmácia Avenida
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia 4 Esquinas: (22) 3861-3021\nFarmácia Avenida: (22) 38
+ 61-3040\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/
+ #escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20261024@farmacias-itaocara
@@ -159,6 +246,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20261024@farmacias-itaocara
+DTSTAMP:20261024T000000Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261028
+SUMMARY:Plantão das 18h às 22h: Farmácia Pop Farma e Drogaria do Povo
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia Pop Farma\nDrogaria do Povo: (22) 98171-5564\n\nEscala
+  completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20261028@farmacias-itaocara
 DTSTAMP:20261028T000000Z
 DTSTART;VALUE=DATE:20261028
@@ -174,6 +273,19 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Farmácia Itaocara e Farmácia Ayrão
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20261028@farmacias-itaocara
+DTSTAMP:20261028T000000Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261031
+SUMMARY:Plantão das 18h às 22h: Farmácia Itaocara e Farmácia Ayrão
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia Itaocara: (22) 3861-2219\nFarmácia Ayrão: (22) 3861-
+ 2083\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#es
+ cala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20261031@farmacias-itaocara
@@ -209,6 +321,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20261102@farmacias-itaocara
+DTSTAMP:20261102T000000Z
+DTSTART;VALUE=DATE:20261103
+DTEND;VALUE=DATE:20261107
+SUMMARY:Plantão das 18h às 22h: Única Farma e Drogaria Ideal
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nÚnica Farma\nDrogaria Ideal: (22) 3861-3428\n\nEscala completa:
+  https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20261107@farmacias-itaocara
 DTSTAMP:20261107T000000Z
 DTSTART;VALUE=DATE:20261107
@@ -226,6 +350,19 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20261107@farmacias-itaocara
+DTSTAMP:20261107T000000Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261114
+SUMMARY:Plantão das 18h às 22h: Nova Droga Ita e Drogaria Descontão
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nNova Droga Ita: (22) 3861-2661\nDrogaria Descontão: (22) 3861-3
+ 713\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#esc
+ ala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20261114@farmacias-itaocara
 DTSTAMP:20261114T000000Z
 DTSTART;VALUE=DATE:20261114
@@ -241,6 +378,19 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Farmácia Jardim d'Aldeia e Farmácia Amaral
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20261114@farmacias-itaocara
+DTSTAMP:20261114T000000Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261120
+SUMMARY:Plantão das 18h às 22h: Farmácia Jardim d'Aldeia e Farmácia Ama
+ ral
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia Jardim d'Aldeia: (22) 3861-1868\nFarmácia Amaral\n\nE
+ scala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20261120@farmacias-itaocara
@@ -276,6 +426,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20261121@farmacias-itaocara
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261128
+SUMMARY:Plantão das 18h às 22h: Farma Pop e Farmácia Martins
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarma Pop\nFarmácia Martins: (22) 3861-2732\n\nEscala completa:
+  https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20261128@farmacias-itaocara
 DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261128
@@ -290,6 +452,18 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Drogalima e Farma Nossa
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20261128@farmacias-itaocara
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261205
+SUMMARY:Plantão das 18h às 22h: Drogalima e Farma Nossa
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nDrogalima: (22) 3861-2531\nFarma Nossa: (22) 98117-3592\n\nEscal
+ a completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20261205@farmacias-itaocara
@@ -309,6 +483,19 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20261205@farmacias-itaocara
+DTSTAMP:20261205T000000Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261212
+SUMMARY:Plantão das 18h às 22h: Drogaria Soares e Farmácia Avenida
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nDrogaria Soares: (22) 3861-2990\nFarmácia Avenida: (22) 3861-30
+ 40\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#esca
+ la
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20261212@farmacias-itaocara
 DTSTAMP:20261212T000000Z
 DTSTART;VALUE=DATE:20261212
@@ -326,6 +513,19 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20261212@farmacias-itaocara
+DTSTAMP:20261212T000000Z
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261219
+SUMMARY:Plantão das 18h às 22h: Farmácia 4 Esquinas e Drogaria do Povo
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia 4 Esquinas: (22) 3861-3021\nDrogaria do Povo: (22) 981
+ 71-5564\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/
+ #escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20261219@farmacias-itaocara
 DTSTAMP:20261219T000000Z
 DTSTART;VALUE=DATE:20261219
@@ -340,6 +540,18 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Farmácia Pop Farma e Farmácia Ayrão
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20261219@farmacias-itaocara
+DTSTAMP:20261219T000000Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261225
+SUMMARY:Plantão das 18h às 22h: Farmácia Pop Farma e Farmácia Ayrão
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia Pop Farma\nFarmácia Ayrão: (22) 3861-2083\n\nEscala 
+ completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20261225@farmacias-itaocara
@@ -375,6 +587,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20261226@farmacias-itaocara
+DTSTAMP:20261226T000000Z
+DTSTART;VALUE=DATE:20261228
+DTEND;VALUE=DATE:20270101
+SUMMARY:Plantão das 18h às 22h: Drogaria Capil e Drogaria Ideal
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nDrogaria Capil: (22) 3861-3318\nDrogaria Ideal: (22) 3861-3428\n
+ \nEscala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20270101@farmacias-itaocara
 DTSTAMP:20270101T000000Z
 DTSTART;VALUE=DATE:20270101
@@ -407,6 +631,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20270102@farmacias-itaocara
+DTSTAMP:20270102T000000Z
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270109
+SUMMARY:Plantão das 18h às 22h: Nova Droga Ita e Farmácia Amaral
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nNova Droga Ita: (22) 3861-2661\nFarmácia Amaral\n\nEscala compl
+ eta: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20270109@farmacias-itaocara
 DTSTAMP:20270109T000000Z
 DTSTART;VALUE=DATE:20270109
@@ -422,6 +658,19 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Farmácia Jardim d'Aldeia e Fort Popular
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20270109@farmacias-itaocara
+DTSTAMP:20270109T000000Z
+DTSTART;VALUE=DATE:20270111
+DTEND;VALUE=DATE:20270116
+SUMMARY:Plantão das 18h às 22h: Farmácia Jardim d'Aldeia e Fort Popular
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia Jardim d'Aldeia: (22) 3861-1868\nFort Popular: (22) 98
+ 154-1153\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara
+ /#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20270116@farmacias-itaocara
@@ -440,6 +689,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20270116@farmacias-itaocara
+DTSTAMP:20270116T000000Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270123
+SUMMARY:Plantão das 18h às 22h: Farmácia 2 Irmãos e Farmácia Martins
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia 2 Irmãos\nFarmácia Martins: (22) 3861-2732\n\nEscala
+  completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20270123@farmacias-itaocara
 DTSTAMP:20270123T000000Z
 DTSTART;VALUE=DATE:20270123
@@ -454,6 +715,18 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Farma Pop e Farma Nossa
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20270123@farmacias-itaocara
+DTSTAMP:20270123T000000Z
+DTSTART;VALUE=DATE:20270125
+DTEND;VALUE=DATE:20270130
+SUMMARY:Plantão das 18h às 22h: Farma Pop e Farma Nossa
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarma Pop\nFarma Nossa: (22) 98117-3592\n\nEscala completa: http
+ s://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20270130@farmacias-itaocara
@@ -472,6 +745,18 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20270130@farmacias-itaocara
+DTSTAMP:20270130T000000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270204
+SUMMARY:Plantão das 18h às 22h: Drogalima e Farmácia Avenida
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nDrogalima: (22) 3861-2531\nFarmácia Avenida: (22) 3861-3040\n\n
+ Escala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20270204@farmacias-itaocara
 DTSTAMP:20270204T000000Z
 DTSTART;VALUE=DATE:20270204
@@ -487,6 +772,19 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Drogaria Soares e Drogaria do Povo
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20270204@farmacias-itaocara
+DTSTAMP:20270204T000000Z
+DTSTART;VALUE=DATE:20270205
+DTEND;VALUE=DATE:20270206
+SUMMARY:Plantão das 18h às 22h: Drogaria Soares e Drogaria do Povo
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nDrogaria Soares: (22) 3861-2990\nDrogaria do Povo: (22) 98171-55
+ 64\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#esca
+ la
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20270206@farmacias-itaocara
@@ -523,6 +821,19 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20270208@farmacias-itaocara
+DTSTAMP:20270208T000000Z
+DTSTART;VALUE=DATE:20270210
+DTEND;VALUE=DATE:20270213
+SUMMARY:Plantão das 18h às 22h: Farmácia Pop Farma e Farmácia Casa Bran
+ ca
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia Pop Farma\nFarmácia Casa Branca: (22) 98133-8982\n\nE
+ scala completa: https://dibmartins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20270213@farmacias-itaocara
 DTSTAMP:20270213T000000Z
 DTSTART;VALUE=DATE:20270213
@@ -538,6 +849,19 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Farmácia Itaocara e Drogaria Ideal
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20270213@farmacias-itaocara
+DTSTAMP:20270213T000000Z
+DTSTART;VALUE=DATE:20270215
+DTEND;VALUE=DATE:20270220
+SUMMARY:Plantão das 18h às 22h: Farmácia Itaocara e Drogaria Ideal
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nFarmácia Itaocara: (22) 3861-2219\nDrogaria Ideal: (22) 3861-34
+ 28\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#esca
+ la
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:plantao-20270220@farmacias-itaocara
@@ -557,6 +881,19 @@ TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:plantao-noite-20270220@farmacias-itaocara
+DTSTAMP:20270220T000000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270227
+SUMMARY:Plantão das 18h às 22h: Drogaria Capil e Drogaria Descontão
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nDrogaria Capil: (22) 3861-3318\nDrogaria Descontão: (22) 3861-3
+ 713\n\nEscala completa: https://dibmartins.github.io/plantao-itaocara/#esc
+ ala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:plantao-20270227@farmacias-itaocara
 DTSTAMP:20270227T000000Z
 DTSTART;VALUE=DATE:20270227
@@ -571,5 +908,17 @@ ACTION:DISPLAY
 DESCRIPTION:Plantão amanhã: Única Farma e Farmácia Amaral
 TRIGGER:-PT7H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:plantao-noite-20270227@farmacias-itaocara
+DTSTAMP:20270227T000000Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270306
+SUMMARY:Plantão das 18h às 22h: Única Farma e Farmácia Amaral
+DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
+ s 22h.\n\nÚnica Farma\nFarmácia Amaral\n\nEscala completa: https://dibma
+ rtins.github.io/plantao-itaocara/#escala
+URL:https://dibmartins.github.io/plantao-itaocara/
+TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR
