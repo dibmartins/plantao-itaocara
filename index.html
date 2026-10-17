@@ -185,6 +185,9 @@ svg{flex:none}
    botões redondos grandes com o nome da ação embaixo (pensado para leitura fácil). */
 .cards-plantao{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
 .card-plantao{background:var(--md-surface-container-low);border-radius:20px;padding:16px}
+.card-plantao .aberto{display:inline-flex;align-items:center;gap:6px;height:24px;margin-bottom:8px;padding:0 10px 0 8px;border-radius:12px;
+  background:#1B7F3B;color:#fff;font-size:.8125rem;line-height:1;font-weight:700;letter-spacing:.01em}
+.card-plantao .aberto::before{content:"";width:8px;height:8px;border-radius:50%;background:#B9F6CA}
 .card-plantao h3{font-size:1.5rem;line-height:1.875rem;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
 .card-plantao .end{margin-top:4px;font-size:1rem;line-height:1.375rem;color:var(--md-on-surface-variant)}
 .card-plantao .acoes-card{display:flex;margin-top:14px}
@@ -508,13 +511,14 @@ function zapDe(c){
 
 // Card de farmácia de plantão na home: nome, endereço (ou telefone, se não houver endereço) e botões grandes com rótulo.
 function cardPlantao(nome){
+  const aberto = SIT?.estado==="diaTodo" || SIT?.estado==="noite";
   const c = CONTATOS[nome] || {};
   const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
   const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
   const whats = zapDe(c);
   const sub = c.end || c.tel || "";
   return `<li class="card-plantao">
-    <h3>${esc(nome)}</h3>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
+    ${aberto ? `<span class="aberto">Aberto agora</span>` : ""}<h3>${esc(nome)}</h3>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
     <div class="acoes-card">
       ${c.tel ? `<a class="acao-card principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}"><span>${ICONE.tel}</span>Ligar</a>` : ""}
       ${whats ? `<a class="acao-card estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}"><span>${ICONE.zap}</span>WhatsApp</a>` : ""}
@@ -648,10 +652,10 @@ function renderEscala(destaque){
 // Barra de status: "Sexta-feira, 16 de outubro" e a situação do dia, alternando.
 function renderStatus(){
   const data = cap(`${fmt(HOJE,{weekday:"long"})}, ${dia(HOJE)} de ${mes(HOJE)}`);
-  const msg = SIT?.estado==="diaTodo" ? "Farmácias de plantão operando normalmente"
-    : SIT?.estado==="noite" ? `Farmácias de plantão operando até as ${FECHA}h`
+  const msg = SIT?.estado==="diaTodo" ? "Farmácias de plantão funcionando normalmente"
+    : SIT?.estado==="noite" ? `Farmácias de plantão funcionando até as ${FECHA}h`
     : SIT?.estado==="proximo" && SIT.encerrou ? `Plantão de hoje encerrado às ${FECHA}h`
-    : "Todas as farmácias estão operando normalmente";
+    : "Todas as farmácias estão funcionando normalmente";
   document.getElementById("status-data").textContent = data;
   document.getElementById("status-msg").textContent = msg;
   document.getElementById("status").setAttribute("aria-label", `${data}: ${msg}`);
