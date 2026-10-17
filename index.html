@@ -5,139 +5,221 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Plantão Itaocara</title>
 <meta name="description" content="Qual farmácia está de plantão hoje em Itaocara, RJ. Escala de fins de semana e feriados.">
-<meta name="theme-color" content="#00874E">
+<meta name="theme-color" content="#F5FBF5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1511" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400..700&display=swap">
 <style>
-/* Layout: coluna única alinhada à esquerda. Topo = data do plantão com marca-texto (como o cartaz), depois as duas farmácias, depois a escala em tabela de cartaz agrupada por mês. */
+/* Material Design 3 em CSS puro: tokens de cor gerados a partir do verde da marca (#00874E), tipografia Roboto Flex,
+   componentes M3 (barra superior, cards, botões, campo de texto, lista, chips) com camadas de estado no lugar do ripple. */
 :root{
-  --papel:#F7F9F8; --superficie:#FFFFFF; --tinta:#13261D; --tinta-2:#4C5F55;
-  --verde:#00874E; --on-verde:#FFFFFF; --marca:#E6F03C; --on-marca:#13261D;
-  --linha:#C9D3CD; --aviso:#A8321E;
-  --f-titulo:"Archivo","Arial Narrow",system-ui,sans-serif;
-  --f-texto:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --t-1:1.0625rem; --t-2:1.3125rem; --t-3:1.75rem; --t-4:2.5rem;
+  --md-primary:#006D40; --md-on-primary:#FFFFFF; --md-primary-container:#9AF5BF; --md-on-primary-container:#002111;
+  --md-secondary:#4E6355; --md-on-secondary:#FFFFFF; --md-secondary-container:#D0E8D6; --md-on-secondary-container:#0B1F14;
+  --md-tertiary:#3B6470; --md-tertiary-container:#BFE9F8; --md-on-tertiary-container:#001F27;
+  --md-error:#BA1A1A;
+  --md-surface:#F5FBF5; --md-on-surface:#171D19; --md-on-surface-variant:#404942;
+  --md-surface-container-lowest:#FFFFFF; --md-surface-container-low:#EFF5EF; --md-surface-container:#E9EFE9;
+  --md-surface-container-high:#E4EAE3; --md-surface-container-highest:#DEE4DE;
+  --md-outline:#707972; --md-outline-variant:#C0C9C0;
+  --md-shadow:rgba(0,0,0,.18);
+  --md-font:"Roboto Flex","Roboto",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --md-ease:cubic-bezier(.2,0,0,1);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --papel:#0F1A15; --superficie:#16241D; --tinta:#E4EEE8; --tinta-2:#9DB0A5;
-  --verde:#35C27F; --on-verde:#062014; --marca:#D9E33A; --on-marca:#13261D;
-  --linha:#2B3D34; --aviso:#F08A6E; color-scheme:dark}}
+  --md-primary:#7ED8A4; --md-on-primary:#00391F; --md-primary-container:#00522F; --md-on-primary-container:#9AF5BF;
+  --md-secondary:#B4CCBB; --md-on-secondary:#203528; --md-secondary-container:#364B3E; --md-on-secondary-container:#D0E8D6;
+  --md-tertiary:#A3CDDB; --md-tertiary-container:#224C58; --md-on-tertiary-container:#BFE9F8;
+  --md-error:#FFB4AB;
+  --md-surface:#0F1511; --md-on-surface:#DEE4DE; --md-on-surface-variant:#C0C9C0;
+  --md-surface-container-lowest:#0A0F0C; --md-surface-container-low:#171D19; --md-surface-container:#1B211D;
+  --md-surface-container-high:#252B27; --md-surface-container-highest:#303632;
+  --md-outline:#8A938B; --md-outline-variant:#404942; --md-shadow:rgba(0,0,0,.5); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --papel:#0F1A15; --superficie:#16241D; --tinta:#E4EEE8; --tinta-2:#9DB0A5;
-  --verde:#35C27F; --on-verde:#062014; --marca:#D9E33A; --on-marca:#13261D;
-  --linha:#2B3D34; --aviso:#F08A6E; color-scheme:dark}
+  --md-primary:#7ED8A4; --md-on-primary:#00391F; --md-primary-container:#00522F; --md-on-primary-container:#9AF5BF;
+  --md-secondary:#B4CCBB; --md-on-secondary:#203528; --md-secondary-container:#364B3E; --md-on-secondary-container:#D0E8D6;
+  --md-tertiary:#A3CDDB; --md-tertiary-container:#224C58; --md-on-tertiary-container:#BFE9F8;
+  --md-error:#FFB4AB;
+  --md-surface:#0F1511; --md-on-surface:#DEE4DE; --md-on-surface-variant:#C0C9C0;
+  --md-surface-container-lowest:#0A0F0C; --md-surface-container-low:#171D19; --md-surface-container:#1B211D;
+  --md-surface-container-high:#252B27; --md-surface-container-highest:#303632;
+  --md-outline:#8A938B; --md-outline-variant:#404942; --md-shadow:rgba(0,0,0,.5); color-scheme:dark}
 
 *,*::before,*::after{box-sizing:border-box}
-body{background:var(--papel);color:var(--tinta);font-family:var(--f-texto);font-size:var(--t-1);line-height:1.55;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
-.pagina{max-width:600px;margin:0 auto;padding-block:20px 56px;display:flex;flex-direction:column;gap:36px}
-h1,h2,h3{font-family:var(--f-titulo);margin:0;line-height:1.1;text-wrap:balance}
-p{margin:0}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--md-surface);color:var(--md-on-surface);font-family:var(--md-font);
+  font-size:1rem;line-height:1.5rem;letter-spacing:.03125rem;-webkit-tap-highlight-color:transparent}
+h1,h2,h3,p{margin:0}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--verde);outline-offset:3px;border-radius:4px}
+:focus-visible{outline:2px solid var(--md-primary);outline-offset:2px}
+[hidden]{display:none!important}
+svg{flex:none}
 
-/* Cabeçalho */
-.topo{display:flex;align-items:center;gap:12px}
-.cruz{width:36px;height:36px;flex:none}
-.cruz path{fill:var(--verde)}
-.topo h1{font-size:var(--t-2);font-weight:750;font-stretch:90%}
-.topo p{color:var(--tinta-2);font-size:.95rem}
+/* Escala tipográfica M3 */
+.display-s{font-size:2.25rem;line-height:2.75rem;font-weight:400;letter-spacing:0}
+.headline-m{font-size:1.75rem;line-height:2.25rem;font-weight:400;letter-spacing:0}
+.headline-s{font-size:1.5rem;line-height:2rem;font-weight:400;letter-spacing:0}
+.title-l{font-size:1.375rem;line-height:1.75rem;font-weight:400;letter-spacing:0}
+.title-m{font-size:1rem;line-height:1.5rem;font-weight:500;letter-spacing:.009375rem}
+.title-s{font-size:.875rem;line-height:1.25rem;font-weight:500;letter-spacing:.00625rem}
+.label-l{font-size:.875rem;line-height:1.25rem;font-weight:500;letter-spacing:.00625rem}
+.body-m{font-size:.875rem;line-height:1.25rem;letter-spacing:.015625rem}
+
+/* Barra superior (top app bar pequena); ganha cor de superfície elevada ao rolar */
+.app-bar{position:sticky;top:0;z-index:2;background:var(--md-surface);
+  padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));
+  transition:background-color .2s var(--md-ease)}
+.app-bar.rolou{background:var(--md-surface-container)}
+.app-bar-conteudo{max-width:640px;margin:0 auto;min-height:64px;display:flex;align-items:center;gap:16px}
+.app-bar .logo{width:40px;height:40px;border-radius:12px;background:var(--md-primary);display:grid;place-items:center}
+.app-bar .logo svg{width:22px;height:22px;fill:var(--md-on-primary)}
+.app-bar h1{font-size:1.375rem;line-height:1.75rem;font-weight:400}
+.app-bar p{color:var(--md-on-surface-variant)}
+
+.pagina{max-width:640px;margin:0 auto;
+  padding:8px max(16px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  display:flex;flex-direction:column;gap:40px}
+
+/* Camada de estado (hover/foco/pressionado) usada por botões, campos e itens clicáveis */
+.estado-camada{position:relative;overflow:hidden;isolation:isolate}
+.estado-camada::before{content:"";position:absolute;inset:0;background:currentColor;opacity:0;pointer-events:none;
+  transition:opacity .15s linear;z-index:-1}
+@media (hover:hover){.estado-camada:hover::before{opacity:.08}}
+.estado-camada:focus-visible::before{opacity:.1}
+.estado-camada:active::before{opacity:.1}
 
 /* Plantão de agora */
-.agora{display:flex;flex-direction:column;gap:18px}
-.estado{font-weight:700;color:var(--tinta-2)}
-.quando{font-size:var(--t-4);font-weight:800;font-stretch:72%;line-height:1.05;letter-spacing:-.005em}
-.quando .tinta-marca{color:var(--on-marca);padding:0 .12em;margin:0 -.12em;
-  -webkit-box-decoration-break:clone;box-decoration-break:clone;
-  background-image:linear-gradient(100deg,transparent .08em,var(--marca) .2em,var(--marca) calc(100% - .25em),transparent 100%);
-  background-repeat:no-repeat;background-size:100% 74%;background-position:0 72%}
-.apoio{color:var(--tinta-2)}
+.agora{display:flex;flex-direction:column;gap:12px}
+.destaque-card{background:var(--md-primary-container);color:var(--md-on-primary-container);border-radius:28px;
+  padding:24px;display:flex;flex-direction:column;gap:8px}
+.estado{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  background:var(--md-primary);color:var(--md-on-primary);border-radius:8px;min-height:32px;padding:6px 12px 6px 8px}
+.estado svg{width:18px;height:18px;fill:currentColor}
+.estado.fechado{background:transparent;color:var(--md-on-primary-container);border:1px solid currentColor;padding:5px 12px}
+.quando{margin-top:4px}
+.apoio{opacity:.9}
 .farmacias{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.farmacia{background:var(--superficie);border:1.5px solid var(--linha);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.farmacia h3{font-size:var(--t-3);font-weight:750;font-stretch:85%}
-.farmacia .end{color:var(--tinta-2)}
-.acoes{display:flex;flex-wrap:wrap;gap:8px}
-.botao{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border-radius:999px;
-  font:700 1rem var(--f-texto);text-decoration:none;cursor:pointer;border:1.5px solid var(--verde);color:var(--verde);background:transparent}
-.botao svg{width:20px;height:20px;flex:none;fill:currentColor}
-.botao.principal{background:var(--verde);color:var(--on-verde)}
-.sem-tel{color:var(--tinta-2);font-size:.95rem;align-self:center}
+.farmacia{background:var(--md-surface-container-low);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:4px;
+  min-width:0;box-shadow:0 1px 2px var(--md-shadow),0 1px 3px 1px color-mix(in srgb,var(--md-shadow) 50%,transparent)}
+.farmacia .end{color:var(--md-on-surface-variant);display:flex;gap:6px;align-items:flex-start}
+.farmacia .end svg{width:18px;height:18px;margin-top:1px;fill:currentColor}
+.acoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.sem-tel{color:var(--md-on-surface-variant);align-self:center}
+.aviso{color:var(--md-error)}
+
+/* Botões M3: preenchido, tonal, contornado e de texto. 40px de altura visual, área de toque de 48px. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 24px;border-radius:20px;
+  font:500 .875rem/1.25rem var(--md-font);letter-spacing:.00625rem;text-decoration:none;cursor:pointer;
+  border:0;background:transparent;color:var(--md-primary);margin:4px 0;white-space:nowrap}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.btn.com-icone{padding-left:16px}
+.btn.preenchido{background:var(--md-primary);color:var(--md-on-primary)}
+.btn.tonal{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.btn.contornado{border:1px solid var(--md-outline)}
+.btn.texto{padding:0 12px}
+@media (hover:hover){.btn.preenchido:hover,.btn.tonal:hover{box-shadow:0 1px 2px var(--md-shadow),0 1px 3px 1px color-mix(in srgb,var(--md-shadow) 50%,transparent)}}
 .compartilhar{align-self:flex-start}
-.aviso{color:var(--aviso);font-weight:700}
 
 /* Escala */
 .escala{display:flex;flex-direction:column;gap:16px}
-.escala-topo{display:flex;flex-direction:column;gap:12px}
-.escala-topo h2{font-size:var(--t-3);font-weight:750;font-stretch:85%}
-.busca{display:flex;flex-direction:column;gap:4px;max-width:360px}
-.busca label{font-size:.9rem;color:var(--tinta-2)}
-.busca input{font:inherit;min-height:48px;padding:0 14px;border-radius:10px;border:1.5px solid var(--linha);background:var(--superficie);color:var(--tinta);width:100%}
-.resultado{color:var(--tinta-2);font-size:.95rem;min-height:1.5em}
-.mes h3{font-size:var(--t-2);font-weight:700;font-stretch:90%;margin-bottom:6px}
+.escala-topo{display:flex;flex-direction:column;gap:16px}
+
+/* Campo de texto preenchido M3 com ícone de busca e rótulo flutuante */
+.campo{position:relative;display:flex;align-items:center;background:var(--md-surface-container-highest);
+  border-radius:4px 4px 0 0;min-height:56px;color:var(--md-on-surface-variant);max-width:420px}
+.campo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--md-on-surface-variant);
+  transition:height .15s var(--md-ease),background-color .15s}
+.campo:focus-within::after{height:2px;background:var(--md-primary)}
+.campo > svg{width:24px;height:24px;margin:0 0 0 12px;fill:currentColor}
+.campo label{position:absolute;left:52px;top:16px;font-size:1rem;line-height:1.5rem;pointer-events:none;
+  transform-origin:left top;transition:transform .15s var(--md-ease),color .15s}
+.campo input{font:inherit;color:var(--md-on-surface);background:transparent;border:0;outline:0;width:100%;
+  height:56px;padding:20px 16px 4px 16px;-webkit-appearance:none;appearance:none}
+.campo input::placeholder{color:transparent}
+.campo input:focus::placeholder{color:var(--md-on-surface-variant)}
+.campo input:focus + label,.campo input:not(:placeholder-shown) + label{transform:translateY(-10px) scale(.75)}
+.campo input:focus + label{color:var(--md-primary)}
+.campo input::-webkit-search-cancel-button{-webkit-appearance:none}
+.limpar{width:40px;height:40px;margin-right:4px;border:0;border-radius:20px;background:transparent;color:inherit;
+  display:grid;place-items:center;cursor:pointer}
+.limpar svg{width:24px;height:24px;fill:currentColor}
+
+.resultado{color:var(--md-on-surface-variant);min-height:1.25rem}
+#meses{display:flex;flex-direction:column;gap:24px}
+.mes h3{color:var(--md-primary);padding:0 4px 8px}
 .mes h3::first-letter{text-transform:uppercase}
-.tabela{list-style:none;margin:0;padding:0;border-top:2px solid var(--tinta)}
-.linha{display:grid;grid-template-columns:6.75rem 1fr;border-bottom:1px solid var(--linha)}
-.linha > div{padding:10px 0;min-width:0}
-.linha .data{border-right:1px solid var(--linha);padding-inline:8px 12px;font-family:var(--f-titulo);font-weight:750;font-stretch:80%;font-size:1.2rem;line-height:1.2;font-variant-numeric:tabular-nums}
-.linha .data small{display:block;font-family:var(--f-texto);font-weight:400;font-size:.85rem;color:var(--tinta-2);font-stretch:100%}
-.linha .nomes{padding-left:12px}
+
+/* Lista M3 dentro de um card preenchido */
+.tabela{list-style:none;margin:0;padding:8px 0;background:var(--md-surface-container-low);border-radius:16px;overflow:hidden}
+.linha{display:flex;gap:16px;align-items:flex-start;padding:12px 16px;position:relative}
+.linha + .linha::before{content:"";position:absolute;top:0;left:16px;right:16px;height:1px;background:var(--md-outline-variant)}
+.linha .data{flex:none;width:76px;min-height:56px;border-radius:12px;background:var(--md-surface-container-highest);
+  color:var(--md-on-surface);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:6px 4px;font-size:1rem;line-height:1.25rem;font-weight:500;font-variant-numeric:tabular-nums}
+.linha .data small{font-size:.75rem;line-height:1rem;font-weight:500;letter-spacing:.03125rem;color:var(--md-on-surface-variant)}
+.linha .nomes{min-width:0;display:flex;flex-direction:column;justify-content:center;min-height:56px}
 .linha .nomes > span:not(.selo){display:block}
-.selo{display:inline-block;margin-top:4px;font-size:.82rem;font-weight:700;padding:1px 9px;border-radius:999px;border:1px solid var(--linha);color:var(--tinta-2)}
-.linha.passou{color:var(--tinta-2)}
-.linha.destaque{background-image:linear-gradient(100deg,transparent 0,var(--marca) .4em,var(--marca) calc(100% - .6em),transparent 100%);
-  background-repeat:no-repeat;background-size:100% 100%;color:var(--on-marca)}
-.linha.destaque .data small,.linha.destaque .selo{color:var(--on-marca);border-color:currentColor}
-.linha.destaque .data{border-right-color:color-mix(in srgb,var(--on-marca) 30%,transparent)}
+.selo{display:inline-flex;align-items:center;align-self:flex-start;gap:6px;height:28px;margin-top:6px;padding:0 10px 0 8px;
+  border-radius:8px;border:1px solid var(--md-outline-variant);font-size:.8125rem;font-weight:500;letter-spacing:.00625rem;
+  color:var(--md-on-surface-variant)}
+.selo svg{width:16px;height:16px;fill:var(--md-tertiary)}
+.linha.passou{opacity:.6}
+.linha.destaque{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.linha.destaque::before,.linha.destaque + .linha::before{display:none}
+.linha.destaque .data{background:var(--md-primary);color:var(--md-on-primary)}
+.linha.destaque .data small{color:var(--md-on-primary);opacity:.85}
+.linha.destaque .selo{border-color:currentColor;color:inherit}
+.agora-tag{display:inline-block;align-self:flex-start;margin-bottom:2px;font-size:.6875rem;line-height:1rem;font-weight:500;
+  letter-spacing:.03125rem;text-transform:uppercase;color:var(--md-primary)}
 .mostrar{align-self:flex-start}
-.vazio{color:var(--tinta-2)}
+.vazio{color:var(--md-on-surface-variant);padding:0 4px}
 
-
-@media (min-width:640px){
+@media (min-width:600px){
   .farmacias{grid-template-columns:1fr 1fr}
-  .quando{font-size:3rem}
+  .destaque-card{padding:32px}
+  .quando{font-size:2.25rem;line-height:2.75rem}
 }
 @media (prefers-reduced-motion:no-preference){
-  .quando .tinta-marca,.linha.destaque{animation:passar-marca .7s cubic-bezier(.3,.7,.3,1) .15s both}
-  .botao{transition:transform .1s}
-  .botao:active{transform:scale(.97)}
+  .destaque-card,.farmacia{animation:entrar .45s var(--md-ease) both}
+  .farmacia:nth-child(1){animation-delay:.06s}
+  .farmacia:nth-child(2){animation-delay:.12s}
 }
-@keyframes passar-marca{from{background-size:0% 74%}to{background-size:100% 74%}}
-.linha.destaque{animation-name:passar-linha}
-@keyframes passar-linha{from{background-size:0% 100%}to{background-size:100% 100%}}
+@keyframes entrar{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icone.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icone-192.png">
 <meta property="og:title" content="Farmácia de plantão em Itaocara">
 <meta property="og:description" content="Qual farmácia está de plantão hoje em Itaocara, RJ.">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
 </head>
 <body>
-<div class="pagina">
-  <header class="topo">
-    <svg class="cruz" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 2h7v6.5H22v7h-6.5V22h-7v-6.5H2v-7h6.5z"/></svg>
+<header class="app-bar" id="app-bar">
+  <div class="app-bar-conteudo">
+    <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 2h7v6.5H22v7h-6.5V22h-7v-6.5H2v-7h6.5z"/></svg></div>
     <div>
       <h1>Farmácia de plantão</h1>
-      <p>Itaocara, RJ. Fins de semana e feriados.</p>
+      <p class="body-m">Itaocara, RJ · fins de semana e feriados</p>
     </div>
-  </header>
+  </div>
+</header>
 
+<div class="pagina">
   <main class="agora" id="agora" aria-live="polite"></main>
 
   <section class="escala" aria-labelledby="titulo-escala">
     <div class="escala-topo">
-      <h2 id="titulo-escala">Escala</h2>
-      <div class="busca">
-        <label for="busca">Buscar farmácia</label>
+      <h2 id="titulo-escala" class="headline-s">Escala</h2>
+      <div class="campo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
         <input id="busca" type="search" autocomplete="off" placeholder="Ex.: Drogalima">
+        <label for="busca">Buscar farmácia</label>
+        <button class="limpar estado-camada" id="limpar" type="button" aria-label="Limpar busca" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/></svg></button>
       </div>
     </div>
-    <p class="resultado" id="resultado" aria-live="polite"></p>
+    <p class="resultado body-m" id="resultado" aria-live="polite"></p>
     <div id="meses"></div>
-    <button class="botao mostrar" id="mostrar" type="button"></button>
+    <button class="btn texto mostrar estado-camada" id="mostrar" type="button"></button>
   </section>
-
 </div>
 
 <script>
@@ -228,6 +310,9 @@ function porExtenso(datas){
 const ICONE = {
   tel:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>',
   mapa:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>',
+  hoje:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>',
+  local:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>',
+  evento:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>',
   zap:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .5l-.3.5-.4.5c-.2.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>'
 };
 
@@ -237,12 +322,12 @@ function cartao(nome){
   const celular = digitos.length===11 && digitos[2]==="9";
   const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
   return `<li class="farmacia">
-    <h3>${esc(nome)}</h3>
-    ${c.end ? `<p class="end">${esc(c.end)}</p>` : ""}
+    <h3 class="title-l">${esc(nome)}</h3>
+    ${c.end ? `<p class="end body-m">${ICONE.local}${esc(c.end)}</p>` : ""}
     <div class="acoes">
-      ${c.tel ? `<a class="botao principal" href="tel:+55${digitos}">${ICONE.tel}Ligar ${esc(c.tel)}</a>` : `<span class="sem-tel">Telefone não cadastrado</span>`}
-      ${celular ? `<a class="botao" href="https://wa.me/55${digitos}" target="_blank" rel="noopener">${ICONE.zap}WhatsApp</a>` : ""}
-      <a class="botao" href="${mapa}" target="_blank" rel="noopener">${ICONE.mapa}Como chegar</a>
+      ${c.tel ? `<a class="btn preenchido com-icone estado-camada" href="tel:+55${digitos}">${ICONE.tel}Ligar ${esc(c.tel)}</a>` : `<span class="sem-tel body-m">Telefone não cadastrado</span>`}
+      ${celular ? `<a class="btn tonal com-icone estado-camada" href="https://wa.me/55${digitos}" target="_blank" rel="noopener">${ICONE.zap}WhatsApp</a>` : ""}
+      <a class="btn contornado com-icone estado-camada" href="${mapa}" target="_blank" rel="noopener">${ICONE.mapa}Como chegar</a>
     </div>
   </li>`;
 }
@@ -258,8 +343,8 @@ function renderAgora(){
   const prox = ESCALA.find(e => e.d[0] > HOJE);
   const e = atual || prox;
   if(!e){
-    el.innerHTML = `<p class="aviso">A escala cadastrada terminou em 28 de fevereiro de 2027.</p>
-      <p class="apoio">Assim que o cartaz novo sair, a página será atualizada.</p>`;
+    el.innerHTML = `<p class="aviso title-m">A escala cadastrada terminou em 28 de fevereiro de 2027.</p>
+      <p class="apoio body-m">Assim que o cartaz novo sair, a página será atualizada.</p>`;
     return null;
   }
   let estado, apoio = "";
@@ -275,11 +360,13 @@ function renderAgora(){
   if(e.selo) apoio = `${e.selo}. ${apoio}`.trim();
   const quando = atual ? cap(`${semana(HOJE)}, ${dia(HOJE)} de ${mes(HOJE)}`) : porExtenso(e.d);
   el.innerHTML = `
-    <p class="estado">${estado}</p>
-    <h2 class="quando"><span class="tinta-marca">${esc(quando)}</span></h2>
-    ${apoio ? `<p class="apoio">${esc(apoio)}</p>` : ""}
+    <div class="destaque-card">
+      <p class="estado label-l${atual ? "" : " fechado"}">${atual ? ICONE.hoje : ""}${estado}</p>
+      <h2 class="quando headline-m">${esc(quando)}</h2>
+      ${apoio ? `<p class="apoio body-m">${esc(apoio)}</p>` : ""}
+    </div>
     <ul class="farmacias">${e.f.map(cartao).join("")}</ul>
-    <a class="botao compartilhar" href="https://wa.me/?text=${encodeURIComponent(mensagem(e))}" target="_blank" rel="noopener">${ICONE.zap}Enviar no WhatsApp</a>`;
+    <a class="btn tonal com-icone compartilhar estado-camada" href="https://wa.me/?text=${encodeURIComponent(mensagem(e))}" target="_blank" rel="noopener">${ICONE.zap}Enviar no WhatsApp</a>`;
   return e;
 }
 
@@ -300,17 +387,17 @@ function renderEscala(destaque){
 
   document.getElementById("meses").innerHTML = grupos.map(g => `
     <section class="mes">
-      <h3>${mes(g.chave+"-01")} de ${g.chave.slice(0,4)}</h3>
+      <h3 class="title-s">${mes(g.chave+"-01")} de ${g.chave.slice(0,4)}</h3>
       <ol class="tabela">${g.itens.map(e => {
         const a = e.d[0], b = ultimo(e);
         const datas = e.d.length===1 ? dia(a) : (a.slice(5,7)===b.slice(5,7) ? `${dia(a)} e ${dia(b)}` : `${dia(a)} e ${dia(b)}/${b.slice(5,7)}`);
         const cls = [b < HOJE ? "passou" : "", e===destaque ? "destaque" : ""].join(" ").trim();
         return `<li class="linha ${cls}" aria-label="${esc(porExtenso(e.d))}: ${esc(e.f.join(" e "))}">
           <div class="data">${datas}<small>${e.d.map(semanaCurta).join(" e ")}</small></div>
-          <div class="nomes">${e.f.map(n => `<span>${esc(n)}</span>`).join("")}${e.selo ? `<span class="selo">${esc(e.selo)}</span>` : ""}</div>
+          <div class="nomes">${e===destaque ? `<span class="agora-tag">${e.d.includes(HOJE) ? "Agora" : "Próximo"}</span>` : ""}${e.f.map(n => `<span class="title-m">${esc(n)}</span>`).join("")}${e.selo ? `<span class="selo">${ICONE.evento}${esc(e.selo)}</span>` : ""}</div>
         </li>`;}).join("")}
       </ol>
-    </section>`).join("") || `<p class="vazio">Nenhuma farmácia com esse nome na escala. Confira a grafia, por exemplo "Drogaria Ideal".</p>`;
+    </section>`).join("") || `<p class="vazio body-m">Nenhuma farmácia com esse nome na escala. Confira a grafia, por exemplo "Drogaria Ideal".</p>`;
 
   const res = document.getElementById("resultado");
   if(termo){
@@ -325,7 +412,13 @@ function renderEscala(destaque){
 
 const destaque = renderAgora();
 renderEscala(destaque);
-document.getElementById("busca").addEventListener("input", () => renderEscala(destaque));
+const busca = document.getElementById("busca"), limpar = document.getElementById("limpar");
+busca.addEventListener("input", () => { limpar.hidden = !busca.value; renderEscala(destaque); });
+limpar.addEventListener("click", () => { busca.value = ""; limpar.hidden = true; busca.focus(); renderEscala(destaque); });
+
+// A barra superior muda de tom quando a página rola, como no Material 3.
+const barra = document.getElementById("app-bar");
+addEventListener("scroll", () => barra.classList.toggle("rolou", scrollY > 4), {passive:true});
 document.getElementById("mostrar").addEventListener("click", () => { mostrarPassadas = !mostrarPassadas; renderEscala(destaque); });
 
 // Guarda a página para abrir mesmo sem internet.
