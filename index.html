@@ -117,11 +117,12 @@ svg{flex:none}
   border-radius:16px;padding:12px 16px}
 .aviso-prox svg{width:24px;height:24px;fill:currentColor}
 .lista-prox{list-style:none;margin:0;padding:4px 0;background:var(--md-surface-container-low);border-radius:16px}
-.lista-prox li{display:flex;align-items:center;gap:4px;padding:10px 8px 10px 16px}
+.lista-prox li{display:flex;align-items:center;gap:8px;padding:10px 8px 10px 16px}
 .lista-prox li + li{border-top:1px solid var(--md-outline-variant)}
 .lista-prox li > div{flex:1;min-width:0}
 .lista-prox .body-m{color:var(--md-on-surface-variant)}
-.btn-icone{width:48px;height:48px;border-radius:24px;display:grid;place-items:center;color:var(--md-primary);flex:none}
+.btn-icone{width:48px;height:48px;border-radius:24px;display:grid;place-items:center;flex:none;
+  background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
 .btn-icone svg{width:24px;height:24px;fill:currentColor}
 .btn-icone.principal{background:var(--md-primary-container);color:var(--md-on-primary-container)}
 .farmacias{list-style:none;margin:0;padding:0;display:grid;gap:12px}
@@ -371,7 +372,7 @@ function itemCompacto(nome){
   return `<li>
     <div><p class="title-m">${esc(nome)}</p>${sub ? `<p class="body-m">${esc(sub)}</p>` : ""}</div>
     ${c.tel ? `<a class="btn-icone principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
-    <a class="btn-icone${c.tel ? "" : " principal"} estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
+    <a class="btn-icone estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
   </li>`;
 }
 
