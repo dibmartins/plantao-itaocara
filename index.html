@@ -144,20 +144,27 @@ svg{flex:none}
 .estado-camada:focus-visible::before{opacity:.1}
 .estado-camada:active::before{opacity:.1}
 
-/* Barra de status vermelha abaixo do topo: data fixa à esquerda e a frase passando, como letreiro de notícias.
+/* Barra de status vermelha abaixo do topo: a data e a frase do dia se revezam no mesmo lugar, subindo com fade.
    Vermelho carmim com leve degradê; o mesmo nos dois temas, para não sumir no fundo escuro. */
-.status{background:linear-gradient(180deg,#C8202F 0%,#A8121F 100%);color:#fff;box-shadow:inset 0 -1px 0 rgba(0,0,0,.18);display:flex;align-items:center;min-height:40px;overflow:hidden;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:env(safe-area-inset-right,0px)}
-.status-data{flex:none;font-weight:700;padding-right:10px;white-space:nowrap}
-.status-trilho{flex:1;min-width:0;overflow:hidden;white-space:nowrap;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent);
-  mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 16px),transparent)}
-.status-msg{display:inline-block;padding-left:100%;animation:letreiro 11s linear infinite}
-@keyframes letreiro{to{transform:translateX(-100%)}}
+.status{background:linear-gradient(180deg,#C8202F 0%,#A8121F 100%);color:#fff;box-shadow:inset 0 -1px 0 rgba(0,0,0,.18);
+  display:flex;align-items:center;min-height:40px;overflow:hidden;
+  padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+/* Data e frase empilhadas na mesma célula da grade: a barra fica com a altura da maior. */
+.status-palco{flex:1;min-width:0;display:grid;justify-items:start;text-align:left}
+.status-palco > span{grid-area:1/1;align-self:center;font-weight:700;opacity:0;animation:10s var(--md-ease) infinite}
+.status-palco > .status-data{animation-name:status-data}
+.status-palco > .status-msg{animation-name:status-msg}
+@keyframes status-data{
+  0%{opacity:0;transform:translateY(70%)} 5%,30%{opacity:1;transform:none} 35%,100%{opacity:0;transform:translateY(-70%)}}
+@keyframes status-msg{
+  0%,35%{opacity:0;transform:translateY(70%)} 40%,95%{opacity:1;transform:none} 100%{opacity:0;transform:translateY(-70%)}}
+@media (min-width:768px){.status-palco{justify-items:center;text-align:center}}
 @media (prefers-reduced-motion:reduce){
-  .status-trilho{white-space:normal;-webkit-mask-image:none;mask-image:none}
-  .status-msg{padding:8px 16px 8px 0;animation:none}
+  .status-palco{display:flex;flex-wrap:wrap;gap:0 8px;justify-content:flex-start}
+  .status-palco > span{animation:none;opacity:1}
+  .status-data::after{content:" ·"}
 }
+@media (prefers-reduced-motion:reduce) and (min-width:768px){.status-palco{justify-content:center}}
 
 /* Plantão de agora: faixa curta (de plantão hoje ou próximo plantão) e lista enxuta das farmácias */
 .agora{display:flex;flex-direction:column;gap:12px}
@@ -312,7 +319,7 @@ svg{flex:none}
   <ol class="body-m" id="passos-agenda"></ol>
   <form method="dialog" class="acoes-dialogo"><button class="btn texto estado-camada">Agora não</button><a class="btn preenchido com-icone estado-camada" id="assinar-agenda" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Adicionar à agenda</a></form>
 </dialog>
-<div class="status label-l" id="status" role="status"><span class="status-data" id="status-data"></span><div class="status-trilho" aria-hidden="true"><span class="status-msg" id="status-msg"></span></div></div>
+<div class="status label-l" id="status" role="status"><div class="status-palco" aria-hidden="true"><span class="status-data" id="status-data"></span><span class="status-msg" id="status-msg"></span></div></div>
 
 <div class="pagina">
   <main class="vista" id="vista-inicio">
@@ -638,16 +645,16 @@ function renderEscala(destaque){
   btn.textContent = mostrarPassadas ? "Esconder datas que já passaram" : "Mostrar datas que já passaram";
 }
 
-// Barra de status: "Sexta-feira, 16 de outubro:" fixo e a situação do dia passando.
+// Barra de status: "Sexta-feira, 16 de outubro" e a situação do dia, alternando.
 function renderStatus(){
-  const data = cap(`${fmt(HOJE,{weekday:"long"})}, ${dia(HOJE)} de ${mes(HOJE)}:`);
+  const data = cap(`${fmt(HOJE,{weekday:"long"})}, ${dia(HOJE)} de ${mes(HOJE)}`);
   const msg = SIT?.estado==="diaTodo" ? "Farmácias de plantão operando normalmente"
     : SIT?.estado==="noite" ? `Farmácias de plantão operando até as ${FECHA}h`
     : SIT?.estado==="proximo" && SIT.encerrou ? `Plantão de hoje encerrado às ${FECHA}h`
     : "Todas as farmácias estão operando normalmente";
   document.getElementById("status-data").textContent = data;
   document.getElementById("status-msg").textContent = msg;
-  document.getElementById("status").setAttribute("aria-label", `${data} ${msg}`);
+  document.getElementById("status").setAttribute("aria-label", `${data}: ${msg}`);
 }
 
 renderStatus();
