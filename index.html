@@ -384,7 +384,7 @@ const SITE = "https://dibmartins.github.io/plantao-itaocara/";
 // Quem não tem telefone cai numa busca no mapa.
 const CONTATOS = {
   "Drogalima": {end:"R. Nilo Peçanha, 242, Centro", tel:"(22) 3861-2531"},
-  "Farmácia 4 Esquinas": {tel:"(22) 3861-3021", zap:"(22) 99855-2738"},
+  "Farmácia 4 Esquinas": {end:"R. Nilo Peçanha, 522", tel:"(22) 3861-3021", zap:"(22) 99855-2738"},
   "Farmácia Avenida": {end:"R. Pastor José Henrique da Mata, 529", tel:"(22) 3861-3040", zap:"(22) 98813-0192"},
   "Drogaria do Povo": {end:"R. Aristides Scisínio, 81, Centro", tel:"(22) 98171-5564"},
   "Farmácia Ayrão": {end:"R. Nilo Peçanha, 500, Cidade Nova", tel:"(22) 3861-2083", zap:"(22) 98112-1564"},
@@ -516,17 +516,22 @@ function zapDe(c){
   return d.length===11 && d[2]==="9" ? d : "";
 }
 
+// Rota no Google Maps do lugar onde a pessoa está até a farmácia (sem origem, o Maps usa a localização do aparelho).
+function rotaAte(nome, c){
+  return "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(`${nome}, ${c.end ? c.end+", " : ""}Itaocara - RJ`);
+}
+
 // Card de farmácia de plantão na home: nome, endereço (ou telefone, se não houver endereço) e botões grandes com rótulo.
 function cardPlantao(nome){
   const aberto = SIT?.estado==="diaTodo" || SIT?.estado==="noite";
   const c = CONTATOS[nome] || {};
   const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
-  const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
+  const mapa = rotaAte(nome, c);
   const whats = zapDe(c);
   const sub = c.end || c.tel || "";
   const embed = "https://maps.google.com/maps?output=embed&z=17&q="+encodeURIComponent(`${nome}, ${c.end ? c.end+", " : ""}Itaocara - RJ`);
   return `<li class="card-plantao">
-    <a class="mapa-card" href="${mapa}" target="_blank" rel="noopener" aria-label="Ver ${esc(nome)} no mapa">${ICONE.mapa}${navigator.onLine ? `<iframe src="${embed}" loading="lazy" tabindex="-1" aria-hidden="true" title="Mapa da ${esc(nome)}" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ""}</a>
+    <a class="mapa-card" href="${mapa}" target="_blank" rel="noopener" aria-label="Rota até a ${esc(nome)}">${ICONE.mapa}${navigator.onLine ? `<iframe src="${embed}" loading="lazy" tabindex="-1" aria-hidden="true" title="Mapa da ${esc(nome)}" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ""}</a>
     <div class="topo-card"><h3>${esc(nome)}</h3>${aberto ? `<span class="aberto">Aberto agora</span>` : ""}</div>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
     <div class="acoes-card">
       ${c.tel ? `<a class="acao-card principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}"><span>${ICONE.tel}</span>Ligar</a>` : ""}
@@ -543,7 +548,7 @@ const PLANTAO_HOJE = plantaoDoDia(HOJE);
 function itemAgenda(nome){
   const c = CONTATOS[nome] || {};
   const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
-  const mapa = "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(`${nome} ${c.end||""} Itaocara RJ`);
+  const mapa = rotaAte(nome, c);
   const whats = zapDe(c);
   return `<li>
     <div><p class="title-m">${esc(nome)}</p>
