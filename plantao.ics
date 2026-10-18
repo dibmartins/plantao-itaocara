@@ -16,8 +16,8 @@ DTSTART;VALUE=DATE:20260907
 DTEND;VALUE=DATE:20260908
 SUMMARY:Plantão: Única Farma e Farmácia Casa Branca
 DESCRIPTION:Independência\n\nÚnica Farma\nFarmácia Casa Branca: (22) 981
- 33-8982\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 33-8982\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -33,8 +33,8 @@ DTEND;VALUE=DATE:20260912
 SUMMARY:Plantão das 18h às 22h: Única Farma e Farmácia Casa Branca
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nÚnica Farma\nFarmácia Casa Branca: (22) 98133-8982\n\nEscala c
- ompleta: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ ompleta: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -44,8 +44,8 @@ DTSTART;VALUE=DATE:20260912
 DTEND;VALUE=DATE:20260914
 SUMMARY:Plantão: Nova Droga Ita e Drogaria Ideal
 DESCRIPTION:Nova Droga Ita: (22) 3861-2661\nDrogaria Ideal: (22) 3861-3428\
- n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -61,8 +61,8 @@ DTEND;VALUE=DATE:20260919
 SUMMARY:Plantão das 18h às 22h: Nova Droga Ita e Drogaria Ideal
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nNova Droga Ita: (22) 3861-2661\nDrogaria Ideal: (22) 3861-3428\n
- \nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ \nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -72,8 +72,9 @@ DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260921
 SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Drogaria Descontão
 DESCRIPTION:Farmácia Jardim d'Aldeia: (22) 3861-1868\nDrogaria Descontão:
-  (22) 3861-3713\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+  (22) 3861-3713\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#
+ escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -91,8 +92,9 @@ SUMMARY:Plantão das 18h às 22h: Farmácia Jardim d'Aldeia e Drogaria Desc
  ontão
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia Jardim d'Aldeia: (22) 3861-1868\nDrogaria Descontão: 
- (22) 3861-3713\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ (22) 3861-3713\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#e
+ scala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -102,8 +104,8 @@ DTSTART;VALUE=DATE:20260926
 DTEND;VALUE=DATE:20260928
 SUMMARY:Plantão: Farmácia 2 Irmãos e Farmácia Amaral
 DESCRIPTION:Farmácia 2 Irmãos\nFarmácia Amaral\n\nEscala completa: https
- ://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ ://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -119,8 +121,8 @@ DTEND;VALUE=DATE:20261003
 SUMMARY:Plantão das 18h às 22h: Farmácia 2 Irmãos e Farmácia Amaral
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia 2 Irmãos\nFarmácia Amaral\n\nEscala completa: https:
- //qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ //itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -130,8 +132,8 @@ DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261005
 SUMMARY:Plantão: Farma Pop e Fort Popular
 DESCRIPTION:Farma Pop\nFort Popular: (22) 98154-1153\n\nEscala completa: ht
- tps://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ tps://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -147,8 +149,8 @@ DTEND;VALUE=DATE:20261010
 SUMMARY:Plantão das 18h às 22h: Farma Pop e Fort Popular
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarma Pop\nFort Popular: (22) 98154-1153\n\nEscala completa: htt
- ps://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ ps://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -158,8 +160,8 @@ DTSTART;VALUE=DATE:20261010
 DTEND;VALUE=DATE:20261012
 SUMMARY:Plantão: Drogalima e Farmácia Martins
 DESCRIPTION:Drogalima: (22) 3861-2531\nFarmácia Martins: (22) 3861-2732\n\
- nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -174,9 +176,9 @@ DTSTART;VALUE=DATE:20261012
 DTEND;VALUE=DATE:20261013
 SUMMARY:Plantão: Drogaria Soares e Farma Nossa
 DESCRIPTION:Nossa Senhora Aparecida\n\nDrogaria Soares: (22) 3861-2990\nFar
- ma Nossa: (22) 98117-3592\n\nEscala completa: https://qualfarmacia.com.br/
- #escala
-URL:https://qualfarmacia.com.br/
+ ma Nossa: (22) 98117-3592\n\nEscala completa: https://itaocara.qualfarmaci
+ a.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -192,8 +194,8 @@ DTEND;VALUE=DATE:20261017
 SUMMARY:Plantão das 18h às 22h: Drogaria Soares e Farma Nossa
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nDrogaria Soares: (22) 3861-2990\nFarma Nossa: (22) 98117-3592\n\
- nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -203,8 +205,8 @@ DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261019
 SUMMARY:Plantão: Farmácia 4 Esquinas e Farmácia Avenida
 DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nFarmácia Avenida: (22) 3
- 861-3040\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 861-3040\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -220,8 +222,8 @@ DTEND;VALUE=DATE:20261024
 SUMMARY:Plantão das 18h às 22h: Farmácia 4 Esquinas e Farmácia Avenida
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia 4 Esquinas: (22) 3861-3021\nFarmácia Avenida: (22) 38
- 61-3040\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 61-3040\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -231,8 +233,8 @@ DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261026
 SUMMARY:Plantão: Farmácia Pop Farma e Drogaria do Povo
 DESCRIPTION:Farmácia Pop Farma\nDrogaria do Povo: (22) 98171-5564\n\nEscal
- a completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ a completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -248,8 +250,8 @@ DTEND;VALUE=DATE:20261028
 SUMMARY:Plantão das 18h às 22h: Farmácia Pop Farma e Drogaria do Povo
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia Pop Farma\nDrogaria do Povo: (22) 98171-5564\n\nEscala
-  completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+  completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -259,9 +261,9 @@ DTSTART;VALUE=DATE:20261028
 DTEND;VALUE=DATE:20261029
 SUMMARY:Plantão: Farmácia Itaocara e Farmácia Ayrão
 DESCRIPTION:Dia do Servidor Público\n\nFarmácia Itaocara: (22) 3861-2219\
- nFarmácia Ayrão: (22) 3861-2083\n\nEscala completa: https://qualfarmacia
- .com.br/#escala
-URL:https://qualfarmacia.com.br/
+ nFarmácia Ayrão: (22) 3861-2083\n\nEscala completa: https://itaocara.qua
+ lfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -277,8 +279,8 @@ DTEND;VALUE=DATE:20261031
 SUMMARY:Plantão das 18h às 22h: Farmácia Itaocara e Farmácia Ayrão
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia Itaocara: (22) 3861-2219\nFarmácia Ayrão: (22) 3861-
- 2083\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 2083\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -288,8 +290,8 @@ DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261102
 SUMMARY:Plantão: Drogaria Capil e Farmácia Casa Branca
 DESCRIPTION:Drogaria Capil: (22) 3861-3318\nFarmácia Casa Branca: (22) 981
- 33-8982\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 33-8982\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -304,8 +306,8 @@ DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:Plantão: Única Farma e Drogaria Ideal
 DESCRIPTION:Finados\n\nÚnica Farma\nDrogaria Ideal: (22) 3861-3428\n\nEsca
- la completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ la completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -321,8 +323,8 @@ DTEND;VALUE=DATE:20261107
 SUMMARY:Plantão das 18h às 22h: Única Farma e Drogaria Ideal
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nÚnica Farma\nDrogaria Ideal: (22) 3861-3428\n\nEscala completa:
-  https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+  https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -332,8 +334,8 @@ DTSTART;VALUE=DATE:20261107
 DTEND;VALUE=DATE:20261109
 SUMMARY:Plantão: Nova Droga Ita e Drogaria Descontão
 DESCRIPTION:Nova Droga Ita: (22) 3861-2661\nDrogaria Descontão: (22) 3861-
- 3713\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 3713\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -349,8 +351,8 @@ DTEND;VALUE=DATE:20261114
 SUMMARY:Plantão das 18h às 22h: Nova Droga Ita e Drogaria Descontão
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nNova Droga Ita: (22) 3861-2661\nDrogaria Descontão: (22) 3861-3
- 713\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 713\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -360,9 +362,9 @@ DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261116
 SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Farmácia Amaral
 DESCRIPTION:Proclamação da República\n\nFarmácia Jardim d'Aldeia: (22) 
- 3861-1868\nFarmácia Amaral\n\nEscala completa: https://qualfarmacia.com.b
- r/#escala
-URL:https://qualfarmacia.com.br/
+ 3861-1868\nFarmácia Amaral\n\nEscala completa: https://itaocara.qualfarma
+ cia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -379,8 +381,8 @@ SUMMARY:Plantão das 18h às 22h: Farmácia Jardim d'Aldeia e Farmácia Ama
  ral
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia Jardim d'Aldeia: (22) 3861-1868\nFarmácia Amaral\n\nE
- scala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ scala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -390,8 +392,8 @@ DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
 SUMMARY:Plantão: Farmácia 2 Irmãos e Fort Popular
 DESCRIPTION:Consciência Negra\n\nFarmácia 2 Irmãos\nFort Popular: (22) 9
- 8154-1153\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 8154-1153\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -406,8 +408,8 @@ DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261123
 SUMMARY:Plantão: Farma Pop e Farmácia Martins
 DESCRIPTION:Farma Pop\nFarmácia Martins: (22) 3861-2732\n\nEscala completa
- : https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ : https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -423,8 +425,8 @@ DTEND;VALUE=DATE:20261128
 SUMMARY:Plantão das 18h às 22h: Farma Pop e Farmácia Martins
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarma Pop\nFarmácia Martins: (22) 3861-2732\n\nEscala completa:
-  https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+  https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -434,8 +436,8 @@ DTSTART;VALUE=DATE:20261128
 DTEND;VALUE=DATE:20261130
 SUMMARY:Plantão: Drogalima e Farma Nossa
 DESCRIPTION:Drogalima: (22) 3861-2531\nFarma Nossa: (22) 98117-3592\n\nEsca
- la completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ la completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -451,8 +453,8 @@ DTEND;VALUE=DATE:20261205
 SUMMARY:Plantão das 18h às 22h: Drogalima e Farma Nossa
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nDrogalima: (22) 3861-2531\nFarma Nossa: (22) 98117-3592\n\nEscal
- a completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ a completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -462,8 +464,8 @@ DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261207
 SUMMARY:Plantão: Drogaria Soares e Farmácia Avenida
 DESCRIPTION:Drogaria Soares: (22) 3861-2990\nFarmácia Avenida: (22) 3861-3
- 040\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 040\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -479,8 +481,8 @@ DTEND;VALUE=DATE:20261212
 SUMMARY:Plantão das 18h às 22h: Drogaria Soares e Farmácia Avenida
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nDrogaria Soares: (22) 3861-2990\nFarmácia Avenida: (22) 3861-30
- 40\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 40\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -490,8 +492,8 @@ DTSTART;VALUE=DATE:20261212
 DTEND;VALUE=DATE:20261214
 SUMMARY:Plantão: Farmácia 4 Esquinas e Drogaria do Povo
 DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nDrogaria do Povo: (22) 98
- 171-5564\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 171-5564\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -507,8 +509,8 @@ DTEND;VALUE=DATE:20261219
 SUMMARY:Plantão das 18h às 22h: Farmácia 4 Esquinas e Drogaria do Povo
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia 4 Esquinas: (22) 3861-3021\nDrogaria do Povo: (22) 981
- 71-5564\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 71-5564\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -518,8 +520,8 @@ DTSTART;VALUE=DATE:20261219
 DTEND;VALUE=DATE:20261221
 SUMMARY:Plantão: Farmácia Pop Farma e Farmácia Ayrão
 DESCRIPTION:Farmácia Pop Farma\nFarmácia Ayrão: (22) 3861-2083\n\nEscala
-  completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+  completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -535,8 +537,8 @@ DTEND;VALUE=DATE:20261225
 SUMMARY:Plantão das 18h às 22h: Farmácia Pop Farma e Farmácia Ayrão
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia Pop Farma\nFarmácia Ayrão: (22) 3861-2083\n\nEscala 
- completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -546,9 +548,9 @@ DTSTART;VALUE=DATE:20261225
 DTEND;VALUE=DATE:20261226
 SUMMARY:Plantão: Farmácia Itaocara e Farmácia Casa Branca
 DESCRIPTION:Natal\n\nFarmácia Itaocara: (22) 3861-2219\nFarmácia Casa Bra
- nca: (22) 98133-8982\n\nEscala completa: https://qualfarmacia.com.br/#esca
- la
-URL:https://qualfarmacia.com.br/
+ nca: (22) 98133-8982\n\nEscala completa: https://itaocara.qualfarmacia.com
+ .br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -563,8 +565,8 @@ DTSTART;VALUE=DATE:20261226
 DTEND;VALUE=DATE:20261228
 SUMMARY:Plantão: Drogaria Capil e Drogaria Ideal
 DESCRIPTION:Drogaria Capil: (22) 3861-3318\nDrogaria Ideal: (22) 3861-3428\
- n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -580,8 +582,8 @@ DTEND;VALUE=DATE:20270101
 SUMMARY:Plantão das 18h às 22h: Drogaria Capil e Drogaria Ideal
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nDrogaria Capil: (22) 3861-3318\nDrogaria Ideal: (22) 3861-3428\n
- \nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ \nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -591,8 +593,8 @@ DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270102
 SUMMARY:Plantão: Única Farma e Drogaria Descontão
 DESCRIPTION:Ano-novo\n\nÚnica Farma\nDrogaria Descontão: (22) 3861-3713\n
- \nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ \nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -607,8 +609,8 @@ DTSTART;VALUE=DATE:20270102
 DTEND;VALUE=DATE:20270104
 SUMMARY:Plantão: Nova Droga Ita e Farmácia Amaral
 DESCRIPTION:Nova Droga Ita: (22) 3861-2661\nFarmácia Amaral\n\nEscala comp
- leta: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ leta: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -624,8 +626,8 @@ DTEND;VALUE=DATE:20270109
 SUMMARY:Plantão das 18h às 22h: Nova Droga Ita e Farmácia Amaral
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nNova Droga Ita: (22) 3861-2661\nFarmácia Amaral\n\nEscala compl
- eta: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ eta: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -635,8 +637,8 @@ DTSTART;VALUE=DATE:20270109
 DTEND;VALUE=DATE:20270111
 SUMMARY:Plantão: Farmácia Jardim d'Aldeia e Fort Popular
 DESCRIPTION:Farmácia Jardim d'Aldeia: (22) 3861-1868\nFort Popular: (22) 9
- 8154-1153\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 8154-1153\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -652,8 +654,8 @@ DTEND;VALUE=DATE:20270116
 SUMMARY:Plantão das 18h às 22h: Farmácia Jardim d'Aldeia e Fort Popular
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia Jardim d'Aldeia: (22) 3861-1868\nFort Popular: (22) 98
- 154-1153\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 154-1153\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -663,8 +665,8 @@ DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270118
 SUMMARY:Plantão: Farmácia 2 Irmãos e Farmácia Martins
 DESCRIPTION:Farmácia 2 Irmãos\nFarmácia Martins: (22) 3861-2732\n\nEscal
- a completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ a completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -680,8 +682,8 @@ DTEND;VALUE=DATE:20270123
 SUMMARY:Plantão das 18h às 22h: Farmácia 2 Irmãos e Farmácia Martins
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia 2 Irmãos\nFarmácia Martins: (22) 3861-2732\n\nEscala
-  completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+  completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -691,8 +693,8 @@ DTSTART;VALUE=DATE:20270123
 DTEND;VALUE=DATE:20270125
 SUMMARY:Plantão: Farma Pop e Farma Nossa
 DESCRIPTION:Farma Pop\nFarma Nossa: (22) 98117-3592\n\nEscala completa: htt
- ps://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ ps://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -708,8 +710,8 @@ DTEND;VALUE=DATE:20270130
 SUMMARY:Plantão das 18h às 22h: Farma Pop e Farma Nossa
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarma Pop\nFarma Nossa: (22) 98117-3592\n\nEscala completa: http
- s://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ s://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -719,8 +721,8 @@ DTSTART;VALUE=DATE:20270130
 DTEND;VALUE=DATE:20270201
 SUMMARY:Plantão: Drogalima e Farmácia Avenida
 DESCRIPTION:Drogalima: (22) 3861-2531\nFarmácia Avenida: (22) 3861-3040\n\
- nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -736,8 +738,8 @@ DTEND;VALUE=DATE:20270204
 SUMMARY:Plantão das 18h às 22h: Drogalima e Farmácia Avenida
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nDrogalima: (22) 3861-2531\nFarmácia Avenida: (22) 3861-3040\n\n
- Escala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ Escala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -747,9 +749,9 @@ DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270205
 SUMMARY:Plantão: Drogaria Soares e Drogaria do Povo
 DESCRIPTION:Plantão extra\n\nDrogaria Soares: (22) 3861-2990\nDrogaria do 
- Povo: (22) 98171-5564\n\nEscala completa: https://qualfarmacia.com.br/#esc
- ala
-URL:https://qualfarmacia.com.br/
+ Povo: (22) 98171-5564\n\nEscala completa: https://itaocara.qualfarmacia.co
+ m.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -765,8 +767,8 @@ DTEND;VALUE=DATE:20270206
 SUMMARY:Plantão das 18h às 22h: Drogaria Soares e Drogaria do Povo
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nDrogaria Soares: (22) 3861-2990\nDrogaria do Povo: (22) 98171-55
- 64\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 64\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -776,8 +778,8 @@ DTSTART;VALUE=DATE:20270206
 DTEND;VALUE=DATE:20270208
 SUMMARY:Plantão: Farmácia 4 Esquinas e Farmácia Ayrão
 DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nFarmácia Ayrão: (22) 38
- 61-2083\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 61-2083\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -792,8 +794,8 @@ DTSTART;VALUE=DATE:20270208
 DTEND;VALUE=DATE:20270210
 SUMMARY:Plantão: Farmácia Pop Farma e Farmácia Casa Branca
 DESCRIPTION:Carnaval\n\nFarmácia Pop Farma\nFarmácia Casa Branca: (22) 98
- 133-8982\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 133-8982\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -810,8 +812,8 @@ SUMMARY:Plantão das 18h às 22h: Farmácia Pop Farma e Farmácia Casa Bran
  ca
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia Pop Farma\nFarmácia Casa Branca: (22) 98133-8982\n\nE
- scala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ scala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -821,8 +823,8 @@ DTSTART;VALUE=DATE:20270213
 DTEND;VALUE=DATE:20270215
 SUMMARY:Plantão: Farmácia Itaocara e Drogaria Ideal
 DESCRIPTION:Farmácia Itaocara: (22) 3861-2219\nDrogaria Ideal: (22) 3861-3
- 428\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 428\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -838,8 +840,8 @@ DTEND;VALUE=DATE:20270220
 SUMMARY:Plantão das 18h às 22h: Farmácia Itaocara e Drogaria Ideal
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nFarmácia Itaocara: (22) 3861-2219\nDrogaria Ideal: (22) 3861-34
- 28\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 28\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -849,8 +851,8 @@ DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270222
 SUMMARY:Plantão: Drogaria Capil e Drogaria Descontão
 DESCRIPTION:Drogaria Capil: (22) 3861-3318\nDrogaria Descontão: (22) 3861-
- 3713\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 3713\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -866,8 +868,8 @@ DTEND;VALUE=DATE:20270227
 SUMMARY:Plantão das 18h às 22h: Drogaria Capil e Drogaria Descontão
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
  s 22h.\n\nDrogaria Capil: (22) 3861-3318\nDrogaria Descontão: (22) 3861-3
- 713\n\nEscala completa: https://qualfarmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ 713\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -876,9 +878,9 @@ DTSTAMP:20270227T000000Z
 DTSTART;VALUE=DATE:20270227
 DTEND;VALUE=DATE:20270301
 SUMMARY:Plantão: Única Farma e Farmácia Amaral
-DESCRIPTION:Única Farma\nFarmácia Amaral\n\nEscala completa: https://qual
- farmacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+DESCRIPTION:Única Farma\nFarmácia Amaral\n\nEscala completa: https://itao
+ cara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -893,9 +895,9 @@ DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270306
 SUMMARY:Plantão das 18h às 22h: Única Farma e Farmácia Amaral
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 22h.\n\nÚnica Farma\nFarmácia Amaral\n\nEscala completa: https://qualf
- armacia.com.br/#escala
-URL:https://qualfarmacia.com.br/
+ s 22h.\n\nÚnica Farma\nFarmácia Amaral\n\nEscala completa: https://itaoc
+ ara.qualfarmacia.com.br/#escala
+URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR
