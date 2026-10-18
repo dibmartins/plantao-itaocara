@@ -2,7 +2,7 @@
 
 Página que mostra quais farmácias estão de plantão hoje em Itaocara, RJ, com a escala de fins de semana e feriados.
 
-Site: https://dibmartins.github.io/plantao-itaocara/
+Site: https://itaocara.qualfarmacia.com.br/ (o endereço antigo, dibmartins.github.io/plantao-itaocara, redireciona para ele)
 
 ## Atualizar a escala
 
