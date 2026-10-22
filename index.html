@@ -516,6 +516,18 @@ function zapDe(c){
   return d.length===11 && d[2]==="9" ? d : "";
 }
 
+// Mensagem pronta no WhatsApp da farmácia, com a saudação do horário de Brasília (bom dia até 12h, boa tarde até 18h, boa noite depois).
+function saudacao(){ const m = agoraSP().minutos; return m < 12*60 ? "bom dia" : m < 18*60 ? "boa tarde" : "boa noite"; }
+function linkZap(nome, numero){
+  const texto = `Olá, ${saudacao()}! Encontrei a ${nome} pelo app ${SITE.replace(/^https:\/\/|\/$/g,"")}.\n\nVocês estão realizando entregas?`;
+  return `https://wa.me/55${numero}?text=${encodeURIComponent(texto)}`;
+}
+// A página pode ficar aberta por horas: a saudação é refeita no toque.
+document.addEventListener("click", ev => {
+  const a = ev.target.closest("a[data-zap]");
+  if(a) a.href = linkZap(a.dataset.zap, zapDe(CONTATOS[a.dataset.zap] || {}));
+});
+
 // Rota no Google Maps do lugar onde a pessoa está até a farmácia (sem origem, o Maps usa a localização do aparelho).
 function rotaAte(nome, c){
   return "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(`${nome}, ${c.end ? c.end+", " : ""}Itaocara - RJ`);
@@ -535,7 +547,7 @@ function cardPlantao(nome){
     <div class="topo-card"><h3>${esc(nome)}</h3>${aberto ? `<span class="aberto">Aberto agora</span>` : ""}</div>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
     <div class="acoes-card">
       ${c.tel ? `<a class="acao-card principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}"><span>${ICONE.tel}</span>Ligar</a>` : ""}
-      ${whats ? `<a class="acao-card estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}"><span>${ICONE.zap}</span>WhatsApp</a>` : ""}
+      ${whats ? `<a class="acao-card estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}"><span>${ICONE.zap}</span>WhatsApp</a>` : ""}
       <a class="acao-card estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}"><span>${ICONE.mapa}</span>Mapa</a>
     </div>
   </li>`;
@@ -557,7 +569,7 @@ function itemAgenda(nome){
       ${c.zap ? `<p class="body-m">WhatsApp ${esc(c.zap)}</p>` : ""}
       ${PLANTAO_HOJE?.e.f.includes(nome) ? `<span class="chip-hoje">${PLANTAO_HOJE.diaTodo ? "De plantão hoje" : `Plantão hoje, ${ABRE}h às ${FECHA}h`}</span>` : ""}</div>
     ${c.tel ? `<a class="btn-icone principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
-    ${whats ? `<a class="btn-icone estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
+    ${whats ? `<a class="btn-icone estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
     <a class="btn-icone estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
   </li>`;
 }
