@@ -383,21 +383,23 @@ const SITE = "https://itaocara.qualfarmacia.com.br/";
 // Contatos do Google Maps e de sites que as farmácias usam (zap = WhatsApp quando é outro número que o tel).
 // Quem não tem telefone cai numa busca no mapa.
 const CONTATOS = {
-  "Drogalima": {end:"R. Nilo Peçanha, 242, Centro", tel:"(22) 3861-2531"},
+  "Drogalima": {geo:[-21.671094,-42.078205], end:"R. Nilo Peçanha, 242, Centro", tel:"(22) 3861-2531"},
   "Farmácia 4 Esquinas": {end:"R. Nilo Peçanha, 522", tel:"(22) 3861-3021", zap:"(22) 99855-2728"},
   "Farmácia Avenida": {end:"R. Pastor José Henrique da Mata, 529", tel:"(22) 3861-3040", zap:"(22) 98858-0850"},
-  "Drogaria do Povo": {end:"R. Aristides Scisínio, 81, Centro", tel:"(22) 98171-5564"},
+  "Drogaria do Povo": {geo:[-21.670909,-42.077628], end:"R. Aristides Scisínio, 81, Centro", tel:"(22) 98171-5564"},
   "Farmácia Ayrão": {end:"R. Nilo Peçanha, 500, Cidade Nova", tel:"(22) 3861-2083", zap:"(22) 98112-1564"},
-  "Drogaria Ideal": {end:"Av. Roberto Silveira, 501, Centro", tel:"(22) 3861-3428"},
-  "Farma Nossa": {end:"Av. Roberto Silveira, 561, Cidade Nova", tel:"(22) 98117-3592"},
+  "Drogaria Ideal": {geo:[-21.671203,-42.075825], end:"Av. Roberto Silveira, 501, Centro", tel:"(22) 3861-3428"},
+  "Farma Nossa": {geo:[-21.671517,-42.075385], end:"Av. Roberto Silveira, 561, Cidade Nova", tel:"(22) 98117-3592"},
   "Fort Popular": {end:"R. Walter Luiz Rimes, 89, Centro", tel:"(22) 98154-1153"},
   "Farmácia Itaocara": {end:"R. Nilo Peçanha, 122, Centro", tel:"(22) 3861-2219"},
-  "Drogaria Descontão": {end:"R. Benedito Pereira de Souza, 149, Centro", tel:"(22) 3861-3713"},
+  "Drogaria Descontão": {geo:[-21.669472,-42.077389], end:"R. Benedito Pereira de Souza, 149, Centro", tel:"(22) 3861-3713", zap:"(22) 3861-3713"},
   "Farmácia Casa Branca": {end:"R. Nilo Peçanha, 549, Centro", tel:"(22) 98133-8982"},
   "Farmácia Martins": {end:"R. Nilo Peçanha, 561, Centro", tel:"(22) 3861-2732"},
-  "Drogaria Soares": {end:"Centro", tel:"(22) 3861-2990"},
+  "Drogaria Soares": {geo:[-21.667334,-42.080320], end:"Centro", tel:"(22) 3861-2990"},
   "Farmácia Jardim d'Aldeia": {end:"R. José Scizinio Bucker, 126, Jardim da Aldeia", tel:"(22) 3861-1868", zap:"(22) 98171-1903"},
-  "Drogaria Capil": {end:"R. Magno Martins", tel:"(22) 3861-3318"},
+  "Farmácia da Cooperativa Capil": {geo:[-21.665420,-42.077350], end:"R. Magno Martins", tel:"(22) 3861-3318", zap:"(22) 98170-2895"},
+  "Farma Pop": {geo:[-21.674721,-42.079887], zap:"(22) 99926-1005"},
+  "Farmácia 2 Irmãos": {zap:"(22) 98163-1547"},
   "Nova Droga Ita": {end:"R. Nilo Peçanha, 110, Centro", tel:"(22) 3861-2661"}
 };
 
@@ -413,7 +415,7 @@ const ESCALA = [
   {d:["2026-10-17","2026-10-18"], f:["Farmácia 4 Esquinas","Farmácia Avenida"]},
   {d:["2026-10-24","2026-10-25"], f:["Farmácia Pop Farma","Drogaria do Povo"]},
   {d:["2026-10-28"], f:["Farmácia Itaocara","Farmácia Ayrão"], selo:"Dia do Servidor Público"},
-  {d:["2026-10-31","2026-11-01"], f:["Drogaria Capil","Farmácia Casa Branca"]},
+  {d:["2026-10-31","2026-11-01"], f:["Farmácia da Cooperativa Capil","Farmácia Casa Branca"]},
   {d:["2026-11-02"], f:["Única Farma","Drogaria Ideal"], selo:"Finados"},
   {d:["2026-11-07","2026-11-08"], f:["Nova Droga Ita","Drogaria Descontão"]},
   {d:["2026-11-14","2026-11-15"], f:["Farmácia Jardim d'Aldeia","Farmácia Amaral"], selo:"Proclamação da República"},
@@ -424,7 +426,7 @@ const ESCALA = [
   {d:["2026-12-12","2026-12-13"], f:["Farmácia 4 Esquinas","Drogaria do Povo"]},
   {d:["2026-12-19","2026-12-20"], f:["Farmácia Pop Farma","Farmácia Ayrão"]},
   {d:["2026-12-25"], f:["Farmácia Itaocara","Farmácia Casa Branca"], selo:"Natal"},
-  {d:["2026-12-26","2026-12-27"], f:["Drogaria Capil","Drogaria Ideal"]},
+  {d:["2026-12-26","2026-12-27"], f:["Farmácia da Cooperativa Capil","Drogaria Ideal"]},
   {d:["2027-01-01"], f:["Única Farma","Drogaria Descontão"], selo:"Ano-novo"},
   {d:["2027-01-02","2027-01-03"], f:["Nova Droga Ita","Farmácia Amaral"]},
   {d:["2027-01-09","2027-01-10"], f:["Farmácia Jardim d'Aldeia","Fort Popular"]},
@@ -435,7 +437,7 @@ const ESCALA = [
   {d:["2027-02-06","2027-02-07"], f:["Farmácia 4 Esquinas","Farmácia Ayrão"]},
   {d:["2027-02-08","2027-02-09"], f:["Farmácia Pop Farma","Farmácia Casa Branca"], selo:"Carnaval"},
   {d:["2027-02-13","2027-02-14"], f:["Farmácia Itaocara","Drogaria Ideal"]},
-  {d:["2027-02-20","2027-02-21"], f:["Drogaria Capil","Drogaria Descontão"]},
+  {d:["2027-02-20","2027-02-21"], f:["Farmácia da Cooperativa Capil","Drogaria Descontão"]},
   {d:["2027-02-27","2027-02-28"], f:["Única Farma","Farmácia Amaral"]}
 ];
 

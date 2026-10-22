@@ -288,14 +288,16 @@ UID:plantao-20261031@farmacias-itaocara
 DTSTAMP:20261031T000000Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261102
-SUMMARY:Plantão: Drogaria Capil e Farmácia Casa Branca
-DESCRIPTION:Drogaria Capil: (22) 3861-3318\nFarmácia Casa Branca: (22) 981
- 33-8982\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Farmácia da Cooperativa Capil e Farmácia Casa Branca
+DESCRIPTION:Farmácia da Cooperativa Capil: (22) 3861-3318\nFarmácia Casa 
+ Branca: (22) 98133-8982\n\nEscala completa: https://itaocara.qualfarmacia.
+ com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Drogaria Capil e Farmácia Casa Branca
+DESCRIPTION:Plantão amanhã: Farmácia da Cooperativa Capil e Farmácia Ca
+ sa Branca
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -563,14 +565,16 @@ UID:plantao-20261226@farmacias-itaocara
 DTSTAMP:20261226T000000Z
 DTSTART;VALUE=DATE:20261226
 DTEND;VALUE=DATE:20261228
-SUMMARY:Plantão: Drogaria Capil e Drogaria Ideal
-DESCRIPTION:Drogaria Capil: (22) 3861-3318\nDrogaria Ideal: (22) 3861-3428\
- n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Farmácia da Cooperativa Capil e Drogaria Ideal
+DESCRIPTION:Farmácia da Cooperativa Capil: (22) 3861-3318\nDrogaria Ideal:
+  (22) 3861-3428\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#
+ escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Drogaria Capil e Drogaria Ideal
+DESCRIPTION:Plantão amanhã: Farmácia da Cooperativa Capil e Drogaria Ide
+ al
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -579,10 +583,12 @@ UID:plantao-noite-20261226@farmacias-itaocara
 DTSTAMP:20261226T000000Z
 DTSTART;VALUE=DATE:20261228
 DTEND;VALUE=DATE:20270101
-SUMMARY:Plantão das 18h às 22h: Drogaria Capil e Drogaria Ideal
+SUMMARY:Plantão das 18h às 22h: Farmácia da Cooperativa Capil e Drogaria
+  Ideal
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 22h.\n\nDrogaria Capil: (22) 3861-3318\nDrogaria Ideal: (22) 3861-3428\n
- \nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+ s 22h.\n\nFarmácia da Cooperativa Capil: (22) 3861-3318\nDrogaria Ideal: 
+ (22) 3861-3428\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#e
+ scala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -849,14 +855,16 @@ UID:plantao-20270220@farmacias-itaocara
 DTSTAMP:20270220T000000Z
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270222
-SUMMARY:Plantão: Drogaria Capil e Drogaria Descontão
-DESCRIPTION:Drogaria Capil: (22) 3861-3318\nDrogaria Descontão: (22) 3861-
- 3713\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Farmácia da Cooperativa Capil e Drogaria Descontão
+DESCRIPTION:Farmácia da Cooperativa Capil: (22) 3861-3318\nDrogaria Descon
+ tão: (22) 3861-3713\n\nEscala completa: https://itaocara.qualfarmacia.com
+ .br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Drogaria Capil e Drogaria Descontão
+DESCRIPTION:Plantão amanhã: Farmácia da Cooperativa Capil e Drogaria Des
+ contão
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -865,10 +873,12 @@ UID:plantao-noite-20270220@farmacias-itaocara
 DTSTAMP:20270220T000000Z
 DTSTART;VALUE=DATE:20270222
 DTEND;VALUE=DATE:20270227
-SUMMARY:Plantão das 18h às 22h: Drogaria Capil e Drogaria Descontão
+SUMMARY:Plantão das 18h às 22h: Farmácia da Cooperativa Capil e Drogaria
+  Descontão
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 22h.\n\nDrogaria Capil: (22) 3861-3318\nDrogaria Descontão: (22) 3861-3
- 713\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+ s 22h.\n\nFarmácia da Cooperativa Capil: (22) 3861-3318\nDrogaria Descont
+ ão: (22) 3861-3713\n\nEscala completa: https://itaocara.qualfarmacia.com.
+ br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
