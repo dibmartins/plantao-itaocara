@@ -196,6 +196,13 @@ svg{flex:none}
   background:#1B7F3B;color:#fff;font-size:.6875rem;line-height:1;font-weight:700;letter-spacing:.01em}
 .card-plantao .aberto::before{content:"";width:6px;height:6px;border-radius:50%;background:#B9F6CA}
 .card-plantao h3{font-size:clamp(1.25rem,calc(10.6vw - 18px),1.5rem);line-height:1.875rem;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+/* Distância até a farmácia (só com a localização permitida): "Mais próxima · aprox. 450 m" */
+.perto{display:inline-flex;align-items:center;gap:4px;margin-top:8px;padding:0 8px 0 6px;height:24px;border-radius:8px;
+  font-size:.8125rem;line-height:1;font-weight:600;background:var(--md-tertiary-container);color:var(--md-on-tertiary-container)}
+.perto svg{width:14px;height:14px;fill:currentColor}
+.perto[hidden]{display:none}
+.lista-prox .perto{margin:4px 0 0 6px;height:20px;font-size:.75rem;font-weight:500}
+.btn-perto{align-self:center}
 .card-plantao .end{margin-top:4px;font-size:1rem;line-height:1.375rem;color:var(--md-on-surface-variant)}
 .card-plantao .acoes-card{display:flex;margin-top:14px}
 .acao-card{flex:0 0 33.333%;display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 0;border-radius:16px;
@@ -516,6 +523,18 @@ function zapDe(c){
   return d.length===11 && d[2]==="9" ? d : "";
 }
 
+// Mensagem pronta no WhatsApp da farmácia, com a saudação do horário de Brasília (bom dia até 12h, boa tarde até 18h, boa noite depois).
+function saudacao(){ const m = agoraSP().minutos; return m < 12*60 ? "bom dia" : m < 18*60 ? "boa tarde" : "boa noite"; }
+function linkZap(nome, numero){
+  const texto = `Olá, ${saudacao()}, encontrei a ${nome} pelo app ${SITE.replace(/^https:\/\/|\/$/g,"")}.\n\nVocês estão realizando entregas?`;
+  return `https://wa.me/55${numero}?text=${encodeURIComponent(texto)}`;
+}
+// A página pode ficar aberta por horas: a saudação é refeita no toque.
+document.addEventListener("click", ev => {
+  const a = ev.target.closest("a[data-zap]");
+  if(a) a.href = linkZap(a.dataset.zap, zapDe(CONTATOS[a.dataset.zap] || {}));
+});
+
 // Rota no Google Maps do lugar onde a pessoa está até a farmácia (sem origem, o Maps usa a localização do aparelho).
 function rotaAte(nome, c){
   return "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(`${nome}, ${c.end ? c.end+", " : ""}Itaocara - RJ`);
@@ -533,9 +552,10 @@ function cardPlantao(nome){
   return `<li class="card-plantao">
     <a class="mapa-card" href="${mapa}" target="_blank" rel="noopener" aria-label="Rota até a ${esc(nome)}">${ICONE.mapa}${navigator.onLine ? `<iframe src="${embed}" loading="lazy" tabindex="-1" aria-hidden="true" title="Mapa da ${esc(nome)}" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ""}</a>
     <div class="topo-card"><h3>${esc(nome)}</h3>${aberto ? `<span class="aberto">Aberto agora</span>` : ""}</div>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
+    <span class="perto" data-perto="${esc(nome)}" hidden></span>
     <div class="acoes-card">
       ${c.tel ? `<a class="acao-card principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}"><span>${ICONE.tel}</span>Ligar</a>` : ""}
-      ${whats ? `<a class="acao-card estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}"><span>${ICONE.zap}</span>WhatsApp</a>` : ""}
+      ${whats ? `<a class="acao-card estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}"><span>${ICONE.zap}</span>WhatsApp</a>` : ""}
       <a class="acao-card estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}"><span>${ICONE.mapa}</span>Mapa</a>
     </div>
   </li>`;
@@ -555,9 +575,9 @@ function itemAgenda(nome){
       ${c.end ? `<p class="body-m">${esc(c.end)}</p>` : ""}
       ${c.tel ? `<p class="body-m">${esc(c.tel)}</p>` : `<p class="body-m">Telefone não informado</p>`}
       ${c.zap ? `<p class="body-m">WhatsApp ${esc(c.zap)}</p>` : ""}
-      ${PLANTAO_HOJE?.e.f.includes(nome) ? `<span class="chip-hoje">${PLANTAO_HOJE.diaTodo ? "De plantão hoje" : `Plantão hoje, ${ABRE}h às ${FECHA}h`}</span>` : ""}</div>
+      ${PLANTAO_HOJE?.e.f.includes(nome) ? `<span class="chip-hoje">${PLANTAO_HOJE.diaTodo ? "De plantão hoje" : `Plantão hoje, ${ABRE}h às ${FECHA}h`}</span>` : ""}<span class="perto" data-perto="${esc(nome)}" hidden></span></div>
     ${c.tel ? `<a class="btn-icone principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
-    ${whats ? `<a class="btn-icone estado-camada" href="https://wa.me/55${whats}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
+    ${whats ? `<a class="btn-icone estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
     <a class="btn-icone estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
   </li>`;
 }
@@ -571,6 +591,54 @@ function renderFarmacias(){
   document.getElementById("contagem").textContent = lista.length
     ? `${lista.length} ${lista.length===1 ? "farmácia" : "farmácias"}`
     : `Nenhuma farmácia com esse nome. Confira a grafia, por exemplo "Drogaria Ideal".`;
+  marcarDistancias();
+}
+
+// Distância em linha reta até as farmácias com coordenadas (campo geo em CONTATOS). A localização só é lida se a pessoa
+// já permitiu antes ou tocar em "Ver qual fica mais perto de você"; o app nunca pede sozinho ao abrir.
+let posicao = null;
+function metros([lat1,lng1],[lat2,lng2]){
+  const r = Math.PI/180, a = Math.sin((lat2-lat1)*r/2)**2 + Math.cos(lat1*r)*Math.cos(lat2*r)*Math.sin((lng2-lng1)*r/2)**2;
+  return 12742000*Math.asin(Math.sqrt(a));
+}
+// Abaixo de 1 km em metros (de 10 em 10), acima em km com uma casa: "aprox. 450 m", "aprox. 1,5 km", "aprox. 2 km".
+function textoDistancia(m){
+  if(m < 995) return `aprox. ${Math.max(10, Math.round(m/10)*10)} m`;
+  return `aprox. ${(Math.round(m/100)/10).toLocaleString("pt-BR")} km`;
+}
+const distanciaAte = nome => posicao && CONTATOS[nome]?.geo ? metros(posicao, CONTATOS[nome].geo) : null;
+// Na home, "Mais próxima" vai na dupla de plantão (só quando as duas têm coordenadas); na agenda, cada farmácia mostra a distância.
+function marcarDistancias(){
+  const dupla = SIT?.e.f || [];
+  const dists = dupla.map(distanciaAte);
+  const maisPerto = dists.length > 1 && dists.every(d => d !== null && d < 30000) ? dupla[dists.indexOf(Math.min(...dists))] : null;
+  for(const el of document.querySelectorAll("[data-perto]")){
+    const nome = el.dataset.perto, d = distanciaAte(nome);
+    const naHome = !!el.closest(".card-plantao");
+    const mostrar = d !== null && d < 30000 && (!naHome || nome === maisPerto);
+    el.hidden = !mostrar;
+    if(mostrar) el.innerHTML = `${ICONE.mapa}${naHome ? "Mais próxima · " : ""}${textoDistancia(d)}`;
+  }
+}
+function lerPosicao(){
+  return new Promise((ok, erro) => navigator.geolocation.getCurrentPosition(
+    p => { posicao = [p.coords.latitude, p.coords.longitude]; marcarDistancias(); ok(); }, erro,
+    {enableHighAccuracy:false, maximumAge:300000, timeout:15000}));
+}
+async function ligarDistancias(){
+  const btn = document.getElementById("ver-perto");
+  const temCoordenadas = (SIT?.e.f || []).filter(n => CONTATOS[n]?.geo).length > 1;
+  if(!("geolocation" in navigator) || !Object.values(CONTATOS).some(c => c.geo)) return;
+  let estado = "prompt";
+  try { estado = (await navigator.permissions.query({name:"geolocation"})).state; } catch {}
+  if(estado === "granted"){ lerPosicao().catch(() => {}); return; }
+  if(estado === "denied" || !btn || !temCoordenadas) return;
+  btn.hidden = false;
+  btn.addEventListener("click", () => {
+    btn.disabled = true;
+    lerPosicao().then(() => { btn.hidden = true; })
+      .catch(() => { btn.disabled = false; btn.hidden = true; });
+  });
 }
 
 // "amanhã" / "sexta, 23 de outubro"
@@ -615,7 +683,8 @@ function renderAgora(){
       <p class="body-m">${esc(sub)}</p>
     </div></div>` : "";
   el.innerHTML = `${faixa}
-    <ul class="cards-plantao">${e.f.map(cardPlantao).join("")}</ul>`;
+    <ul class="cards-plantao">${e.f.map(cardPlantao).join("")}</ul>
+    <button class="btn tonal com-icone btn-perto" id="ver-perto" type="button" hidden>${ICONE.mapa}Ver qual fica mais perto de você</button>`;
   return e;
 }
 
@@ -679,6 +748,7 @@ renderStatus();
 const destaque = renderAgora();
 renderEscala(destaque);
 renderFarmacias();
+ligarDistancias();
 // Campo de busca com botão de limpar, usado na escala e na agenda.
 function ligarBusca(idCampo, idLimpar, render){
   const campo = document.getElementById(idCampo), limpar = document.getElementById(idLimpar);
