@@ -516,10 +516,10 @@ function zapDe(c){
   return d.length===11 && d[2]==="9" ? d : "";
 }
 
-// Mensagem pronta no WhatsApp da farmácia, com a saudação do horário de Brasília (bom dia até 12h, boa tarde até 18h, boa noite depois).
+// Mensagem pronta no WhatsApp da farmácia (nome em negrito com *…*), com a saudação do horário de Brasília (bom dia até 12h, boa tarde até 18h, boa noite depois).
 function saudacao(){ const m = agoraSP().minutos; return m < 12*60 ? "bom dia" : m < 18*60 ? "boa tarde" : "boa noite"; }
 function linkZap(nome, numero){
-  const texto = `Olá, ${saudacao()}! Tudo bem?\n\nEncontrei a ${nome} pelo app ${SITE.replace(/^https:\/\/|\/$/g,"")}\n\nVocês estão realizando entregas?`;
+  const texto = `Olá, ${saudacao()}! Tudo bem?\n\nEncontrei a *${nome}* pelo app ${SITE.replace(/^https:\/\/|\/$/g,"")} 🤳\n\nVocês estão realizando entregas? 🏍️📦`;
   return `https://wa.me/55${numero}?text=${encodeURIComponent(texto)}`;
 }
 // A página pode ficar aberta por horas: a saudação é refeita no toque.
