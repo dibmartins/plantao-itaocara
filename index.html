@@ -307,7 +307,7 @@ svg{flex:none}
     <a class="estado-camada" href="#escala" data-vista="escala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg><span class="label-l">Escala de Plantão</span></a>
     <a class="estado-camada" href="#farmacias" data-vista="farmacias"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM10 4h4v2h-4V4zm6 11h-3v3h-2v-3H8v-2h3v-3h2v3h3v2z"/></svg><span class="label-l">Farmácias</span></a>
     <hr>
-    <a class="estado-camada" href="https://forms.gle/PBM95zkxEXc9qqyX6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg><span class="label-l">Sugerir melhoria</span></a>
+    <a class="estado-camada" data-evento="sugerir_melhoria" href="https://forms.gle/PBM95zkxEXc9qqyX6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg><span class="label-l">Sugerir melhoria</span></a>
     <button class="estado-camada" id="abrir-cookies" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg><span class="label-l">Privacidade e cookies</span></button>
   </nav>
 </dialog>
@@ -333,7 +333,7 @@ svg{flex:none}
   <h2 id="titulo-agenda" class="headline-s">Aviso na agenda</h2>
   <p class="body-m apoio-dialogo">Todos os plantões entram na agenda do celular, com um lembrete na véspera às 17h. Quando a escala mudar, a agenda se atualiza sozinha.</p>
   <ol class="body-m" id="passos-agenda"></ol>
-  <form method="dialog" class="acoes-dialogo"><button class="btn texto estado-camada">Agora não</button><a class="btn preenchido com-icone estado-camada" id="assinar-agenda" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Adicionar à agenda</a></form>
+  <form method="dialog" class="acoes-dialogo"><button class="btn texto estado-camada">Agora não</button><a class="btn preenchido com-icone estado-camada" id="assinar-agenda" data-evento="adicionar_agenda" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Adicionar à agenda</a></form>
 </dialog>
 <div class="status label-l" id="status" role="status"><div class="status-palco" aria-hidden="true"><span class="status-data" id="status-data"></span><span class="status-msg" id="status-msg"></span></div></div>
 
@@ -341,10 +341,10 @@ svg{flex:none}
   <main class="vista" id="vista-inicio">
     <div class="agora" id="agora" aria-live="polite"></div>
     <div class="atalhos" id="atalhos">
-      <a class="atalho estado-camada" id="compartilhar" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .5l-.3.5-.4.5c-.2.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Compartilhar no WhatsApp</a>
+      <a class="atalho estado-camada" id="compartilhar" data-evento="compartilhar_whatsapp" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .5l-.3.5-.4.5c-.2.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Compartilhar no WhatsApp</a>
       <a class="atalho estado-camada" href="#escala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Ver escala de plantão</a>
       <button class="atalho estado-camada" id="agenda-aviso" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.1-1.6-5.6-4.5-6.3V4a1.5 1.5 0 0 0-3 0v.7C7.6 5.4 6 7.9 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>Adicione a escala no seu calendário</button>
-      <button class="atalho estado-camada" id="instalar" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zm14-9h-4V3H9v8H5l7 7 7-7z"/></svg>Instale o aplicativo</button>
+      <button class="atalho estado-camada" id="instalar" data-evento="instalar_app" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zm14-9h-4V3H9v8H5l7 7 7-7z"/></svg>Instale o aplicativo</button>
     </div>
   </main>
 
@@ -554,14 +554,14 @@ function cardPlantao(nome){
   const whats = zapDe(c);
   const sub = c.end || c.tel || "";
   const embed = "https://maps.google.com/maps?output=embed&t=k&z=17&q="+encodeURIComponent(lugar(nome, c));
-  return `<li class="card-plantao">
-    <a class="mapa-card" href="${mapa}" target="_blank" rel="noopener" aria-label="Rota até a ${esc(nome)}">${ICONE.mapa}${navigator.onLine ? `<iframe src="${embed}" loading="lazy" tabindex="-1" aria-hidden="true" title="Mapa da ${esc(nome)}" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ""}</a>
+  return `<li class="card-plantao" data-farmacia="${esc(nome)}" data-local="plantao_hoje">
+    <a class="mapa-card" data-evento="clique_mapa" data-botao="mapa_card" href="${mapa}" target="_blank" rel="noopener" aria-label="Rota até a ${esc(nome)}">${ICONE.mapa}${navigator.onLine ? `<iframe src="${embed}" loading="lazy" tabindex="-1" aria-hidden="true" title="Mapa da ${esc(nome)}" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ""}</a>
     <div class="topo-card"><h3>${esc(nome)}</h3>${aberto ? `<span class="aberto">Aberto agora</span>` : ""}</div>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
     <span class="perto" data-perto="${esc(nome)}" hidden></span>
     <div class="acoes-card">
-      ${c.tel ? `<a class="acao-card principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}"><span>${ICONE.tel}</span>Ligar</a>` : ""}
-      ${whats ? `<a class="acao-card estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}"><span>${ICONE.zap}</span>WhatsApp</a>` : ""}
-      <a class="acao-card estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}"><span>${ICONE.mapa}</span>Mapa</a>
+      ${c.tel ? `<a class="acao-card principal estado-camada" data-evento="clique_ligar" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}"><span>${ICONE.tel}</span>Ligar</a>` : ""}
+      ${whats ? `<a class="acao-card estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" data-evento="clique_whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}"><span>${ICONE.zap}</span>WhatsApp</a>` : ""}
+      <a class="acao-card estado-camada" data-evento="clique_mapa" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}"><span>${ICONE.mapa}</span>Mapa</a>
     </div>
   </li>`;
 }
@@ -575,15 +575,15 @@ function itemAgenda(nome){
   const digitos = c.tel ? c.tel.replace(/\D/g,"") : "";
   const mapa = rotaAte(nome, c);
   const whats = zapDe(c);
-  return `<li>
+  return `<li data-farmacia="${esc(nome)}" data-local="agenda">
     <div><p class="title-m">${esc(nome)}</p>
       ${c.end ? `<p class="body-m">${esc(c.end)}</p>` : ""}
       ${c.tel ? `<p class="body-m">${esc(c.tel)}</p>` : `<p class="body-m">Telefone não informado</p>`}
       ${c.zap ? `<p class="body-m">WhatsApp ${esc(c.zap)}</p>` : ""}
       ${PLANTAO_HOJE?.e.f.includes(nome) ? `<span class="chip-hoje">${PLANTAO_HOJE.diaTodo ? "De plantão hoje" : `Plantão hoje, ${ABRE}h às ${FECHA}h`}</span>` : ""}<span class="perto" data-perto="${esc(nome)}" hidden></span></div>
-    ${c.tel ? `<a class="btn-icone principal estado-camada" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
-    ${whats ? `<a class="btn-icone estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
-    <a class="btn-icone estado-camada" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
+    ${c.tel ? `<a class="btn-icone principal estado-camada" data-evento="clique_ligar" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
+    ${whats ? `<a class="btn-icone estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" data-evento="clique_whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
+    <a class="btn-icone estado-camada" data-evento="clique_mapa" href="${mapa}" target="_blank" rel="noopener" aria-label="Como chegar à ${esc(nome)}">${ICONE.mapa}</a>
   </li>`;
 }
 
@@ -888,6 +888,17 @@ function desligarAnalytics(){
   }
 }
 addEventListener("hashchange", contarTela);
+// Toques nos botões marcados com data-evento (ligar, WhatsApp, mapa, compartilhar...), com a farmácia e a tela de onde vieram.
+// Para ver a farmácia nos relatórios, cadastre "farmacia" e "local" como dimensões personalizadas (escopo de evento) no Analytics.
+document.addEventListener("click", ev => {
+  const el = ev.target.closest("[data-evento]");
+  if(!el || !gaLigado) return;
+  const item = el.closest("[data-farmacia]");
+  const p = {transport_type: "beacon"};
+  if(item) Object.assign(p, {farmacia: item.dataset.farmacia, local: item.dataset.local});
+  if(el.dataset.botao) p.botao = el.dataset.botao;
+  gtag("event", el.dataset.evento, p);
+});
 document.getElementById("aceitar-cookies").addEventListener("click", () => {
   salvarConsentimento("aceito"); avisoCookies.hidden = true; delete window["ga-disable-" + GA_ID]; ligarAnalytics();
 });
