@@ -119,11 +119,23 @@ svg{flex:none}
 .atalho svg{width:24px;height:24px;fill:currentColor}
 .atalho.largo{grid-column:1 / -1;min-height:0;flex-direction:row;align-items:center}
 .contagem{color:var(--md-on-surface-variant);padding:0 4px}
-/* Faixa da home que leva aos telefones de emergência, no tom de erro do M3 para se destacar dos atalhos verdes. */
-.atalho-emergencia{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;text-decoration:none;
-  background:var(--md-error-container);color:var(--md-on-error-container);font:500 .875rem/1.25rem var(--md-font);letter-spacing:.00625rem}
-.atalho-emergencia svg{width:24px;height:24px;fill:currentColor;flex:none}
-.atalho-emergencia span{flex:1}
+/* Seção de emergência na home: fileira de botões redondos no estilo dos cards de plantão, no tom de erro do M3. */
+.emergencia-home{background:var(--md-surface-container-low);border-radius:20px;padding:16px}
+.emergencia-home h2{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-weight:600}
+.emergencia-home h2 svg{width:20px;height:20px;fill:var(--md-error)}
+.emergencia-home .acoes-card{display:flex}
+.emergencia-home .acao-card{flex:1 1 25%;text-align:center}
+.emergencia-home .acao-card span{background:var(--md-error-container);color:var(--md-on-error-container)}
+.emergencia-home small{display:block;font-weight:400;color:var(--md-on-surface-variant);white-space:nowrap}
+.emergencia-home .acao-card{min-width:0}
+/* Em telas estreitas (320px), círculos e textos menores para os quatro caberem numa linha. */
+@media (max-width:360px){
+  .emergencia-home{padding:16px 8px}
+  .emergencia-home h2{padding-left:8px}
+  .emergencia-home .acao-card{font-size:.75rem}
+  .emergencia-home .acao-card span{width:52px;height:52px}
+  .emergencia-home small{font-size:.6875rem}
+}
 .lista-prox .numero{font-size:1.375rem;line-height:1.75rem;font-weight:700;color:var(--md-on-surface);letter-spacing:.01em}
 .btn-icone.urgente{background:var(--md-error-container);color:var(--md-on-error-container)}
 .lista-prox .chip-hoje{display:inline-block;margin-top:4px;padding:0 8px;border-radius:8px;font-size:.75rem;line-height:1.25rem;font-weight:500;
@@ -373,7 +385,10 @@ svg{flex:none}
       <button class="atalho estado-camada" id="agenda-aviso" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.1-1.6-5.6-4.5-6.3V4a1.5 1.5 0 0 0-3 0v.7C7.6 5.4 6 7.9 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>Adicione a escala no seu calendário</button>
       <button class="atalho estado-camada" id="instalar" data-evento="instalar_app" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zm14-9h-4V3H9v8H5l7 7 7-7z"/></svg>Instale o aplicativo</button>
     </div>
-    <a class="atalho-emergencia estado-camada" href="#emergencia" data-evento="clique_emergencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.8 9.2-2-3.4L14 8.5V3h-4v5.5L5.2 5.8l-2 3.4L8 12l-4.8 2.8 2 3.4 4.8-2.7V21h4v-5.5l4.8 2.7 2-3.4L16 12z"/></svg><span>Telefones de emergência</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6 8.6 7.4 13.2 12l-4.6 4.6L10 18l6-6z"/></svg></a>
+    <section class="emergencia-home" aria-labelledby="titulo-emergencia-home">
+      <h2 id="titulo-emergencia-home" class="title-m"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.8 9.2-2-3.4L14 8.5V3h-4v5.5L5.2 5.8l-2 3.4L8 12l-4.8 2.8 2 3.4 4.8-2.7V21h4v-5.5l4.8 2.7 2-3.4L16 12z"/></svg>Emergência</h2>
+      <div class="acoes-card" id="emergencia-home"></div>
+    </section>
   </main>
 
   <section class="vista escala" id="vista-escala" aria-labelledby="titulo-escala" hidden>
@@ -548,6 +563,9 @@ const ICONE = {
   mapa:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>',
   lua:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 2a10 10 0 1 0 9.7 12.4A7.5 7.5 0 0 1 12.3 2z"/></svg>',
   evento:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>',
+  emergencia:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.8 9.2-2-3.4L14 8.5V3h-4v5.5L5.2 5.8l-2 3.4L8 12l-4.8 2.8 2 3.4 4.8-2.7V21h4v-5.5l4.8 2.7 2-3.4L16 12z"/></svg>',
+  fogo:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5.7s.7 2.6.7 4.8c0 2-1.3 3.7-3.4 3.7S7.3 7.5 7.3 5.5v-.3C5.3 7.6 4 10.7 4 14a8 8 0 0 0 16 0C20 8.6 17.4 3.8 13.5.7zM11.7 19c-1.8 0-3.2-1.4-3.2-3.1 0-1.6 1-2.8 2.8-3.1 1.8-.4 3.6-1.2 4.6-2.6.4 1.3.6 2.6.6 4 0 2.6-2.1 4.8-4.8 4.8z"/></svg>',
+  hospital:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>',
   zap:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .5l-.3.5-.4.5c-.2.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>'
 };
 
@@ -622,14 +640,18 @@ function itemAgenda(nome){
 
 // Telefones de emergência. Itaocara não tem UPA: urgência é no Hospital Municipal.
 const EMERGENCIA = [
-  {nome:"SAMU", desc:"Ambulância, urgência médica", tel:"192"},
-  {nome:"Bombeiros", desc:"Incêndio, resgate e acidentes", tel:"193"},
-  {nome:"Hospital Municipal de Itaocara", desc:"Pronto-socorro 24h · Rua Toledo Piza, 151, Centro", tel:"(22) 3861-2050"},
-  {nome:"Casa de Saúde João XXIII", desc:"Rua Nilo Peçanha, 564, Centro", tel:"(22) 3861-2065"}
+  {nome:"SAMU", curto:"SAMU", icone:"emergencia", desc:"Ambulância, urgência médica", tel:"192"},
+  {nome:"Bombeiros", curto:"Bombeiros", icone:"fogo", desc:"Incêndio, resgate e acidentes", tel:"193"},
+  {nome:"Hospital Municipal de Itaocara", curto:"Hospital", icone:"hospital", desc:"Pronto-socorro 24h · Rua Toledo Piza, 151, Centro", tel:"(22) 3861-2050"},
+  {nome:"Casa de Saúde João XXIII", curto:"João XXIII", icone:"hospital", desc:"Rua Nilo Peçanha, 564, Centro", tel:"(22) 3861-2065"}
 ];
+const linkTel = e => { const d = e.tel.replace(/\D/g,""); return d.length > 4 ? "tel:+55" + d : "tel:" + d; };
+// Na home, botões redondos com o número sem DDD embaixo; a tela #emergencia traz a lista completa.
+document.getElementById("emergencia-home").innerHTML = EMERGENCIA.map(e =>
+  `<a class="acao-card estado-camada" data-evento="clique_ligar" data-farmacia="${esc(e.nome)}" data-local="emergencia_home" href="${linkTel(e)}" aria-label="Ligar para ${esc(e.nome)}, ${esc(e.tel)}"><span>${ICONE[e.icone]}</span>${esc(e.curto)}<small>${esc(e.tel.replace(/^\(\d+\) /,""))}</small></a>`
+).join("");
 document.getElementById("emergencia").innerHTML = EMERGENCIA.map(e => {
-  const digitos = e.tel.replace(/\D/g,"");
-  const href = digitos.length > 4 ? "tel:+55" + digitos : "tel:" + digitos;
+  const href = linkTel(e);
   return `<li data-farmacia="${esc(e.nome)}" data-local="emergencia">
     <div><p class="title-m">${esc(e.nome)}</p><p class="numero">${esc(e.tel)}</p><p class="body-m">${esc(e.desc)}</p></div>
     <a class="btn-icone urgente estado-camada" data-evento="clique_ligar" href="${href}" aria-label="Ligar para ${esc(e.nome)}, ${esc(e.tel)}">${ICONE.tel}</a>
