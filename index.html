@@ -554,7 +554,7 @@ function cardPlantao(nome){
   const mapa = rotaAte(nome, c);
   const whats = zapDe(c);
   const sub = c.end || c.tel || "";
-  const embed = "https://maps.google.com/maps?output=embed&z=17&q="+encodeURIComponent(lugar(nome, c));
+  const embed = "https://maps.google.com/maps?output=embed&t=k&z=17&q="+encodeURIComponent(lugar(nome, c));
   return `<li class="card-plantao">
     <a class="mapa-card" href="${mapa}" target="_blank" rel="noopener" aria-label="Rota até a ${esc(nome)}">${ICONE.mapa}${navigator.onLine ? `<iframe src="${embed}" loading="lazy" tabindex="-1" aria-hidden="true" title="Mapa da ${esc(nome)}" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ""}</a>
     <div class="topo-card"><h3>${esc(nome)}</h3>${aberto ? `<span class="aberto">Aberto agora</span>` : ""}</div>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
