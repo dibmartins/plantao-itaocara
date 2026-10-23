@@ -173,6 +173,10 @@ svg{flex:none}
 .cookies p{flex:1 1 180px;color:var(--md-on-surface-variant)}
 .cookies .acoes{display:flex;gap:4px;margin-left:auto}
 @media (prefers-reduced-motion:no-preference){.cookies > div{animation:entrar .3s var(--md-ease) both}}
+/* Convite para instalar: mesmo cartão do rodapé, com texto e botões maiores para quem enxerga pouco. */
+.convite > div{padding:12px 12px 12px 20px}
+.convite p{color:var(--md-on-surface)}
+.convite .btn{height:48px;border-radius:24px;font-size:1rem}
 
 .pagina{max-width:640px;margin:0 auto;
   padding:8px max(16px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
@@ -446,6 +450,13 @@ svg{flex:none}
   <div>
     <p class="body-m">Usamos cookies para melhorar sua experiência.</p>
     <div class="acoes"><button class="btn texto estado-camada" id="recusar-cookies" type="button">Recusar</button><button class="btn tonal estado-camada" id="aceitar-cookies" type="button">Ok</button></div>
+  </div>
+</div>
+
+<div class="cookies convite" id="convite" role="region" aria-label="Instalar o aplicativo" hidden>
+  <div>
+    <p class="body-l">Deixe o plantão na tela do seu celular.</p>
+    <div class="acoes"><button class="btn texto estado-camada" id="convite-depois" type="button">Agora não</button><button class="btn preenchido estado-camada" id="convite-instalar" type="button">Instalar</button></div>
   </div>
 </div>
 
@@ -922,16 +933,66 @@ if(!instalado){
   if(ehIOS || ehSamsung) btnInstalar.hidden = false;
   addEventListener("beforeinstallprompt", ev => { ev.preventDefault(); pedidoInstalacao = ev; btnInstalar.hidden = false; });
 }
-btnInstalar.addEventListener("click", async () => {
+async function instalar(origem){
   if(pedidoInstalacao){
     pedidoInstalacao.prompt();
     const {outcome} = await pedidoInstalacao.userChoice;
+    evento("instalar_resultado", {resultado: outcome === "accepted" ? "aceitou" : "cancelou", origem});
     if(outcome === "accepted") btnInstalar.hidden = true;
     pedidoInstalacao = null;
   } else if(ehIOS) document.getElementById("dialogo-ios").showModal();
   else if(ehSamsung) document.getElementById("dialogo-samsung").showModal();
+}
+btnInstalar.addEventListener("click", () => instalar("atalho"));
+addEventListener("appinstalled", () => { btnInstalar.hidden = true; fecharConvite(); evento("app_instalado"); });
+
+// Convite para instalar: aparece quando a pessoa volta ao app depois de Ligar, WhatsApp ou Mapa, ou na 2ª visita.
+// No máximo 2 vezes por aparelho, com 7 dias entre elas, e só onde dá para instalar.
+// Se o aviso de cookies ainda estiver aberto, ele sai da frente e volta quando o convite fecha.
+const convite = document.getElementById("convite");
+const SEMANA = 7 * 24 * 60 * 60 * 1000;
+let gatilhoConvite = "", cookiesEsperando = false;
+function lerConvite(){ try { return JSON.parse(localStorage.getItem("convite")) || {vezes:0, ultimo:0}; } catch { return {vezes:0, ultimo:0}; } }
+function mostrarConvite(gatilho){
+  const c = lerConvite();
+  if(gatilhoConvite || btnInstalar.hidden || c.vezes >= 2 || Date.now() - c.ultimo < SEMANA) return;
+  gatilhoConvite = gatilho;
+  try { localStorage.setItem("convite", JSON.stringify({vezes: c.vezes + 1, ultimo: Date.now()})); } catch {}
+  cookiesEsperando = !avisoCookies.hidden;
+  avisoCookies.hidden = true;
+  convite.hidden = false;
+  evento("convite_exibido", {gatilho});
+}
+function fecharConvite(){ convite.hidden = true; if(cookiesEsperando) avisoCookies.hidden = false; cookiesEsperando = false; }
+document.getElementById("convite-instalar").addEventListener("click", () => {
+  fecharConvite(); evento("convite_instalar", {gatilho: gatilhoConvite}); instalar("convite");
 });
-addEventListener("appinstalled", () => { btnInstalar.hidden = true; });
+document.getElementById("convite-depois").addEventListener("click", () => {
+  fecharConvite(); evento("convite_dispensado", {gatilho: gatilhoConvite});
+});
+// Depois de um toque em Ligar, WhatsApp ou Mapa, espera a pessoa voltar para o app (o celular abre outro aplicativo).
+// Onde nada abre por cima, como no computador, mostra depois de alguns segundos.
+let esperaConvite = 0;
+document.addEventListener("click", ev => {
+  if(instalado || !ev.target.closest('[data-evento="clique_ligar"],[data-evento="clique_whatsapp"],[data-evento="clique_mapa"]')) return;
+  clearTimeout(esperaConvite);
+  esperaConvite = setTimeout(() => mostrarConvite("pos_acao"), 4000);
+});
+document.addEventListener("visibilitychange", () => {
+  if(!esperaConvite) return;
+  clearTimeout(esperaConvite);
+  if(document.visibilityState === "visible") { esperaConvite = 0; setTimeout(() => mostrarConvite("pos_acao"), 600); }
+  else esperaConvite = -1;
+});
+// Conta uma visita por sessão do navegador; da 2ª em diante, o convite pode aparecer sozinho.
+if(!instalado){
+  let visitas = 0;
+  try {
+    visitas = Number(localStorage.getItem("visitas")) || 0;
+    if(!sessionStorage.getItem("visita")){ sessionStorage.setItem("visita", "1"); localStorage.setItem("visitas", ++visitas); }
+  } catch {}
+  if(visitas >= 2) setTimeout(() => mostrarConvite("segunda_visita"), 3000);
+}
 
 // Aviso na agenda: o celular assina o plantao.ics (gerado por ferramentas/gerar-agenda.mjs) e avisa na véspera de cada plantão.
 // O Google Agenda ignora lembretes de agendas assinadas por link; no Android o caminho é a agenda pública do Google
@@ -994,6 +1055,7 @@ function contarTela(){
   if(!gaLigado) return;
   const v = {"#escala":"escala","#farmacias":"farmacias","#emergencia":"emergencia"}[location.hash] || "inicio";
   gtag("event", "page_view", {
+    modo: instalado ? "app" : "navegador",
     page_title: TITULOS[v],
     page_location: location.origin + location.pathname + (v === "inicio" ? "" : "#" + v)
   });
@@ -1022,6 +1084,8 @@ function desligarAnalytics(){
   }
 }
 addEventListener("hashchange", contarTela);
+// Eventos disparados pelo código (convite e instalação), com as mesmas regras de consentimento dos toques.
+function evento(nome, p = {}){ if(gaLigado) gtag("event", nome, {transport_type: "beacon", ...p}); }
 // Toques nos botões marcados com data-evento (ligar, WhatsApp, mapa, compartilhar...), com a farmácia e a tela de onde vieram.
 // Para ver a farmácia nos relatórios, cadastre "farmacia" e "local" como dimensões personalizadas (escopo de evento) no Analytics.
 document.addEventListener("click", ev => {
