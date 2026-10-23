@@ -98,6 +98,15 @@ svg{flex:none}
 .gaveta a[aria-current="page"]{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
 .gaveta a[aria-current="page"] .label-l{font-weight:700}
 
+/* Formulário de sugestões em tela cheia, dentro do app, com o topo verde e o botão de voltar */
+.tela-cheia{margin:0;padding:0;border:0;width:100%;height:100%;max-width:none;max-height:none;
+  background:var(--md-surface);color:var(--md-on-surface)}
+.tela-cheia[open]{display:flex;flex-direction:column;animation:tela-entra .3s var(--md-ease)}
+@keyframes tela-entra{from{transform:translateY(24px);opacity:0}}
+.tela-cheia .app-bar{position:static;flex:none}
+.tela-cheia iframe{flex:1;width:100%;border:0;background:var(--md-surface-container-lowest)}
+.tela-cheia .sem-rede{flex:1;display:grid;place-content:center;gap:16px;padding:24px;text-align:center;color:var(--md-on-surface-variant)}
+
 /* Cada tela (início, escala, farmácias) é uma vista; só uma aparece por vez */
 .vista{display:flex;flex-direction:column;gap:16px}
 .vista > h2{margin-top:8px}
@@ -307,9 +316,19 @@ svg{flex:none}
     <a class="estado-camada" href="#escala" data-vista="escala" data-evento="clique_menu" data-botao="escala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg><span class="label-l">Escala de Plantão</span></a>
     <a class="estado-camada" href="#farmacias" data-vista="farmacias" data-evento="clique_menu" data-botao="farmacias"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM10 4h4v2h-4V4zm6 11h-3v3h-2v-3H8v-2h3v-3h2v3h3v2z"/></svg><span class="label-l">Farmácias</span></a>
     <hr>
-    <a class="estado-camada" data-evento="clique_menu" data-botao="sugerir_melhoria" href="https://forms.gle/PBM95zkxEXc9qqyX6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg><span class="label-l">Sugerir melhoria</span></a>
+    <a class="estado-camada" id="abrir-sugestao" data-evento="clique_menu" data-botao="sugerir_melhoria" href="https://forms.gle/PBM95zkxEXc9qqyX6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg><span class="label-l">Sugerir melhoria</span></a>
     <button class="estado-camada" id="abrir-cookies" data-evento="clique_menu" data-botao="privacidade" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg><span class="label-l">Privacidade e cookies</span></button>
   </nav>
+</dialog>
+<dialog class="tela-cheia" id="tela-sugestao" aria-labelledby="titulo-sugestao">
+  <div class="app-bar">
+    <div class="app-bar-conteudo">
+      <button class="menu estado-camada" id="fechar-sugestao" type="button" aria-label="Voltar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20v-2z"/></svg></button>
+      <h2 class="title-l" id="titulo-sugestao">Sugerir melhoria</h2>
+    </div>
+  </div>
+  <iframe id="quadro-sugestao" title="Formulário de sugestões"></iframe>
+  <div class="sem-rede body-l" id="sugestao-sem-rede" hidden><p>Sem internet agora. Tente de novo quando estiver conectado.</p></div>
 </dialog>
 <dialog class="dialogo" id="dialogo-ios" aria-labelledby="titulo-ios">
   <h2 id="titulo-ios" class="headline-s">Instalar no iPhone</h2>
@@ -769,6 +788,28 @@ gaveta.addEventListener("click", ev => {
   const r = gaveta.getBoundingClientRect();
   if(ev.target.closest("a") || ev.clientX > r.right) gaveta.close();
 });
+
+// "Sugerir melhoria" abre o Formulário do Google dentro do app, em tela cheia.
+// O botão voltar do celular fecha a tela em vez de sair do app. Sem JavaScript, o link abre o formulário fora.
+const FORM_SUGESTAO = "https://docs.google.com/forms/d/e/1FAIpQLScjbdfhIVBmxoHZkAElIlavvQ0eCyRDegZRek2yH8ggkzjF1g/viewform?embedded=true";
+const telaSugestao = document.getElementById("tela-sugestao");
+const quadroSugestao = document.getElementById("quadro-sugestao");
+document.getElementById("abrir-sugestao").addEventListener("click", ev => {
+  ev.preventDefault();
+  const online = navigator.onLine;
+  quadroSugestao.hidden = !online;
+  document.getElementById("sugestao-sem-rede").hidden = online;
+  // Recarrega a cada abertura, para começar um formulário em branco depois de um envio.
+  if(online) quadroSugestao.src = FORM_SUGESTAO;
+  telaSugestao.showModal();
+  history.pushState({sugestao:true}, "");
+});
+document.getElementById("fechar-sugestao").addEventListener("click", () => telaSugestao.close());
+telaSugestao.addEventListener("close", () => {
+  quadroSugestao.removeAttribute("src");
+  if(history.state && history.state.sugestao) history.back();
+});
+addEventListener("popstate", () => { if(telaSugestao.open) telaSugestao.close(); });
 
 // A barra superior muda de tom quando a página rola, como no Material 3.
 const barra = document.getElementById("app-bar");
