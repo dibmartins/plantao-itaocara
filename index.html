@@ -532,9 +532,11 @@ document.addEventListener("click", ev => {
   if(a) a.href = linkZap(a.dataset.zap, zapDe(CONTATOS[a.dataset.zap] || {}));
 });
 
+// Onde a farmácia fica para o Google Maps: as coordenadas, quando cadastradas; senão, a busca por nome e endereço.
+const lugar = (nome, c) => c.geo ? c.geo.join(",") : `${nome}, ${c.end ? c.end+", " : ""}Itaocara - RJ`;
 // Rota no Google Maps do lugar onde a pessoa está até a farmácia (sem origem, o Maps usa a localização do aparelho).
 function rotaAte(nome, c){
-  return "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(`${nome}, ${c.end ? c.end+", " : ""}Itaocara - RJ`);
+  return "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(lugar(nome, c));
 }
 
 // Card de farmácia de plantão na home: nome, endereço (ou telefone, se não houver endereço) e botões grandes com rótulo.
@@ -545,7 +547,7 @@ function cardPlantao(nome){
   const mapa = rotaAte(nome, c);
   const whats = zapDe(c);
   const sub = c.end || c.tel || "";
-  const embed = "https://maps.google.com/maps?output=embed&z=17&q="+encodeURIComponent(`${nome}, ${c.end ? c.end+", " : ""}Itaocara - RJ`);
+  const embed = "https://maps.google.com/maps?output=embed&z=17&q="+encodeURIComponent(lugar(nome, c));
   return `<li class="card-plantao">
     <a class="mapa-card" href="${mapa}" target="_blank" rel="noopener" aria-label="Rota até a ${esc(nome)}">${ICONE.mapa}${navigator.onLine ? `<iframe src="${embed}" loading="lazy" tabindex="-1" aria-hidden="true" title="Mapa da ${esc(nome)}" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ""}</a>
     <div class="topo-card"><h3>${esc(nome)}</h3>${aberto ? `<span class="aberto">Aberto agora</span>` : ""}</div>${sub ? `<p class="end">${esc(sub)}</p>` : ""}
