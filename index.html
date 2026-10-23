@@ -124,10 +124,10 @@ svg{flex:none}
 .emergencia-home h2{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-weight:600}
 .emergencia-home h2 svg{width:20px;height:20px;fill:var(--md-error)}
 .emergencia-home .acoes-card{display:flex}
-.emergencia-home .acao-card{flex:1 1 25%;text-align:center}
+.emergencia-home .acao-card-emerg{flex:1 1 25%;min-width:0;display:flex}
+.emergencia-home .acao-card{flex:1;min-width:0;text-align:center;border:0;background:none;font-family:inherit;cursor:pointer}
 .emergencia-home .acao-card span{background:var(--md-error-container);color:var(--md-on-error-container)}
 .emergencia-home small{display:block;font-weight:400;color:var(--md-on-surface-variant);white-space:nowrap}
-.emergencia-home .acao-card{min-width:0}
 /* Nome com altura de duas linhas para os números ficarem alinhados quando "Casa de Saúde" quebra. */
 .emergencia-home .acao-card b{min-height:2.5em;display:flex;align-items:center;font-weight:inherit;line-height:1.25}
 .emergencia-home .acao-card small{margin-top:-6px}
@@ -140,7 +140,7 @@ svg{flex:none}
   .emergencia-home small{font-size:.6875rem}
 }
 .lista-prox .numero{font-size:1.375rem;line-height:1.75rem;font-weight:700;color:var(--md-on-surface);letter-spacing:.01em}
-.btn-icone.urgente{background:var(--md-error-container);color:var(--md-on-error-container)}
+.btn-icone.urgente{border:0;cursor:pointer;background:var(--md-error-container);color:var(--md-on-error-container)}
 /* Tela Farmácias: bloco verde com o plantão de hoje e depois as demais, das mais perto às mais longe */
 .secao-farm{margin:16px 4px 8px;font-size:.875rem;line-height:1.25rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--md-primary)}
 .secao-farm:first-child{margin-top:4px}
@@ -159,6 +159,11 @@ svg{flex:none}
 .dialogo form{display:flex;justify-content:flex-end;margin-top:20px}
 .dialogo .apoio-dialogo{margin:0 0 16px;color:var(--md-on-surface-variant)}
 .dialogo .acoes-dialogo{gap:8px;flex-wrap:wrap}
+/* Escolha do número quando o contato de emergência tem mais de um telefone */
+.opcoes-tel{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.opcoes-tel a{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;text-decoration:none;
+  background:var(--md-error-container);color:var(--md-on-error-container);font-size:1.25rem;line-height:1.75rem;font-weight:700}
+.opcoes-tel svg{width:24px;height:24px;fill:currentColor;flex:none}
 
 /* Aviso de cookies (LGPD): cartão fixo no rodapé, sem bloquear a página. */
 .cookies{position:fixed;z-index:10;left:0;right:0;bottom:0;margin:0 auto;max-width:640px;
@@ -381,6 +386,12 @@ svg{flex:none}
   <p class="body-m apoio-dialogo">Todos os plantões entram na agenda do celular, com um lembrete na véspera às 17h. Quando a escala mudar, a agenda se atualiza sozinha.</p>
   <ol class="body-m" id="passos-agenda"></ol>
   <form method="dialog" class="acoes-dialogo"><button class="btn texto estado-camada">Agora não</button><a class="btn preenchido com-icone estado-camada" id="assinar-agenda" data-evento="adicionar_agenda" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Adicionar à agenda</a></form>
+</dialog>
+<dialog class="dialogo" id="dialogo-telefones" aria-labelledby="titulo-telefones">
+  <h2 id="titulo-telefones" class="headline-s"></h2>
+  <p class="body-m apoio-dialogo">Escolha o número para ligar.</p>
+  <ul class="opcoes-tel" id="opcoes-tel"></ul>
+  <form method="dialog"><button class="btn texto estado-camada">Cancelar</button></form>
 </dialog>
 <div class="status label-l" id="status" role="status"><div class="status-palco" aria-hidden="true"><span class="status-data" id="status-data"></span><span class="status-msg" id="status-msg"></span></div></div>
 
@@ -644,24 +655,43 @@ function itemAgenda(nome){
 }
 
 // Telefones de emergência. Itaocara não tem UPA: urgência é no Hospital Municipal.
+// Com mais de um número em tels, o botão de ligar abre um diálogo para escolher.
 const EMERGENCIA = [
-  {nome:"SAMU", curto:"SAMU", icone:"emergencia", desc:"Ambulância, urgência médica", tel:"192"},
-  {nome:"Bombeiros", curto:"Bombeiros", icone:"fogo", desc:"Incêndio, resgate e acidentes", tel:"193"},
-  {nome:"Hospital Municipal de Itaocara", curto:"Hospital", icone:"hospital", desc:"Pronto-socorro 24h · Rua Toledo Piza, 151, Centro", tel:"(22) 3861-2050"},
-  {nome:"Casa de Saúde João XXIII", curto:"Casa de Saúde", icone:"hospital", desc:"Rua Nilo Peçanha, 564, Centro", tel:"(22) 3861-8400"}
+  {nome:"SAMU", curto:"SAMU", icone:"emergencia", desc:"Ambulância, urgência médica", tels:["192"]},
+  {nome:"Bombeiros", curto:"Bombeiros", icone:"fogo", desc:"Incêndio, resgate e acidentes", tels:["193"]},
+  {nome:"Hospital Municipal de Itaocara", curto:"Hospital", icone:"hospital", desc:"Pronto-socorro 24h · Rua Toledo Piza, 151, Centro", tels:["(22) 93618-4696","(22) 93618-4702"]},
+  {nome:"Casa de Saúde João XXIII", curto:"Casa de Saúde", icone:"hospital", desc:"Rua Nilo Peçanha, 564, Centro", tels:["(22) 3861-8400"]}
 ];
-const linkTel = e => { const d = e.tel.replace(/\D/g,""); return d.length > 4 ? "tel:+55" + d : "tel:" + d; };
+const linkTel = tel => { const d = tel.replace(/\D/g,""); return d.length > 4 ? "tel:+55" + d : "tel:" + d; };
+// Botão de ligar: link direto com um número; com vários, um botão que abre o diálogo de escolha.
+function botaoLigar(e, i, classe, conteudo){
+  const rotulo = `Ligar para ${esc(e.nome)}`;
+  return e.tels.length > 1
+    ? `<button class="${classe} estado-camada" type="button" data-escolher="${i}" aria-label="${rotulo}" aria-haspopup="dialog">${conteudo}</button>`
+    : `<a class="${classe} estado-camada" data-evento="clique_ligar" href="${linkTel(e.tels[0])}" aria-label="${rotulo}, ${esc(e.tels[0])}">${conteudo}</a>`;
+}
 // Na home, botões redondos com o número sem DDD embaixo; a tela #emergencia traz a lista completa.
-document.getElementById("emergencia-home").innerHTML = EMERGENCIA.map(e =>
-  `<a class="acao-card estado-camada" data-evento="clique_ligar" data-farmacia="${esc(e.nome)}" data-local="emergencia_home" href="${linkTel(e)}" aria-label="Ligar para ${esc(e.nome)}, ${esc(e.tel)}"><span>${ICONE[e.icone]}</span><b>${esc(e.curto)}</b><small>${esc(e.tel.replace(/^\(\d+\) /,""))}</small></a>`
+document.getElementById("emergencia-home").innerHTML = EMERGENCIA.map((e, i) =>
+  `<div class="acao-card-emerg" data-farmacia="${esc(e.nome)}" data-local="emergencia_home">${botaoLigar(e, i, "acao-card",
+    `<span>${ICONE[e.icone]}</span><b>${esc(e.curto)}</b><small>${e.tels.length > 1 ? e.tels.length + " números" : esc(e.tels[0].replace(/^\(\d+\) /,""))}</small>`)}</div>`
 ).join("");
-document.getElementById("emergencia").innerHTML = EMERGENCIA.map(e => {
-  const href = linkTel(e);
-  return `<li data-farmacia="${esc(e.nome)}" data-local="emergencia">
-    <div><p class="title-m">${esc(e.nome)}</p><p class="numero">${esc(e.tel)}</p><p class="body-m">${esc(e.desc)}</p></div>
-    <a class="btn-icone urgente estado-camada" data-evento="clique_ligar" href="${href}" aria-label="Ligar para ${esc(e.nome)}, ${esc(e.tel)}">${ICONE.tel}</a>
-  </li>`;
-}).join("");
+document.getElementById("emergencia").innerHTML = EMERGENCIA.map((e, i) => `<li data-farmacia="${esc(e.nome)}" data-local="emergencia">
+    <div><p class="title-m">${esc(e.nome)}</p>${e.tels.map(t => `<p class="numero">${esc(t)}</p>`).join("")}<p class="body-m">${esc(e.desc)}</p></div>
+    ${botaoLigar(e, i, "btn-icone urgente", ICONE.tel)}
+  </li>`).join("");
+const dialogoTel = document.getElementById("dialogo-telefones");
+document.addEventListener("click", ev => {
+  const b = ev.target.closest("[data-escolher]");
+  if(!b) return;
+  const e = EMERGENCIA[b.dataset.escolher];
+  dialogoTel.dataset.farmacia = e.nome;
+  dialogoTel.dataset.local = b.closest("[data-local]").dataset.local;
+  document.getElementById("titulo-telefones").textContent = e.nome;
+  document.getElementById("opcoes-tel").innerHTML = e.tels.map(t =>
+    `<li><a class="estado-camada" data-evento="clique_ligar" href="${linkTel(t)}" aria-label="Ligar para ${esc(t)}">${ICONE.tel}${esc(t)}</a></li>`).join("");
+  dialogoTel.showModal();
+});
+dialogoTel.addEventListener("click", ev => { if(ev.target.closest("a")) dialogoTel.close(); });
 
 function renderFarmacias(){
   const termo = semAcento(document.getElementById("busca-farm").value.trim());
