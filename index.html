@@ -632,8 +632,6 @@ function itemAgenda(nome){
   return `<li data-farmacia="${esc(nome)}" data-local="agenda">
     <div><p class="title-m">${esc(nome)}</p>
       ${c.end ? `<p class="body-m">${esc(c.end)}</p>` : ""}
-      ${c.tel ? `<p class="body-m">${esc(c.tel)}</p>` : `<p class="body-m">Telefone não informado</p>`}
-      ${c.zap ? `<p class="body-m">WhatsApp ${esc(c.zap)}</p>` : ""}
       ${PLANTAO_HOJE?.e.f.includes(nome) ? `<span class="chip-hoje">${PLANTAO_HOJE.diaTodo ? "De plantão hoje" : `Plantão hoje, ${ABRE}h às ${FECHA}h`}</span>` : ""}<span class="perto" data-perto="${esc(nome)}" hidden></span></div>
     ${c.tel ? `<a class="btn-icone principal estado-camada" data-evento="clique_ligar" href="tel:+55${digitos}" aria-label="Ligar para ${esc(nome)}">${ICONE.tel}</a>` : ""}
     ${whats ? `<a class="btn-icone estado-camada" href="${linkZap(nome, whats)}" data-zap="${esc(nome)}" data-evento="clique_whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp da ${esc(nome)}">${ICONE.zap}</a>` : ""}
