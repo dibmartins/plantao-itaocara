@@ -259,15 +259,15 @@ UID:plantao-20261028@farmacias-itaocara
 DTSTAMP:20261028T000000Z
 DTSTART;VALUE=DATE:20261028
 DTEND;VALUE=DATE:20261029
-SUMMARY:Plantão: Farmácia Itaocara e Farmácia Ayrão
+SUMMARY:Plantão: Farmácia Itaocara e Unidas Farma (Ayrão)
 DESCRIPTION:Dia do Servidor Público\n\nFarmácia Itaocara: (22) 3861-2219\
- nFarmácia Ayrão: (22) 3861-2083\n\nEscala completa: https://itaocara.qua
- lfarmacia.com.br/#escala
+ nUnidas Farma (Ayrão): (22) 3861-2083\n\nEscala completa: https://itaocar
+ a.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Farmácia Itaocara e Farmácia Ayrão
+DESCRIPTION:Plantão amanhã: Farmácia Itaocara e Unidas Farma (Ayrão)
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -276,10 +276,11 @@ UID:plantao-noite-20261028@farmacias-itaocara
 DTSTAMP:20261028T000000Z
 DTSTART;VALUE=DATE:20261029
 DTEND;VALUE=DATE:20261031
-SUMMARY:Plantão das 18h às 22h: Farmácia Itaocara e Farmácia Ayrão
+SUMMARY:Plantão das 18h às 22h: Farmácia Itaocara e Unidas Farma (Ayrão
+ )
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 22h.\n\nFarmácia Itaocara: (22) 3861-2219\nFarmácia Ayrão: (22) 3861-
- 2083\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+ s 22h.\n\nFarmácia Itaocara: (22) 3861-2219\nUnidas Farma (Ayrão): (22) 
+ 3861-2083\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -520,14 +521,14 @@ UID:plantao-20261219@farmacias-itaocara
 DTSTAMP:20261219T000000Z
 DTSTART;VALUE=DATE:20261219
 DTEND;VALUE=DATE:20261221
-SUMMARY:Plantão: Farmácia Pop Farma e Farmácia Ayrão
-DESCRIPTION:Farmácia Pop Farma\nFarmácia Ayrão: (22) 3861-2083\n\nEscala
-  completa: https://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Farmácia Pop Farma e Unidas Farma (Ayrão)
+DESCRIPTION:Farmácia Pop Farma\nUnidas Farma (Ayrão): (22) 3861-2083\n\nE
+ scala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Farmácia Pop Farma e Farmácia Ayrão
+DESCRIPTION:Plantão amanhã: Farmácia Pop Farma e Unidas Farma (Ayrão)
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -536,10 +537,11 @@ UID:plantao-noite-20261219@farmacias-itaocara
 DTSTAMP:20261219T000000Z
 DTSTART;VALUE=DATE:20261221
 DTEND;VALUE=DATE:20261225
-SUMMARY:Plantão das 18h às 22h: Farmácia Pop Farma e Farmácia Ayrão
+SUMMARY:Plantão das 18h às 22h: Farmácia Pop Farma e Unidas Farma (Ayrã
+ o)
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 22h.\n\nFarmácia Pop Farma\nFarmácia Ayrão: (22) 3861-2083\n\nEscala 
- completa: https://itaocara.qualfarmacia.com.br/#escala
+ s 22h.\n\nFarmácia Pop Farma\nUnidas Farma (Ayrão): (22) 3861-2083\n\nEs
+ cala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -782,14 +784,15 @@ UID:plantao-20270206@farmacias-itaocara
 DTSTAMP:20270206T000000Z
 DTSTART;VALUE=DATE:20270206
 DTEND;VALUE=DATE:20270208
-SUMMARY:Plantão: Farmácia 4 Esquinas e Farmácia Ayrão
-DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nFarmácia Ayrão: (22) 38
- 61-2083\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Farmácia 4 Esquinas e Unidas Farma (Ayrão)
+DESCRIPTION:Farmácia 4 Esquinas: (22) 3861-3021\nUnidas Farma (Ayrão): (2
+ 2) 3861-2083\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#esc
+ ala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Farmácia 4 Esquinas e Farmácia Ayrão
+DESCRIPTION:Plantão amanhã: Farmácia 4 Esquinas e Unidas Farma (Ayrão)
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
