@@ -17,7 +17,7 @@
   --md-primary:#006D40; --md-on-primary:#FFFFFF; --md-primary-container:#9AF5BF; --md-on-primary-container:#002111;
   --md-secondary:#4E6355; --md-on-secondary:#FFFFFF; --md-secondary-container:#D0E8D6; --md-on-secondary-container:#0B1F14;
   --md-tertiary:#3B6470; --md-tertiary-container:#BFE9F8; --md-on-tertiary-container:#001F27;
-  --md-error:#BA1A1A;
+  --md-error:#BA1A1A; --md-error-container:#FFDAD6; --md-on-error-container:#410002;
   --md-surface:#F5FBF5; --md-on-surface:#171D19; --md-on-surface-variant:#404942;
   --md-surface-container-lowest:#FFFFFF; --md-surface-container-low:#EFF5EF; --md-surface-container:#E9EFE9;
   --md-surface-container-high:#E4EAE3; --md-surface-container-highest:#DEE4DE;
@@ -31,7 +31,7 @@
   --md-primary:#7ED8A4; --md-on-primary:#00391F; --md-primary-container:#00522F; --md-on-primary-container:#9AF5BF;
   --md-secondary:#B4CCBB; --md-on-secondary:#203528; --md-secondary-container:#364B3E; --md-on-secondary-container:#D0E8D6;
   --md-tertiary:#A3CDDB; --md-tertiary-container:#224C58; --md-on-tertiary-container:#BFE9F8;
-  --md-error:#FFB4AB;
+  --md-error:#FFB4AB; --md-error-container:#93000A; --md-on-error-container:#FFDAD6;
   --md-surface:#0F1511; --md-on-surface:#DEE4DE; --md-on-surface-variant:#C0C9C0;
   --md-surface-container-lowest:#0A0F0C; --md-surface-container-low:#171D19; --md-surface-container:#1B211D;
   --md-surface-container-high:#252B27; --md-surface-container-highest:#303632;
@@ -40,7 +40,7 @@
   --md-primary:#7ED8A4; --md-on-primary:#00391F; --md-primary-container:#00522F; --md-on-primary-container:#9AF5BF;
   --md-secondary:#B4CCBB; --md-on-secondary:#203528; --md-secondary-container:#364B3E; --md-on-secondary-container:#D0E8D6;
   --md-tertiary:#A3CDDB; --md-tertiary-container:#224C58; --md-on-tertiary-container:#BFE9F8;
-  --md-error:#FFB4AB;
+  --md-error:#FFB4AB; --md-error-container:#93000A; --md-on-error-container:#FFDAD6;
   --md-surface:#0F1511; --md-on-surface:#DEE4DE; --md-on-surface-variant:#C0C9C0;
   --md-surface-container-lowest:#0A0F0C; --md-surface-container-low:#171D19; --md-surface-container:#1B211D;
   --md-surface-container-high:#252B27; --md-surface-container-highest:#303632;
@@ -119,6 +119,13 @@ svg{flex:none}
 .atalho svg{width:24px;height:24px;fill:currentColor}
 .atalho.largo{grid-column:1 / -1;min-height:0;flex-direction:row;align-items:center}
 .contagem{color:var(--md-on-surface-variant);padding:0 4px}
+/* Faixa da home que leva aos telefones de emergência, no tom de erro do M3 para se destacar dos atalhos verdes. */
+.atalho-emergencia{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;text-decoration:none;
+  background:var(--md-error-container);color:var(--md-on-error-container);font:500 .875rem/1.25rem var(--md-font);letter-spacing:.00625rem}
+.atalho-emergencia svg{width:24px;height:24px;fill:currentColor;flex:none}
+.atalho-emergencia span{flex:1}
+.lista-prox .numero{font-size:1.375rem;line-height:1.75rem;font-weight:700;color:var(--md-on-surface);letter-spacing:.01em}
+.btn-icone.urgente{background:var(--md-error-container);color:var(--md-on-error-container)}
 .lista-prox .chip-hoje{display:inline-block;margin-top:4px;padding:0 8px;border-radius:8px;font-size:.75rem;line-height:1.25rem;font-weight:500;
   background:var(--md-primary-container);color:var(--md-on-primary-container)}
 /* Diálogo M3 com os passos para instalar no iPhone */
@@ -315,6 +322,7 @@ svg{flex:none}
     <a class="estado-camada" href="#inicio" data-vista="inicio" data-evento="clique_menu" data-botao="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 2a10 10 0 1 0 9.7 12.4A7.5 7.5 0 0 1 12.3 2z"/></svg><span class="label-l">Plantão de hoje</span></a>
     <a class="estado-camada" href="#escala" data-vista="escala" data-evento="clique_menu" data-botao="escala"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg><span class="label-l">Escala de Plantão</span></a>
     <a class="estado-camada" href="#farmacias" data-vista="farmacias" data-evento="clique_menu" data-botao="farmacias"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM10 4h4v2h-4V4zm6 11h-3v3h-2v-3H8v-2h3v-3h2v3h3v2z"/></svg><span class="label-l">Farmácias</span></a>
+    <a class="estado-camada" href="#emergencia" data-vista="emergencia" data-evento="clique_menu" data-botao="emergencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.8 9.2-2-3.4L14 8.5V3h-4v5.5L5.2 5.8l-2 3.4L8 12l-4.8 2.8 2 3.4 4.8-2.7V21h4v-5.5l4.8 2.7 2-3.4L16 12z"/></svg><span class="label-l">Telefones de emergência</span></a>
     <hr>
     <a class="estado-camada" id="abrir-sugestao" data-evento="clique_menu" data-botao="sugerir_melhoria" href="https://forms.gle/PBM95zkxEXc9qqyX6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg><span class="label-l">Sugerir melhoria</span></a>
     <button class="estado-camada" id="abrir-cookies" data-evento="clique_menu" data-botao="privacidade" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg><span class="label-l">Privacidade e cookies</span></button>
@@ -365,6 +373,7 @@ svg{flex:none}
       <button class="atalho estado-camada" id="agenda-aviso" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.1-1.6-5.6-4.5-6.3V4a1.5 1.5 0 0 0-3 0v.7C7.6 5.4 6 7.9 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>Adicione a escala no seu calendário</button>
       <button class="atalho estado-camada" id="instalar" data-evento="instalar_app" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zm14-9h-4V3H9v8H5l7 7 7-7z"/></svg>Instale o aplicativo</button>
     </div>
+    <a class="atalho-emergencia estado-camada" href="#emergencia" data-evento="clique_emergencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m20.8 9.2-2-3.4L14 8.5V3h-4v5.5L5.2 5.8l-2 3.4L8 12l-4.8 2.8 2 3.4 4.8-2.7V21h4v-5.5l4.8 2.7 2-3.4L16 12z"/></svg><span>Telefones de emergência</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6 8.6 7.4 13.2 12l-4.6 4.6L10 18l6-6z"/></svg></a>
   </main>
 
   <section class="vista escala" id="vista-escala" aria-labelledby="titulo-escala" hidden>
@@ -391,6 +400,11 @@ svg{flex:none}
     </div>
     <p class="contagem body-m" id="contagem" aria-live="polite"></p>
     <ul class="lista-prox" id="agenda"></ul>
+  </section>
+
+  <section class="vista" id="vista-emergencia" aria-labelledby="titulo-emergencia" hidden>
+    <h2 id="titulo-emergencia" class="headline-s">Telefones de emergência</h2>
+    <ul class="lista-prox" id="emergencia"></ul>
   </section>
 </div>
 
@@ -606,6 +620,22 @@ function itemAgenda(nome){
   </li>`;
 }
 
+// Telefones de emergência. Itaocara não tem UPA: urgência é no Hospital Municipal.
+const EMERGENCIA = [
+  {nome:"SAMU", desc:"Ambulância, urgência médica", tel:"192"},
+  {nome:"Bombeiros", desc:"Incêndio, resgate e acidentes", tel:"193"},
+  {nome:"Hospital Municipal de Itaocara", desc:"Pronto-socorro 24h · Rua Toledo Piza, 151, Centro", tel:"(22) 3861-2050"},
+  {nome:"Casa de Saúde João XXIII", desc:"Rua Nilo Peçanha, 564, Centro", tel:"(22) 3861-2065"}
+];
+document.getElementById("emergencia").innerHTML = EMERGENCIA.map(e => {
+  const digitos = e.tel.replace(/\D/g,"");
+  const href = digitos.length > 4 ? "tel:+55" + digitos : "tel:" + digitos;
+  return `<li data-farmacia="${esc(e.nome)}" data-local="emergencia">
+    <div><p class="title-m">${esc(e.nome)}</p><p class="numero">${esc(e.tel)}</p><p class="body-m">${esc(e.desc)}</p></div>
+    <a class="btn-icone urgente estado-camada" data-evento="clique_ligar" href="${href}" aria-label="Ligar para ${esc(e.nome)}, ${esc(e.tel)}">${ICONE.tel}</a>
+  </li>`;
+}).join("");
+
 function renderFarmacias(){
   const termo = semAcento(document.getElementById("busca-farm").value.trim());
   const lista = FARMACIAS.filter(n => !termo || semAcento(n).includes(termo));
@@ -771,11 +801,11 @@ function ligarBusca(idCampo, idLimpar, render){
 ligarBusca("busca", "limpar", () => renderEscala(destaque));
 ligarBusca("busca-farm", "limpar-farm", renderFarmacias);
 
-// Telas: #escala e #farmacias; qualquer outro endereço mostra o plantão de hoje.
+// Telas: #escala, #farmacias e #emergencia; qualquer outro endereço mostra o plantão de hoje.
 const gaveta = document.getElementById("gaveta");
 function mostrarVista(){
-  const v = {"#escala":"escala","#farmacias":"farmacias"}[location.hash] || "inicio";
-  for(const id of ["inicio","escala","farmacias"]) document.getElementById("vista-"+id).hidden = id !== v;
+  const v = {"#escala":"escala","#farmacias":"farmacias","#emergencia":"emergencia"}[location.hash] || "inicio";
+  for(const id of ["inicio","escala","farmacias","emergencia"]) document.getElementById("vista-"+id).hidden = id !== v;
   for(const a of gaveta.querySelectorAll("a")){
     if(a.dataset.vista === v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
   }
@@ -890,7 +920,7 @@ if(!dataForcada && !horaForcada){
 // As telas são trocadas pelo # do endereço, então cada uma vira uma visualização de página com seu próprio título.
 const GA_ID = "G-LNWS21PP4G";
 const avisoCookies = document.getElementById("cookies");
-const TITULOS = {inicio:"Plantão de hoje", escala:"Escala de Plantão", farmacias:"Farmácias"};
+const TITULOS = {inicio:"Plantão de hoje", escala:"Escala de Plantão", farmacias:"Farmácias", emergencia:"Telefones de emergência"};
 let gaLigado = false;
 function lerConsentimento(){ try { return localStorage.getItem("cookies"); } catch { return null; } }
 function salvarConsentimento(v){ try { localStorage.setItem("cookies", v); } catch {} }
@@ -899,7 +929,7 @@ function gtag(){ dataLayer.push(arguments); }
 gtag("consent", "default", {analytics_storage:"denied", ad_storage:"denied", ad_user_data:"denied", ad_personalization:"denied"});
 function contarTela(){
   if(!gaLigado) return;
-  const v = {"#escala":"escala","#farmacias":"farmacias"}[location.hash] || "inicio";
+  const v = {"#escala":"escala","#farmacias":"farmacias","#emergencia":"emergencia"}[location.hash] || "inicio";
   gtag("event", "page_view", {
     page_title: TITULOS[v],
     page_location: location.origin + location.pathname + (v === "inicio" ? "" : "#" + v)
