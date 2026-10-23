@@ -196,13 +196,12 @@ svg{flex:none}
   background:#1B7F3B;color:#fff;font-size:.6875rem;line-height:1;font-weight:700;letter-spacing:.01em}
 .card-plantao .aberto::before{content:"";width:6px;height:6px;border-radius:50%;background:#B9F6CA}
 .card-plantao h3{font-size:clamp(1.25rem,calc(10.6vw - 18px),1.5rem);line-height:1.875rem;font-weight:700;letter-spacing:-.01em;text-wrap:balance}
-/* Distância até a farmácia (só com a localização permitida): "Mais próxima · aprox. 450 m" */
+/* Distância até a farmácia (só com a localização permitida): "É a opção mais próxima: 450 m" */
 .perto{display:inline-flex;align-items:center;gap:4px;margin-top:8px;padding:0 8px 0 6px;height:24px;border-radius:8px;
   font-size:.8125rem;line-height:1;font-weight:600;background:var(--md-tertiary-container);color:var(--md-on-tertiary-container)}
 .perto svg{width:14px;height:14px;fill:currentColor}
 .perto[hidden]{display:none}
 .lista-prox .perto{margin:4px 0 0 6px;height:20px;font-size:.75rem;font-weight:500}
-.btn-perto{align-self:center}
 .card-plantao .end{margin-top:4px;font-size:1rem;line-height:1.375rem;color:var(--md-on-surface-variant)}
 .card-plantao .acoes-card{display:flex;margin-top:14px}
 .acao-card{flex:0 0 33.333%;display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 0;border-radius:16px;
@@ -600,8 +599,8 @@ function renderFarmacias(){
   marcarDistancias();
 }
 
-// Distância em linha reta até as farmácias com coordenadas (campo geo em CONTATOS). A localização só é lida se a pessoa
-// já permitiu antes ou tocar em "Ver qual fica mais perto de você"; o app nunca pede sozinho ao abrir.
+// Distância em linha reta até as farmácias com coordenadas (campo geo em CONTATOS). A localização é lida ao abrir;
+// na primeira vez o navegador pergunta se pode, e se a pessoa negar o app não insiste.
 let posicao = null;
 function metros([lat1,lng1],[lat2,lng2]){
   const r = Math.PI/180, a = Math.sin((lat2-lat1)*r/2)**2 + Math.cos(lat1*r)*Math.cos(lat2*r)*Math.sin((lng2-lng1)*r/2)**2;
@@ -623,7 +622,7 @@ function marcarDistancias(){
     const naHome = !!el.closest(".card-plantao");
     const mostrar = d !== null && d < 30000 && (!naHome || nome === maisPerto);
     el.hidden = !mostrar;
-    if(mostrar) el.innerHTML = `${ICONE.mapa}${naHome ? "Mais próxima · " : ""}${textoDistancia(d)}`;
+    if(mostrar) el.innerHTML = `${ICONE.mapa}${naHome ? `É a opção mais próxima: ${textoDistancia(d).replace("aprox. ","")}` : textoDistancia(d)}`;
   }
 }
 function lerPosicao(){
@@ -632,19 +631,9 @@ function lerPosicao(){
     {enableHighAccuracy:false, maximumAge:300000, timeout:15000}));
 }
 async function ligarDistancias(){
-  const btn = document.getElementById("ver-perto");
-  const temCoordenadas = (SIT?.e.f || []).filter(n => CONTATOS[n]?.geo).length > 1;
   if(!("geolocation" in navigator) || !Object.values(CONTATOS).some(c => c.geo)) return;
-  let estado = "prompt";
-  try { estado = (await navigator.permissions.query({name:"geolocation"})).state; } catch {}
-  if(estado === "granted"){ lerPosicao().catch(() => {}); return; }
-  if(estado === "denied" || !btn || !temCoordenadas) return;
-  btn.hidden = false;
-  btn.addEventListener("click", () => {
-    btn.disabled = true;
-    lerPosicao().then(() => { btn.hidden = true; })
-      .catch(() => { btn.disabled = false; btn.hidden = true; });
-  });
+  try { if((await navigator.permissions.query({name:"geolocation"})).state === "denied") return; } catch {}
+  lerPosicao().catch(() => {});
 }
 
 // "amanhã" / "sexta, 23 de outubro"
@@ -689,8 +678,7 @@ function renderAgora(){
       <p class="body-m">${esc(sub)}</p>
     </div></div>` : "";
   el.innerHTML = `${faixa}
-    <ul class="cards-plantao">${e.f.map(cardPlantao).join("")}</ul>
-    <button class="btn tonal com-icone btn-perto" id="ver-perto" type="button" hidden>${ICONE.mapa}Ver qual fica mais perto de você</button>`;
+    <ul class="cards-plantao">${e.f.map(cardPlantao).join("")}</ul>`;
   return e;
 }
 
