@@ -1,5 +1,5 @@
 // Rede primeiro, para a escala nova aparecer logo; sem internet, usa a última cópia salva.
-const CACHE = "plantao-v48";
+const CACHE = "plantao-v49";
 const ARQUIVOS = ["./", "index.html", "manifest.webmanifest", "icone.svg", "icone-192.png", "icone-512.png"];
 
 self.addEventListener("install", e => {

@@ -732,12 +732,9 @@ function renderAgora(){
   const compartilhar = document.getElementById("compartilhar");
   compartilhar.href = "https://wa.me/?text="+encodeURIComponent(mensagem(SIT));
   compartilhar.hidden = false;
-  // Com a dupla atendendo agora, a barra vermelha já diz tudo: os cards vêm direto, sem faixa.
+  // Com a dupla atendendo agora ou ainda hoje (18h às 22h), a barra vermelha já diz tudo: os cards vêm direto, sem faixa.
   let titulo = "", sub = "";
-  if(SIT.estado==="maisTarde"){
-    titulo = `Plantão hoje ${NOITE}`;
-    sub = "Até lá, as farmácias atendem no horário normal.";
-  } else if(SIT.estado==="proximo"){
+  if(SIT.estado==="proximo"){
     const n = diasAte(SIT.dia);
     if(SIT.diaTodo){
       titulo = `Próximo plantão: ${n===1 ? "amanhã" : `em ${n} dias`}`;
@@ -805,8 +802,9 @@ function renderStatus(){
   const data = cap(`${fmt(HOJE,{weekday:"long"})}, ${dia(HOJE)} de ${mes(HOJE)}`);
   const msg = SIT?.estado==="diaTodo" ? "Farmácias de plantão funcionando normalmente"
     : SIT?.estado==="noite" ? `Farmácias de plantão funcionando até as ${FECHA}h`
+    : SIT?.estado==="maisTarde" ? `Plantão hoje ${NOITE}`
     : SIT?.estado==="proximo" && SIT.encerrou ? `Plantão de hoje encerrado às ${FECHA}h`
-    : "Todas as farmácias estão funcionando normalmente";
+    : "Todas as farmácias estão abertas agora";
   document.getElementById("status-data").textContent = data;
   document.getElementById("status-msg").textContent = msg;
   document.getElementById("status").setAttribute("aria-label", `${data}: ${msg}`);
