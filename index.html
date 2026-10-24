@@ -416,7 +416,7 @@ svg{flex:none}
 
   <section class="vista escala" id="vista-escala" aria-labelledby="titulo-escala" hidden>
     <h2 id="titulo-escala" class="headline-s">Escala de Plantão</h2>
-    <p class="regra body-m">O plantão é válido também para os dias úteis após o horário comercial. Encerrando-se às 22h.</p>
+    <p class="regra body-m">O plantão é válido também para os dias úteis após o horário comercial. Encerrando-se às 21h.</p>
     <div class="campo">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
       <input id="busca" type="search" autocomplete="off" placeholder="Ex.: Drogalima">
@@ -550,8 +550,8 @@ const ultimo = e => e.d[e.d.length-1];
 const somarDias = (iso,n) => { const x = utc(iso); x.setUTCDate(x.getUTCDate()+n); return x.toISOString().slice(0,10); };
 
 // Regra do plantão: a dupla atende o dia todo nas datas da escala (fim de semana ou feriado) e,
-// nos dias seguintes, das 18h às 22h, até começar o próximo plantão.
-const ABRE = 18, FECHA = 22, NOITE = `das ${ABRE}h às ${FECHA}h`;
+// nos dias seguintes, das 18h às 21h, até começar o próximo plantão.
+const ABRE = 18, FECHA = 21, NOITE = `das ${ABRE}h às ${FECHA}h`;
 // Quem responde pelo dia: {e, diaTodo} ou null. Depois do último plantão do cartaz, cobre só os 5 dias seguintes.
 function plantaoDoDia(iso){
   const i = ESCALA.findLastIndex(e => e.d[0] <= iso);
@@ -560,8 +560,8 @@ function plantaoDoDia(iso){
   if(e.d.includes(iso)) return {e, diaTodo:true};
   return (prox ? iso < prox.d[0] : iso <= somarDias(ultimo(e),5)) ? {e, diaTodo:false} : null;
 }
-// Situação agora: "diaTodo" (data da escala), "noite" (dia útil, 18h às 22h), "maisTarde" (dia útil antes das 18h)
-// ou "proximo" (depois das 22h, ou sem plantão hoje), com a dupla e, no caso de "proximo", o dia em que ela entra.
+// Situação agora: "diaTodo" (data da escala), "noite" (dia útil, 18h às 21h), "maisTarde" (dia útil antes das 18h)
+// ou "proximo" (depois das 21h, ou sem plantão hoje), com a dupla e, no caso de "proximo", o dia em que ela entra.
 function situacao(hoje, minutos){
   const p = plantaoDoDia(hoje);
   if(p?.diaTodo) return {estado:"diaTodo", e:p.e};
@@ -783,7 +783,7 @@ function renderAgora(){
   const compartilhar = document.getElementById("compartilhar");
   compartilhar.href = "https://wa.me/?text="+encodeURIComponent(mensagem(SIT));
   compartilhar.hidden = false;
-  // Com a dupla atendendo agora ou ainda hoje (18h às 22h), a barra vermelha já diz tudo: os cards vêm direto, sem faixa.
+  // Com a dupla atendendo agora ou ainda hoje (18h às 21h), a barra vermelha já diz tudo: os cards vêm direto, sem faixa.
   let titulo = "", sub = "";
   if(SIT.estado==="proximo"){
     const n = diasAte(SIT.dia);
@@ -1030,7 +1030,7 @@ function ajustarAtalhos(){
 ajustarAtalhos();
 new MutationObserver(ajustarAtalhos).observe(atalhos, {subtree:true, attributes:true, attributeFilter:["hidden"]});
 
-// Com o app aberto de um dia para o outro, ou passando das 18h ou 22h, recarrega ao voltar para ele.
+// Com o app aberto de um dia para o outro, ou passando das 18h ou 21h, recarrega ao voltar para ele.
 if(!dataForcada && !horaForcada){
   const chave = s => s ? `${s.estado}|${s.e.d[0]}|${s.dia||""}` : "";
   document.addEventListener("visibilitychange", () => {
