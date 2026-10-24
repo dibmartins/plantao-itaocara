@@ -29,7 +29,7 @@ function dobrar(linha){
 
 const linhas = [
   "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Farmacias Itaocara//Plantao//PT-BR", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
-  "X-WR-CALNAME:Plantão Itaocara", "X-WR-CALDESC:Farmácias de plantão em Itaocara-RJ: o dia todo nos fins de semana e feriados e\, nos dias úteis seguintes\, das 18h às 22h",
+  "X-WR-CALNAME:Plantão Itaocara", "X-WR-CALDESC:Farmácias de plantão em Itaocara-RJ: o dia todo nos fins de semana e feriados e\, nos dias úteis seguintes\, das 18h às 21h",
   "X-WR-TIMEZONE:America/Sao_Paulo", "REFRESH-INTERVAL;VALUE=DURATION:PT12H", "X-PUBLISHED-TTL:PT12H"
 ];
 const somarDias = (d, n) => { const x = new Date(d + "T12:00:00Z"); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); };
@@ -51,7 +51,7 @@ ESCALA.forEach((e, i) => {
     "BEGIN:VALARM", "ACTION:DISPLAY", `DESCRIPTION:${texto(`Plantão amanhã: ${e.f.join(" e ")}`)}`, "TRIGGER:-PT7H", "END:VALARM",
     "END:VEVENT"
   );
-  // A mesma dupla atende nos dias úteis seguintes, das 18h às 22h, até o próximo plantão (sem alarme, para não avisar todo dia).
+  // A mesma dupla atende nos dias úteis seguintes, das 18h às 21h, até o próximo plantão (sem alarme, para não avisar todo dia).
   const ate = ESCALA[i + 1]?.d[0] ?? somarDias(e.d.at(-1), 6);
   if(fim < ate) linhas.push(
     "BEGIN:VEVENT",
@@ -59,8 +59,8 @@ ESCALA.forEach((e, i) => {
     `DTSTAMP:${semTraco(inicio)}T000000Z`,
     `DTSTART;VALUE=DATE:${semTraco(fim)}`,
     `DTEND;VALUE=DATE:${semTraco(ate)}`,
-    `SUMMARY:${texto(`Plantão das 18h às 22h: ${e.f.join(" e ")}`)}`,
-    `DESCRIPTION:${texto(`Nos dias úteis, a dupla do último plantão atende das 18h às 22h.\n\n${quem}\n\nEscala completa: ${SITE}#escala`)}`,
+    `SUMMARY:${texto(`Plantão das 18h às 21h: ${e.f.join(" e ")}`)}`,
+    `DESCRIPTION:${texto(`Nos dias úteis, a dupla do último plantão atende das 18h às 21h.\n\n${quem}\n\nEscala completa: ${SITE}#escala`)}`,
     `URL:${SITE}`,
     "TRANSP:TRANSPARENT",
     "END:VEVENT"
