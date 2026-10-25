@@ -132,8 +132,8 @@ DTSTAMP:20261003T000000Z
 DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261005
 SUMMARY:Plantão: Pop Farma e Fort Popular
-DESCRIPTION:Pop Farma\nFort Popular: (22) 98154-1153\n\nEscala completa: ht
- tps://itaocara.qualfarmacia.com.br/#escala
+DESCRIPTION:Pop Farma: (22) 3861-2600\nFort Popular: (22) 98154-1153\n\nEsc
+ ala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -149,8 +149,8 @@ DTSTART;VALUE=DATE:20261005
 DTEND;VALUE=DATE:20261010
 SUMMARY:Plantão das 18h às 21h: Pop Farma e Fort Popular
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nPop Farma\nFort Popular: (22) 98154-1153\n\nEscala completa: htt
- ps://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nPop Farma: (22) 3861-2600\nFort Popular: (22) 98154-1153\n\nEsca
+ la completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -233,8 +233,8 @@ DTSTAMP:20261024T000000Z
 DTSTART;VALUE=DATE:20261024
 DTEND;VALUE=DATE:20261026
 SUMMARY:Plantão: Pop Farma e Drogaria do Povo
-DESCRIPTION:Pop Farma\nDrogaria do Povo: (22) 98171-5564\n\nEscala completa
- : https://itaocara.qualfarmacia.com.br/#escala
+DESCRIPTION:Pop Farma: (22) 3861-2600\nDrogaria do Povo: (22) 98171-5564\n\
+ nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -250,8 +250,8 @@ DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261028
 SUMMARY:Plantão das 18h às 21h: Pop Farma e Drogaria do Povo
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nPop Farma\nDrogaria do Povo: (22) 98171-5564\n\nEscala completa:
-  https://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nPop Farma: (22) 3861-2600\nDrogaria do Povo: (22) 98171-5564\n\n
+ Escala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -413,8 +413,8 @@ DTSTAMP:20261121T000000Z
 DTSTART;VALUE=DATE:20261121
 DTEND;VALUE=DATE:20261123
 SUMMARY:Plantão: Pop Farma e Farmácia Martins (Reginho)
-DESCRIPTION:Pop Farma\nFarmácia Martins (Reginho): (22) 3861-2732\n\nEscal
- a completa: https://itaocara.qualfarmacia.com.br/#escala
+DESCRIPTION:Pop Farma: (22) 3861-2600\nFarmácia Martins (Reginho): (22) 38
+ 61-2732\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -430,8 +430,8 @@ DTSTART;VALUE=DATE:20261123
 DTEND;VALUE=DATE:20261128
 SUMMARY:Plantão das 18h às 21h: Pop Farma e Farmácia Martins (Reginho)
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nPop Farma\nFarmácia Martins (Reginho): (22) 3861-2732\n\nEscala
-  completa: https://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nPop Farma: (22) 3861-2600\nFarmácia Martins (Reginho): (22) 386
+ 1-2732\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -525,8 +525,8 @@ DTSTAMP:20261219T000000Z
 DTSTART;VALUE=DATE:20261219
 DTEND;VALUE=DATE:20261221
 SUMMARY:Plantão: Pop Farma e Unidas Farma 12 (Ayrão)
-DESCRIPTION:Pop Farma\nUnidas Farma 12 (Ayrão): (22) 3861-2083\n\nEscala c
- ompleta: https://itaocara.qualfarmacia.com.br/#escala
+DESCRIPTION:Pop Farma: (22) 3861-2600\nUnidas Farma 12 (Ayrão): (22) 3861-
+ 2083\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -542,8 +542,8 @@ DTSTART;VALUE=DATE:20261221
 DTEND;VALUE=DATE:20261225
 SUMMARY:Plantão das 18h às 21h: Pop Farma e Unidas Farma 12 (Ayrão)
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nPop Farma\nUnidas Farma 12 (Ayrão): (22) 3861-2083\n\nEscala co
- mpleta: https://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nPop Farma: (22) 3861-2600\nUnidas Farma 12 (Ayrão): (22) 3861-2
+ 083\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -705,8 +705,8 @@ DTSTAMP:20270123T000000Z
 DTSTART;VALUE=DATE:20270123
 DTEND;VALUE=DATE:20270125
 SUMMARY:Plantão: Pop Farma e Farma Nossa
-DESCRIPTION:Pop Farma\nFarma Nossa: (22) 98117-3592\n\nEscala completa: htt
- ps://itaocara.qualfarmacia.com.br/#escala
+DESCRIPTION:Pop Farma: (22) 3861-2600\nFarma Nossa: (22) 98117-3592\n\nEsca
+ la completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -722,8 +722,8 @@ DTSTART;VALUE=DATE:20270125
 DTEND;VALUE=DATE:20270130
 SUMMARY:Plantão das 18h às 21h: Pop Farma e Farma Nossa
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nPop Farma\nFarma Nossa: (22) 98117-3592\n\nEscala completa: http
- s://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nPop Farma: (22) 3861-2600\nFarma Nossa: (22) 98117-3592\n\nEscal
+ a completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -808,8 +808,9 @@ DTSTAMP:20270208T000000Z
 DTSTART;VALUE=DATE:20270208
 DTEND;VALUE=DATE:20270210
 SUMMARY:Plantão: Pop Farma e Farmácia Casa Branca
-DESCRIPTION:Carnaval\n\nPop Farma\nFarmácia Casa Branca: (22) 98133-8982\n
- \nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+DESCRIPTION:Carnaval\n\nPop Farma: (22) 3861-2600\nFarmácia Casa Branca: (
+ 22) 98133-8982\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#e
+ scala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
@@ -825,8 +826,8 @@ DTSTART;VALUE=DATE:20270210
 DTEND;VALUE=DATE:20270213
 SUMMARY:Plantão das 18h às 21h: Pop Farma e Farmácia Casa Branca
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nPop Farma\nFarmácia Casa Branca: (22) 98133-8982\n\nEscala comp
- leta: https://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nPop Farma: (22) 3861-2600\nFarmácia Casa Branca: (22) 98133-898
+ 2\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
