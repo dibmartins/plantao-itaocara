@@ -681,6 +681,13 @@ function botaoLigar(e, i, classe, conteudo){
     ? `<button class="${classe} estado-camada" type="button" data-escolher="${i}" aria-label="${rotulo}" aria-haspopup="dialog">${conteudo}</button>`
     : `<a class="${classe} estado-camada" data-evento="clique_ligar" href="${linkTel(e.tels[0])}" aria-label="${rotulo}, ${esc(e.tels[0])}">${conteudo}</a>`;
 }
+// Mensagem pronta para compartilhar um contato de emergência no WhatsApp: nome em negrito, descrição (cada parte separada por "·" numa linha), números e o link do app.
+const EMOJI_EMERG = {emergencia:"🚑", fogo:"🚒", hospital:"🏥"};
+function textoEmergencia(e){
+  return `${EMOJI_EMERG[e.icone] || "🚨"} *${e.nome}*\n${e.desc.split(" · ").join("\n")}\n\n`
+    + e.tels.map(t => `📞 ${t}`).join("\n")
+    + `\n\nTelefones de emergência de Itaocara no app ${SITE.replace(/^https:\/\//,"")}#emergencia`;
+}
 // Na home, botões redondos com o número sem DDD embaixo; a tela #emergencia traz a lista completa.
 document.getElementById("emergencia-home").innerHTML = EMERGENCIA.map((e, i) =>
   `<div class="acao-card-emerg" data-farmacia="${esc(e.nome)}" data-local="emergencia_home">${botaoLigar(e, i, "acao-card",
@@ -689,6 +696,7 @@ document.getElementById("emergencia-home").innerHTML = EMERGENCIA.map((e, i) =>
 document.getElementById("emergencia").innerHTML = EMERGENCIA.map((e, i) => `<li data-farmacia="${esc(e.nome)}" data-local="emergencia">
     <div><p class="title-m">${esc(e.nome)}</p>${e.tels.map(t => `<p class="numero">${esc(t)}</p>`).join("")}<p class="body-m">${esc(e.desc)}</p></div>
     ${botaoLigar(e, i, "btn-icone urgente", ICONE.tel)}
+    <a class="btn-icone estado-camada" data-evento="compartilhar_whatsapp" data-botao="emergencia" href="https://wa.me/?text=${encodeURIComponent(textoEmergencia(e))}" target="_blank" rel="noopener" aria-label="Compartilhar os telefones de ${esc(e.nome)} no WhatsApp">${ICONE.zap}</a>
   </li>`).join("");
 const dialogoTel = document.getElementById("dialogo-telefones");
 document.addEventListener("click", ev => {
