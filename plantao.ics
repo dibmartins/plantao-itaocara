@@ -14,15 +14,15 @@ UID:plantao-20260907@farmacias-itaocara
 DTSTAMP:20260907T000000Z
 DTSTART;VALUE=DATE:20260907
 DTEND;VALUE=DATE:20260908
-SUMMARY:Plantão: Unidas Farma 13 e Farmácia Casa Branca
-DESCRIPTION:Independência\n\nUnidas Farma 13: (22) 3861-2531\nFarmácia Ca
- sa Branca: (22) 98133-8982\n\nEscala completa: https://itaocara.qualfarmac
- ia.com.br/#escala
+SUMMARY:Plantão: Única Farma Prime e Farmácia Casa Branca
+DESCRIPTION:Independência\n\nÚnica Farma Prime: (22) 99830-1400\nFarmáci
+ a Casa Branca: (22) 98133-8982\n\nEscala completa: https://itaocara.qualfa
+ rmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Unidas Farma 13 e Farmácia Casa Branca
+DESCRIPTION:Plantão amanhã: Única Farma Prime e Farmácia Casa Branca
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -31,10 +31,12 @@ UID:plantao-noite-20260907@farmacias-itaocara
 DTSTAMP:20260907T000000Z
 DTSTART;VALUE=DATE:20260908
 DTEND;VALUE=DATE:20260912
-SUMMARY:Plantão das 18h às 21h: Unidas Farma 13 e Farmácia Casa Branca
+SUMMARY:Plantão das 18h às 21h: Única Farma Prime e Farmácia Casa Branc
+ a
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nUnidas Farma 13: (22) 3861-2531\nFarmácia Casa Branca: (22) 981
- 33-8982\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nÚnica Farma Prime: (22) 99830-1400\nFarmácia Casa Branca: (22)
+  98133-8982\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#esca
+ la
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -309,15 +311,15 @@ UID:plantao-20261102@farmacias-itaocara
 DTSTAMP:20261102T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
-SUMMARY:Plantão: Unidas Farma 13 e Drogaria Ideal
-DESCRIPTION:Finados\n\nUnidas Farma 13: (22) 3861-2531\nDrogaria Ideal: (22
- ) 3861-3428\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#esca
- la
+SUMMARY:Plantão: Única Farma Prime e Drogaria Ideal
+DESCRIPTION:Finados\n\nÚnica Farma Prime: (22) 99830-1400\nDrogaria Ideal:
+  (22) 3861-3428\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#
+ escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Unidas Farma 13 e Drogaria Ideal
+DESCRIPTION:Plantão amanhã: Única Farma Prime e Drogaria Ideal
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -326,10 +328,10 @@ UID:plantao-noite-20261102@farmacias-itaocara
 DTSTAMP:20261102T000000Z
 DTSTART;VALUE=DATE:20261103
 DTEND;VALUE=DATE:20261107
-SUMMARY:Plantão das 18h às 21h: Unidas Farma 13 e Drogaria Ideal
+SUMMARY:Plantão das 18h às 21h: Única Farma Prime e Drogaria Ideal
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nUnidas Farma 13: (22) 3861-2531\nDrogaria Ideal: (22) 3861-3428\
- n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nÚnica Farma Prime: (22) 99830-1400\nDrogaria Ideal: (22) 3861-3
+ 428\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -601,15 +603,15 @@ UID:plantao-20270101@farmacias-itaocara
 DTSTAMP:20270101T000000Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270102
-SUMMARY:Plantão: Unidas Farma 13 e Drogaria Descontão
-DESCRIPTION:Ano-novo\n\nUnidas Farma 13: (22) 3861-2531\nDrogaria Descontã
- o: (22) 3861-3713\n\nEscala completa: https://itaocara.qualfarmacia.com.br
- /#escala
+SUMMARY:Plantão: Única Farma Prime e Drogaria Descontão
+DESCRIPTION:Ano-novo\n\nÚnica Farma Prime: (22) 99830-1400\nDrogaria Desco
+ ntão: (22) 3861-3713\n\nEscala completa: https://itaocara.qualfarmacia.co
+ m.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Unidas Farma 13 e Drogaria Descontão
+DESCRIPTION:Plantão amanhã: Única Farma Prime e Drogaria Descontão
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -896,14 +898,14 @@ UID:plantao-20270227@farmacias-itaocara
 DTSTAMP:20270227T000000Z
 DTSTART;VALUE=DATE:20270227
 DTEND;VALUE=DATE:20270301
-SUMMARY:Plantão: Unidas Farma 13 e Farmácia Amaral
-DESCRIPTION:Unidas Farma 13: (22) 3861-2531\nFarmácia Amaral\n\nEscala com
- pleta: https://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Única Farma Prime e Farmácia Amaral
+DESCRIPTION:Única Farma Prime: (22) 99830-1400\nFarmácia Amaral\n\nEscala
+  completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Unidas Farma 13 e Farmácia Amaral
+DESCRIPTION:Plantão amanhã: Única Farma Prime e Farmácia Amaral
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -912,10 +914,10 @@ UID:plantao-noite-20270227@farmacias-itaocara
 DTSTAMP:20270227T000000Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270306
-SUMMARY:Plantão das 18h às 21h: Unidas Farma 13 e Farmácia Amaral
+SUMMARY:Plantão das 18h às 21h: Única Farma Prime e Farmácia Amaral
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nUnidas Farma 13: (22) 3861-2531\nFarmácia Amaral\n\nEscala comp
- leta: https://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nÚnica Farma Prime: (22) 99830-1400\nFarmácia Amaral\n\nEscala 
+ completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
