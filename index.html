@@ -472,7 +472,7 @@ const CONTATOS = {
   "Farmácia Avenida": {geo:[-21.671142,-42.078773], end:"R. Pastor José Henrique da Mata, 529", tel:"(22) 3861-3040", zap:"(22) 98858-0850"},
   "Drogaria do Povo": {geo:[-21.670909,-42.077628], end:"R. Aristides Scisínio, 81, Centro", tel:"(22) 98171-5564"},
   "Unidas Farma 12 (Ayrão)": {geo:[-21.670833,-42.078515], end:"R. Nilo Peçanha, 500, Cidade Nova", tel:"(22) 3861-2083", zap:"(22) 98112-1564"},
-  "Drogaria Ideal": {geo:[-21.671203,-42.075825], end:"Av. Roberto Silveira, 501, Centro", tel:"(22) 3861-3428"},
+  "Drogaria Ideal": {geo:[-21.671203,-42.075825], end:"Av. Roberto Silveira, 501, Centro", tel:"(22) 3861-3428", zap:"(22) 98839-1046"},
   "Farma Nossa": {geo:[-21.671517,-42.075385], end:"Av. Roberto Silveira, 561, Cidade Nova", tel:"(22) 98117-3592"},
   "Fort Popular": {geo:[-21.671625,-42.075147], end:"R. Walter Luiz Rimes, 89, Centro", tel:"(22) 98154-1153"},
   "Farmácia Itaocara": {geo:[-21.6680191,-42.0802475], end:"R. Nilo Peçanha, 122, Centro", tel:"(22) 3861-2219", zap:"(22) 99865-1654"},
@@ -482,7 +482,7 @@ const CONTATOS = {
   "Drogaria Soares": {geo:[-21.667334,-42.080320], end:"Centro", tel:"(22) 3861-2990"},
   "Farmácia Jardim d'Aldeia": {geo:[-21.673218,-42.086873], end:"R. José Scizinio Bucker, 126, Jardim da Aldeia", tel:"(22) 3861-1868", zap:"(22) 98171-1903"},
   "Farmácia da Cooperativa Capil": {geo:[-21.665420,-42.077350], end:"R. Magno Martins", tel:"(22) 3861-3318", zap:"(22) 98170-2895"},
-  "Unidas Farma 13": {geo:[-21.668874,-42.079779], tel:"(22) 3861-2531", zap:"(22) 98841-7967"},
+  "Única Farma Prime": {geo:[-21.668874,-42.079779], end:"Calçadão do Centenário, 136, Centro", tel:"(22) 99830-1400"},
   "Pop Farma": {geo:[-21.674721,-42.079887], tel:"(22) 3861-2600", zap:"(22) 99926-1005"},
   "Farmácia Amaral": {geo:[-21.670548,-42.078570]},
   "Farmácia 2 Irmãos": {zap:"(22) 98163-1547"},
@@ -491,7 +491,7 @@ const CONTATOS = {
 
 // Escala do cartaz: datas, as duas farmácias e, quando houver, o motivo do plantão.
 const ESCALA = [
-  {d:["2026-09-07"], f:["Unidas Farma 13","Farmácia Casa Branca"], selo:"Independência"},
+  {d:["2026-09-07"], f:["Única Farma Prime","Farmácia Casa Branca"], selo:"Independência"},
   {d:["2026-09-12","2026-09-13"], f:["Nova Droga Ita","Drogaria Ideal"]},
   {d:["2026-09-19","2026-09-20"], f:["Farmácia Jardim d'Aldeia","Drogaria Descontão"]},
   {d:["2026-09-26","2026-09-27"], f:["Farmácia 2 Irmãos","Farmácia Amaral"]},
@@ -502,7 +502,7 @@ const ESCALA = [
   {d:["2026-10-24","2026-10-25"], f:["Pop Farma","Drogaria do Povo"]},
   {d:["2026-10-28"], f:["Farmácia Itaocara","Unidas Farma 12 (Ayrão)"], selo:"Dia do Servidor Público"},
   {d:["2026-10-31","2026-11-01"], f:["Farmácia da Cooperativa Capil","Farmácia Casa Branca"]},
-  {d:["2026-11-02"], f:["Unidas Farma 13","Drogaria Ideal"], selo:"Finados"},
+  {d:["2026-11-02"], f:["Única Farma Prime","Drogaria Ideal"], selo:"Finados"},
   {d:["2026-11-07","2026-11-08"], f:["Nova Droga Ita","Drogaria Descontão"]},
   {d:["2026-11-14","2026-11-15"], f:["Farmácia Jardim d'Aldeia","Farmácia Amaral"], selo:"Proclamação da República"},
   {d:["2026-11-20"], f:["Farmácia 2 Irmãos","Fort Popular"], selo:"Consciência Negra"},
@@ -513,7 +513,7 @@ const ESCALA = [
   {d:["2026-12-19","2026-12-20"], f:["Pop Farma","Unidas Farma 12 (Ayrão)"]},
   {d:["2026-12-25"], f:["Farmácia Itaocara","Farmácia Casa Branca"], selo:"Natal"},
   {d:["2026-12-26","2026-12-27"], f:["Farmácia da Cooperativa Capil","Drogaria Ideal"]},
-  {d:["2027-01-01"], f:["Unidas Farma 13","Drogaria Descontão"], selo:"Ano-novo"},
+  {d:["2027-01-01"], f:["Única Farma Prime","Drogaria Descontão"], selo:"Ano-novo"},
   {d:["2027-01-02","2027-01-03"], f:["Nova Droga Ita","Farmácia Amaral"]},
   {d:["2027-01-09","2027-01-10"], f:["Farmácia Jardim d'Aldeia","Fort Popular"]},
   {d:["2027-01-16","2027-01-17"], f:["Farmácia 2 Irmãos","Farmácia Martins (Reginho)"]},
@@ -524,7 +524,7 @@ const ESCALA = [
   {d:["2027-02-08","2027-02-09"], f:["Pop Farma","Farmácia Casa Branca"], selo:"Carnaval"},
   {d:["2027-02-13","2027-02-14"], f:["Farmácia Itaocara","Drogaria Ideal"]},
   {d:["2027-02-20","2027-02-21"], f:["Farmácia da Cooperativa Capil","Drogaria Descontão"]},
-  {d:["2027-02-27","2027-02-28"], f:["Unidas Farma 13","Farmácia Amaral"]}
+  {d:["2027-02-27","2027-02-28"], f:["Única Farma Prime","Farmácia Amaral"]}
 ];
 
 // "Hoje" e a hora no horário de Brasília. Para testar, abra a página com ?data=2026-10-20&hora=19:00 (ou #2026-10-20) no link.
