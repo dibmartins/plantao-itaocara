@@ -1,6 +1,6 @@
 // Rede primeiro, para a escala nova aparecer logo; sem internet, usa a última cópia salva.
-const CACHE = "plantao-v61";
-const ARQUIVOS = ["./", "index.html", "manifest.webmanifest", "icone.svg", "icone-192.png", "icone-512.png"];
+const CACHE = "plantao-v62";
+const ARQUIVOS = ["./", "index.html", "manifest.webmanifest", "icone.svg", "icone-192.png", "icone-512.png", "fontes/roboto-flex-latin.woff2"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ARQUIVOS)).then(() => self.skipWaiting()));

@@ -1,0 +1,75 @@
+# Farmácias Itaocara
+
+> Farmácia de plantão hoje em Itaocara-RJ: a escala de plantão das farmácias nos fins de semana e feriados e o telefone, WhatsApp e endereço de todas as farmácias da cidade.
+
+Regra do plantão: em cada data da escala (fim de semana ou feriado), as duas farmácias listadas atendem o dia todo. Nos dias úteis seguintes, a mesma dupla atende das 18h às 21h, até o próximo plantão. Fora disso, as farmácias funcionam no horário comercial de cada uma.
+
+A escala vem do cartaz de plantão das farmácias de Itaocara. Confirme por telefone antes de ir, principalmente em feriados.
+
+## Páginas
+
+- [Plantão de hoje](https://itaocara.qualfarmacia.com.br/): quais farmácias estão de plantão agora
+- [Escala de plantão](https://itaocara.qualfarmacia.com.br/#escala): todas as datas
+- [Farmácias](https://itaocara.qualfarmacia.com.br/#farmacias): telefones, WhatsApp e endereços
+- [Telefones de emergência](https://itaocara.qualfarmacia.com.br/#emergencia)
+- [Agenda da escala (.ics)](https://itaocara.qualfarmacia.com.br/plantao.ics)
+
+## Escala de plantão
+
+- segunda 07/09/2026 (Independência): Única Farma Prime e Farmácia Casa Branca
+- sábado 12/09/2026 e domingo 13/09/2026: Nova Droga Ita e Drogaria Ideal
+- sábado 19/09/2026 e domingo 20/09/2026: Farmácia Jardim d'Aldeia e Drogaria Descontão
+- sábado 26/09/2026 e domingo 27/09/2026: Farmácia 2 Irmãos e Farmácia Amaral
+- sábado 03/10/2026 e domingo 04/10/2026: Pop Farma e Fort Popular
+- sábado 10/10/2026 e domingo 11/10/2026: Drogalima e Farmácia Martins (Reginho)
+- segunda 12/10/2026 (Nossa Senhora Aparecida): Drogaria Soares e Farma Nossa
+- sábado 17/10/2026 e domingo 18/10/2026: Farmácia 4 Esquinas e Farmácia Avenida
+- sábado 24/10/2026 e domingo 25/10/2026: Pop Farma e Drogaria do Povo
+- quarta 28/10/2026 (Dia do Servidor Público): Farmácia Itaocara e Unidas Farma 12 (Ayrão)
+- sábado 31/10/2026 e domingo 01/11/2026: Farmácia da Cooperativa Capil e Farmácia Casa Branca
+- segunda 02/11/2026 (Finados): Única Farma Prime e Drogaria Ideal
+- sábado 07/11/2026 e domingo 08/11/2026: Nova Droga Ita e Drogaria Descontão
+- sábado 14/11/2026 e domingo 15/11/2026 (Proclamação da República): Farmácia Jardim d'Aldeia e Farmácia Amaral
+- sexta 20/11/2026 (Consciência Negra): Farmácia 2 Irmãos e Fort Popular
+- sábado 21/11/2026 e domingo 22/11/2026: Pop Farma e Farmácia Martins (Reginho)
+- sábado 28/11/2026 e domingo 29/11/2026: Drogalima e Farma Nossa
+- sábado 05/12/2026 e domingo 06/12/2026: Drogaria Soares e Farmácia Avenida
+- sábado 12/12/2026 e domingo 13/12/2026: Farmácia 4 Esquinas e Drogaria do Povo
+- sábado 19/12/2026 e domingo 20/12/2026: Pop Farma e Unidas Farma 12 (Ayrão)
+- sexta 25/12/2026 (Natal): Farmácia Itaocara e Farmácia Casa Branca
+- sábado 26/12/2026 e domingo 27/12/2026: Farmácia da Cooperativa Capil e Drogaria Ideal
+- sexta 01/01/2027 (Ano-novo): Única Farma Prime e Drogaria Descontão
+- sábado 02/01/2027 e domingo 03/01/2027: Nova Droga Ita e Farmácia Amaral
+- sábado 09/01/2027 e domingo 10/01/2027: Farmácia Jardim d'Aldeia e Fort Popular
+- sábado 16/01/2027 e domingo 17/01/2027: Farmácia 2 Irmãos e Farmácia Martins (Reginho)
+- sábado 23/01/2027 e domingo 24/01/2027: Pop Farma e Farma Nossa
+- sábado 30/01/2027 e domingo 31/01/2027: Drogalima e Farmácia Avenida
+- quinta 04/02/2027 (Plantão extra): Drogaria Soares e Drogaria do Povo
+- sábado 06/02/2027 e domingo 07/02/2027: Farmácia 4 Esquinas e Unidas Farma 12 (Ayrão)
+- segunda 08/02/2027 e terça 09/02/2027 (Carnaval): Pop Farma e Farmácia Casa Branca
+- sábado 13/02/2027 e domingo 14/02/2027: Farmácia Itaocara e Drogaria Ideal
+- sábado 20/02/2027 e domingo 21/02/2027: Farmácia da Cooperativa Capil e Drogaria Descontão
+- sábado 27/02/2027 e domingo 28/02/2027: Única Farma Prime e Farmácia Amaral
+
+## Farmácias de Itaocara
+
+- Drogalima: R. Nilo Peçanha, 242, Centro, tel. (22) 3861-2531
+- Drogaria Descontão: R. Benedito Pereira de Souza, 149, Centro, tel. (22) 3861-3713, WhatsApp (22) 3861-3713
+- Drogaria do Povo: R. Aristides Scisínio, 81, Centro, tel. (22) 98171-5564
+- Drogaria Ideal: Av. Roberto Silveira, 501, Centro, tel. (22) 3861-3428, WhatsApp (22) 98839-1046
+- Drogaria Soares: Centro, tel. (22) 3861-2990
+- Farma Nossa: Av. Roberto Silveira, 561, Cidade Nova, tel. (22) 98117-3592
+- Farmácia 2 Irmãos: WhatsApp (22) 98163-1547
+- Farmácia 4 Esquinas: R. Nilo Peçanha, 522, tel. (22) 3861-3021, WhatsApp (22) 99855-2728
+- Farmácia Amaral: sem contato cadastrado
+- Farmácia Avenida: R. Pastor José Henrique da Mata, 529, tel. (22) 3861-3040, WhatsApp (22) 98858-0850
+- Farmácia Casa Branca: R. Nilo Peçanha, 549, Centro, tel. (22) 98133-8982
+- Farmácia da Cooperativa Capil: R. Magno Martins, tel. (22) 3861-3318, WhatsApp (22) 98170-2895
+- Farmácia Itaocara: R. Nilo Peçanha, 122, Centro, tel. (22) 3861-2219, WhatsApp (22) 99865-1654
+- Farmácia Jardim d'Aldeia: R. José Scizinio Bucker, 126, Jardim da Aldeia, tel. (22) 3861-1868, WhatsApp (22) 98171-1903
+- Farmácia Martins (Reginho): R. Nilo Peçanha, 561, Centro, tel. (22) 3861-2732, WhatsApp (22) 99714-2147
+- Fort Popular: R. Walter Luiz Rimes, 89, Centro, tel. (22) 98154-1153
+- Nova Droga Ita: R. Nilo Peçanha, 110, Centro, tel. (22) 3861-2661, WhatsApp (22) 99601-1488
+- Pop Farma: tel. (22) 3861-2600, WhatsApp (22) 99926-1005
+- Única Farma Prime: Calçadão do Centenário, 136, Centro, tel. (22) 99830-1400
+- Unidas Farma 12 (Ayrão): R. Nilo Peçanha, 500, Centro, tel. (22) 3861-2083, WhatsApp (22) 98112-1564

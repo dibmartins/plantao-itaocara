@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- As telas (#escala, #farmacias, #emergencia) ficam no mesmo endereço: o Google ignora o que vem depois do #. -->
+<urlset xmlns="http://www.w3.org/2000/sitemaps/0.9">
+  <url>
+    <loc>https://itaocara.qualfarmacia.com.br/</loc>
+  </url>
+</urlset>
