@@ -1,4 +1,4 @@
-name: Agenda em dia
+name: Agenda, llms.txt e dados estruturados em dia
 on: [push, pull_request]
 jobs:
   conferir:

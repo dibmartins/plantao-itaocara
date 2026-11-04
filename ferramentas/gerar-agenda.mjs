@@ -1,6 +1,9 @@
-// Gera plantao.ics (a agenda assinável) a partir da ESCALA e dos CONTATOS do index.html.
-// Rode depois de mudar a escala: node ferramentas/gerar-agenda.mjs
-// Com --conferir, só avisa (e sai com erro) se o plantao.ics estiver desatualizado.
+// Gera, a partir da ESCALA e dos CONTATOS do index.html:
+// - plantao.ics (a agenda assinável);
+// - llms.txt (resumo em texto para assistentes de IA);
+// - os dados estruturados (JSON-LD) das farmácias dentro do index.html.
+// Rode depois de mudar a escala ou os contatos: node ferramentas/gerar-agenda.mjs
+// Com --conferir, só avisa (e sai com erro) se algum deles estiver desatualizado.
 import {readFileSync, writeFileSync} from "node:fs";
 
 const raiz = new URL("../", import.meta.url);
@@ -69,12 +72,67 @@ ESCALA.forEach((e, i) => {
 linhas.push("END:VCALENDAR");
 const ics = linhas.map(dobrar).join("\r\n") + "\r\n";
 
-const destino = new URL("plantao.ics", raiz);
+// llms.txt: o mesmo conteúdo do site em texto simples, porque a maioria dos robôs de IA não executa JavaScript.
+const dataBR = d => d.split("-").reverse().join("/");
+const semana = d => ["domingo","segunda","terça","quarta","quinta","sexta","sábado"][new Date(d + "T12:00:00Z").getUTCDay()];
+const contato = n => {
+  const c = CONTATOS[n] || {};
+  return [c.end, c.tel && `tel. ${c.tel}`, c.zap && `WhatsApp ${c.zap}`].filter(Boolean).join(", ") || "sem contato cadastrado";
+};
+const llms = [
+  "# Farmácias Itaocara",
+  "",
+  "> Farmácia de plantão hoje em Itaocara-RJ: a escala de plantão das farmácias nos fins de semana e feriados e o telefone, WhatsApp e endereço de todas as farmácias da cidade.",
+  "",
+  "Regra do plantão: em cada data da escala (fim de semana ou feriado), as duas farmácias listadas atendem o dia todo. Nos dias úteis seguintes, a mesma dupla atende das 18h às 21h, até o próximo plantão. Fora disso, as farmácias funcionam no horário comercial de cada uma.",
+  "",
+  "A escala vem do cartaz de plantão das farmácias de Itaocara. Confirme por telefone antes de ir, principalmente em feriados.",
+  "",
+  "## Páginas",
+  "",
+  `- [Plantão de hoje](${SITE}): quais farmácias estão de plantão agora`,
+  `- [Escala de plantão](${SITE}#escala): todas as datas`,
+  `- [Farmácias](${SITE}#farmacias): telefones, WhatsApp e endereços`,
+  `- [Telefones de emergência](${SITE}#emergencia)`,
+  `- [Agenda da escala (.ics)](${SITE}plantao.ics)`,
+  "",
+  "## Escala de plantão",
+  "",
+  ...ESCALA.map(e => `- ${e.d.map(d => `${semana(d)} ${dataBR(d)}`).join(" e ")}${e.selo ? ` (${e.selo})` : ""}: ${e.f.join(" e ")}`),
+  "",
+  "## Farmácias de Itaocara",
+  "",
+  ...Object.keys(CONTATOS).sort((a, b) => a.localeCompare(b, "pt-BR")).map(n => `- ${n}: ${contato(n)}`),
+  ""
+].join("\n");
+
+// Dados estruturados: o site e cada farmácia como Pharmacy, para o Google e as IAs ligarem o site às farmácias da cidade.
+const farmacias = Object.entries(CONTATOS).map(([nome, c]) => ({
+  "@type": "Pharmacy",
+  name: nome,
+  ...(c.tel || c.zap ? {telephone: c.tel || c.zap} : {}),
+  address: {"@type": "PostalAddress", ...(c.end ? {streetAddress: c.end} : {}), addressLocality: "Itaocara", addressRegion: "RJ", addressCountry: "BR"},
+  ...(c.geo ? {geo: {"@type": "GeoCoordinates", latitude: c.geo[0], longitude: c.geo[1]}} : {})
+}));
+const jsonld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "WebSite", "@id": SITE + "#site", url: SITE, name: "Farmácias Itaocara", inLanguage: "pt-BR",
+     description: "Farmácia de plantão hoje em Itaocara-RJ, escala de plantão e contatos das farmácias."},
+    {"@type": "ItemList", name: "Farmácias de Itaocara", itemListElement: farmacias.map((f, i) => ({"@type": "ListItem", position: i + 1, item: f}))}
+  ]
+};
+const INICIO = "<!-- dados-estruturados: gerado por ferramentas/gerar-agenda.mjs, não edite à mão -->", FIM = "<!-- /dados-estruturados -->";
+const a = html.indexOf(INICIO), b = html.indexOf(FIM);
+if(a < 0 || b < a) throw new Error("marcadores dos dados estruturados não encontrados no index.html");
+const htmlNovo = html.slice(0, a + INICIO.length) + "\n<script type=\"application/ld+json\">" + JSON.stringify(jsonld).replaceAll("<", "\\u003c") + "</script>\n" + html.slice(b);
+
+const saidas = [["plantao.ics", ics], ["llms.txt", llms], ["index.html", htmlNovo]];
 if(process.argv.includes("--conferir")){
-  let atual = ""; try { atual = readFileSync(destino, "utf8"); } catch {}
-  if(atual !== ics){ console.error("plantao.ics desatualizado: rode node ferramentas/gerar-agenda.mjs"); process.exit(1); }
-  console.log("plantao.ics em dia");
+  const velhos = saidas.filter(([nome, conteudo]) => { try { return readFileSync(new URL(nome, raiz), "utf8") !== conteudo; } catch { return true; } }).map(([nome]) => nome);
+  if(velhos.length){ console.error(`Desatualizado: ${velhos.join(", ")}. Rode node ferramentas/gerar-agenda.mjs`); process.exit(1); }
+  console.log("plantao.ics, llms.txt e dados estruturados em dia");
 } else {
-  writeFileSync(destino, ics);
-  console.log(`plantao.ics gerado com ${ESCALA.length} plantões`);
+  for(const [nome, conteudo] of saidas) writeFileSync(new URL(nome, raiz), conteudo);
+  console.log(`Gerados plantao.ics (${ESCALA.length} plantões), llms.txt e dados estruturados (${farmacias.length} farmácias)`);
 }
