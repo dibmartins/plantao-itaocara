@@ -19,7 +19,7 @@ A escala vem do cartaz de plantão das farmácias de Itaocara. Confirme por tele
 - segunda 07/09/2026 (Independência): Única Farma Prime e Farmácia Casa Branca
 - sábado 12/09/2026 e domingo 13/09/2026: Nova Droga Ita e Drogaria Ideal
 - sábado 19/09/2026 e domingo 20/09/2026: Farmácia Jardim d'Aldeia e Drogaria Descontão
-- sábado 26/09/2026 e domingo 27/09/2026: Farmácia 2 Irmãos e Farmácia Amaral
+- sábado 26/09/2026 e domingo 27/09/2026: Drogaria Mais Saúde e Farmácia Amaral
 - sábado 03/10/2026 e domingo 04/10/2026: Pop Farma e Fort Popular
 - sábado 10/10/2026 e domingo 11/10/2026: Drogalima e Farmácia Martins (Reginho)
 - segunda 12/10/2026 (Nossa Senhora Aparecida): Drogaria Soares e Farma Nossa
@@ -30,7 +30,7 @@ A escala vem do cartaz de plantão das farmácias de Itaocara. Confirme por tele
 - segunda 02/11/2026 (Finados): Única Farma Prime e Drogaria Ideal
 - sábado 07/11/2026 e domingo 08/11/2026: Nova Droga Ita e Drogaria Descontão
 - sábado 14/11/2026 e domingo 15/11/2026 (Proclamação da República): Farmácia Jardim d'Aldeia e Farmácia Amaral
-- sexta 20/11/2026 (Consciência Negra): Farmácia 2 Irmãos e Fort Popular
+- sexta 20/11/2026 (Consciência Negra): Drogaria Mais Saúde e Fort Popular
 - sábado 21/11/2026 e domingo 22/11/2026: Pop Farma e Farmácia Martins (Reginho)
 - sábado 28/11/2026 e domingo 29/11/2026: Drogalima e Farma Nossa
 - sábado 05/12/2026 e domingo 06/12/2026: Drogaria Soares e Farmácia Avenida
@@ -41,7 +41,7 @@ A escala vem do cartaz de plantão das farmácias de Itaocara. Confirme por tele
 - sexta 01/01/2027 (Ano-novo): Única Farma Prime e Drogaria Descontão
 - sábado 02/01/2027 e domingo 03/01/2027: Nova Droga Ita e Farmácia Amaral
 - sábado 09/01/2027 e domingo 10/01/2027: Farmácia Jardim d'Aldeia e Fort Popular
-- sábado 16/01/2027 e domingo 17/01/2027: Farmácia 2 Irmãos e Farmácia Martins (Reginho)
+- sábado 16/01/2027 e domingo 17/01/2027: Drogaria Mais Saúde e Farmácia Martins (Reginho)
 - sábado 23/01/2027 e domingo 24/01/2027: Pop Farma e Farma Nossa
 - sábado 30/01/2027 e domingo 31/01/2027: Drogalima e Farmácia Avenida
 - quinta 04/02/2027 (Plantão extra): Drogaria Soares e Drogaria do Povo
@@ -57,9 +57,9 @@ A escala vem do cartaz de plantão das farmácias de Itaocara. Confirme por tele
 - Drogaria Descontão: R. Benedito Pereira de Souza, 149, Centro, tel. (22) 3861-3713, WhatsApp (22) 3861-3713
 - Drogaria do Povo: R. Aristides Scisínio, 81, Centro, tel. (22) 98171-5564
 - Drogaria Ideal: Av. Roberto Silveira, 501, Centro, tel. (22) 3861-3428, WhatsApp (22) 98839-1046
+- Drogaria Mais Saúde: WhatsApp (22) 98818-3382
 - Drogaria Soares: Centro, tel. (22) 3861-2990
 - Farma Nossa: Av. Roberto Silveira, 561, Cidade Nova, tel. (22) 98117-3592
-- Farmácia 2 Irmãos: R. Pastor José Henrique da Mata, Caxias (ao lado do Açougue do André), WhatsApp (22) 98163-1547
 - Farmácia 4 Esquinas: R. Nilo Peçanha, 522, tel. (22) 3861-3021, WhatsApp (22) 99855-2728
 - Farmácia Amaral: sem contato cadastrado
 - Farmácia Avenida: R. Pastor José Henrique da Mata, 529, tel. (22) 3861-3040, WhatsApp (22) 98858-0850

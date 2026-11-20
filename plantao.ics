@@ -105,14 +105,14 @@ UID:plantao-20260926@farmacias-itaocara
 DTSTAMP:20260926T000000Z
 DTSTART;VALUE=DATE:20260926
 DTEND;VALUE=DATE:20260928
-SUMMARY:Plantão: Farmácia 2 Irmãos e Farmácia Amaral
-DESCRIPTION:Farmácia 2 Irmãos\nFarmácia Amaral\n\nEscala completa: https
- ://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Drogaria Mais Saúde e Farmácia Amaral
+DESCRIPTION:Drogaria Mais Saúde\nFarmácia Amaral\n\nEscala completa: http
+ s://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Farmácia 2 Irmãos e Farmácia Amaral
+DESCRIPTION:Plantão amanhã: Drogaria Mais Saúde e Farmácia Amaral
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -121,10 +121,10 @@ UID:plantao-noite-20260926@farmacias-itaocara
 DTSTAMP:20260926T000000Z
 DTSTART;VALUE=DATE:20260928
 DTEND;VALUE=DATE:20261003
-SUMMARY:Plantão das 18h às 21h: Farmácia 2 Irmãos e Farmácia Amaral
+SUMMARY:Plantão das 18h às 21h: Drogaria Mais Saúde e Farmácia Amaral
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nFarmácia 2 Irmãos\nFarmácia Amaral\n\nEscala completa: https:
- //itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nDrogaria Mais Saúde\nFarmácia Amaral\n\nEscala completa: https
+ ://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
@@ -398,14 +398,15 @@ UID:plantao-20261120@farmacias-itaocara
 DTSTAMP:20261120T000000Z
 DTSTART;VALUE=DATE:20261120
 DTEND;VALUE=DATE:20261121
-SUMMARY:Plantão: Farmácia 2 Irmãos e Fort Popular
-DESCRIPTION:Consciência Negra\n\nFarmácia 2 Irmãos\nFort Popular: (22) 9
- 8154-1153\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Drogaria Mais Saúde e Fort Popular
+DESCRIPTION:Consciência Negra\n\nDrogaria Mais Saúde\nFort Popular: (22) 
+ 98154-1153\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escal
+ a
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Farmácia 2 Irmãos e Fort Popular
+DESCRIPTION:Plantão amanhã: Drogaria Mais Saúde e Fort Popular
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -676,15 +677,15 @@ UID:plantao-20270116@farmacias-itaocara
 DTSTAMP:20270116T000000Z
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270118
-SUMMARY:Plantão: Farmácia 2 Irmãos e Farmácia Martins (Reginho)
-DESCRIPTION:Farmácia 2 Irmãos\nFarmácia Martins (Reginho): (22) 3861-273
- 2\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+SUMMARY:Plantão: Drogaria Mais Saúde e Farmácia Martins (Reginho)
+DESCRIPTION:Drogaria Mais Saúde\nFarmácia Martins (Reginho): (22) 3861-27
+ 32\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Plantão amanhã: Farmácia 2 Irmãos e Farmácia Martins (Regi
- nho)
+DESCRIPTION:Plantão amanhã: Drogaria Mais Saúde e Farmácia Martins (Reg
+ inho)
 TRIGGER:-PT7H
 END:VALARM
 END:VEVENT
@@ -693,11 +694,11 @@ UID:plantao-noite-20270116@farmacias-itaocara
 DTSTAMP:20270116T000000Z
 DTSTART;VALUE=DATE:20270118
 DTEND;VALUE=DATE:20270123
-SUMMARY:Plantão das 18h às 21h: Farmácia 2 Irmãos e Farmácia Martins (
- Reginho)
+SUMMARY:Plantão das 18h às 21h: Drogaria Mais Saúde e Farmácia Martins 
+ (Reginho)
 DESCRIPTION:Nos dias úteis\, a dupla do último plantão atende das 18h à
- s 21h.\n\nFarmácia 2 Irmãos\nFarmácia Martins (Reginho): (22) 3861-2732
- \n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
+ s 21h.\n\nDrogaria Mais Saúde\nFarmácia Martins (Reginho): (22) 3861-273
+ 2\n\nEscala completa: https://itaocara.qualfarmacia.com.br/#escala
 URL:https://itaocara.qualfarmacia.com.br/
 TRANSP:TRANSPARENT
 END:VEVENT
